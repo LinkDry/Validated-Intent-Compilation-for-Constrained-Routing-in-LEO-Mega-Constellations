@@ -1,0 +1,158 @@
+[
+  {
+    "threshold_deg": 30.0,
+    "num_edges": 1140,
+    "edges_removed": 460,
+    "edge_removal_pct": 28.8,
+    "gnn_pdr_mean": 38.17,
+    "gnn_pdr_std": 0.11,
+    "dijkstra_pdr_mean": 99.75,
+    "dijkstra_pdr_std": 0.01,
+    "gap": -61.58,
+    "gnn_seeds": [
+      {
+        "seed": 42,
+        "mean_pdr": 0.38327061661890105
+      },
+      {
+        "seed": 123,
+        "mean_pdr": 0.38100471221107185
+      },
+      {
+        "seed": 456,
+        "mean_pdr": 0.3807763058830197
+      }
+    ],
+    "dijkstra_seeds": [
+      {
+        "seed": 42,
+        "mean_pdr": 0.9976400693945792
+      },
+      {
+        "seed": 123,
+        "mean_pdr": 0.9975435809419221
+      },
+      {
+        "seed": 456,
+        "mean_pdr": 0.9973881012132618
+      }
+    ]
+  },
+  {
+    "threshold_deg": 40.0,
+    "num_edges": 1272,
+    "edges_removed": 328,
+    "edge_removal_pct": 20.5,
+    "gnn_pdr_mean": 54.08,
+    "gnn_pdr_std": 0.05,
+    "dijkstra_pdr_mean": 99.75,
+    "dijkstra_pdr_std": 0.01,
+    "gap": -45.67,
+    "gnn_seeds": [
+      {
+        "seed": 42,
+        "mean_pdr": 0.5405800825546707
+      },
+      {
+        "seed": 123,
+        "mean_pdr": 0.5404040542572457
+      },
+      {
+        "seed": 456,
+        "mean_pdr": 0.5414663543586427
+      }
+    ],
+    "dijkstra_seeds": [
+      {
+        "seed": 42,
+        "mean_pdr": 0.9976400693945792
+      },
+      {
+        "seed": 123,
+        "mean_pdr": 0.9975435809419221
+      },
+      {
+        "seed": 456,
+        "mean_pdr": 0.9973881012132618
+      }
+    ]
+  },
+  {
+    "threshold_deg": 45.0,
+    "num_edges": 1348,
+    "edges_removed": 252,
+    "edge_removal_pct": 15.8,
+    "gnn_pdr_mean": 65.2,
+    "gnn_pdr_std": 0.09,
+    "dijkstra_pdr_mean": 99.75,
+    "dijkstra_pdr_std": 0.01,
+    "gap": -34.55,
+    "gnn_seeds": [
+      {
+        "seed": 42,
+        "mean_pdr": 0.6523632009960426
+      },
+      {
+        "seed": 123,
+        "mean_pdr": 0.6507775780836397
+      },
+      {
+        "seed": 456,
+        "mean_pdr": 0.6529130851150434
+      }
+    ],
+    "dijkstra_seeds": [
+      {
+        "seed": 42,
+        "mean_pdr": 0.9976400693945792
+      },
+      {
+        "seed": 123,
+        "mean_pdr": 0.9975435809419221
+      },
+      {
+        "seed": 456,
+        "mean_pdr": 0.9973881012132618
+      }
+    ]
+  },
+  {
+    "threshold_deg": 50.0,
+    "num_edges": 1444,
+    "edges_removed": 156,
+    "edge_removal_pct": 9.8,
+    "gnn_pdr_mean": 80.37,
+    "gnn_pdr_std": 0.1,
+    "dijkstra_pdr_mean": 99.75,
+    "dijkstra_pdr_std": 0.01,
+    "gap": -19.38,
+    "gnn_seeds": [
+      {
+        "seed": 42,
+        "mean_pdr": 0.8042601420161754
+      },
+      {
+        "seed": 123,
+        "mean_pdr": 0.8023043306142849
+      },
+      {
+        "seed": 456,
+        "mean_pdr": 0.804523326177161
+      }
+    ],
+    "dijkstra_seeds": [
+      {
+        "seed": 42,
+        "mean_pdr": 0.9976400693945792
+      },
+      {
+        "seed": 123,
+        "mean_pdr": 0.9975435809419221
+      },
+      {
+        "seed": 456,
+        "mean_pdr": 0.9973881012132618
+      }
+    ]
+  }
+]

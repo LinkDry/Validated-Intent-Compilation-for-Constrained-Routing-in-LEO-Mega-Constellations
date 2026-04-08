@@ -1,0 +1,248 @@
+{
+  "total_tests": 15,
+  "total_caught": 15,
+  "detection_rate": "100.0%",
+  "by_category": {
+    "resource_exhaustion": {
+      "total": 5,
+      "caught": 5
+    },
+    "semantic_conflict": {
+      "total": 5,
+      "caught": 5
+    },
+    "boundary_exploitation": {
+      "total": 5,
+      "caught": 5
+    }
+  },
+  "tests": [
+    {
+      "id": "adv-4.1",
+      "category": "resource_exhaustion",
+      "description": "Disable all 20 orbital planes",
+      "expected": "reject (all nodes disabled)",
+      "caught": true,
+      "errors": [
+        "All nodes disabled \u2014 network unreachable"
+      ],
+      "warnings": [],
+      "valid": false
+    },
+    {
+      "id": "adv-4.2",
+      "category": "resource_exhaustion",
+      "description": "Disable 19/20 planes (95% capacity)",
+      "expected": "warn (massive capacity loss, likely partitioned)",
+      "caught": true,
+      "errors": [],
+      "warnings": [
+        "Severe capacity loss: 380/400 nodes (95%) disabled \u2014 network likely non-functional"
+      ],
+      "valid": true
+    },
+    {
+      "id": "adv-4.3",
+      "category": "resource_exhaustion",
+      "description": "Disable 200 individual nodes (50%)",
+      "expected": "warn (massive capacity loss)",
+      "caught": true,
+      "errors": [],
+      "warnings": [
+        "Massive capacity loss: 200/400 nodes (50%) disabled"
+      ],
+      "valid": true
+    },
+    {
+      "id": "adv-4.4",
+      "category": "resource_exhaustion",
+      "description": "Disable all planes + demand latency SLA",
+      "expected": "reject (network dead + impossible SLA)",
+      "caught": true,
+      "errors": [
+        "All nodes disabled \u2014 network unreachable"
+      ],
+      "warnings": [],
+      "valid": false
+    },
+    {
+      "id": "adv-4.5",
+      "category": "resource_exhaustion",
+      "description": "Avoid latitude > 0 (removes nearly all edges)",
+      "expected": "warn or reject (extreme edge removal)",
+      "caught": true,
+      "errors": [],
+      "warnings": [
+        "avoid_latitude threshold 0.0\u00b0 removes 1560/1600 edges (98%)"
+      ],
+      "valid": true
+    },
+    {
+      "id": "adv-5.1",
+      "category": "semantic_conflict",
+      "description": "Disable node 42 AND reroute_away node 42",
+      "expected": "warn (contradictory: disable + reroute same node)",
+      "caught": true,
+      "errors": [
+        "Contradictory constraints: nodes both disabled and reroute target: {'node:42'}"
+      ],
+      "warnings": [],
+      "valid": false
+    },
+    {
+      "id": "adv-5.2",
+      "category": "semantic_conflict",
+      "description": "Conflicting latency bounds (30ms AND 100ms) on same flow",
+      "expected": "warn (conflicting bounds)",
+      "caught": true,
+      "errors": [],
+      "warnings": [
+        "Conflicting latency bounds on flow_selector:0: constraint[0]=30.0ms vs [1]=100.0ms. Using stricter bound."
+      ],
+      "valid": true
+    },
+    {
+      "id": "adv-5.3",
+      "category": "semantic_conflict",
+      "description": "Latency deadline below physical minimum (0.5ms)",
+      "expected": "reject (below physical minimum ~2.5ms)",
+      "caught": true,
+      "errors": [
+        "hard_constraints[0]: latency 0.5ms below physical minimum (~2.5ms single hop)"
+      ],
+      "warnings": [],
+      "valid": false
+    },
+    {
+      "id": "adv-5.4",
+      "category": "semantic_conflict",
+      "description": "Disable plane 5 + demand flow between plane-5 nodes",
+      "expected": "warn (source/dest nodes disabled)",
+      "caught": true,
+      "errors": [
+        "flow[0]: src node 100 is disabled"
+      ],
+      "warnings": [],
+      "valid": false
+    },
+    {
+      "id": "adv-5.5",
+      "category": "semantic_conflict",
+      "description": "Negative latency value (-50ms)",
+      "expected": "reject (latency out of range)",
+      "caught": true,
+      "errors": [
+        "hard_constraints[0]: latency -50.0ms out of range (0, 10000]",
+        "hard_constraints[0]: latency -50.0ms below physical minimum (~2.5ms single hop)"
+      ],
+      "warnings": [],
+      "valid": false
+    },
+    {
+      "id": "adv-6.1",
+      "category": "boundary_exploitation",
+      "description": "Node ID boundary: 399 (valid) vs 400 (invalid)",
+      "expected": "399 accepted, 400 rejected",
+      "caught": true,
+      "sub_results": {
+        "node_399": {
+          "valid": true,
+          "errors": []
+        },
+        "node_400": {
+          "valid": false,
+          "errors": [
+            "hard_constraints[0]: node 400 does not exist"
+          ]
+        }
+      }
+    },
+    {
+      "id": "adv-6.2",
+      "category": "boundary_exploitation",
+      "description": "Plane ID boundary: 19 (valid) vs 20 (invalid)",
+      "expected": "19 accepted, 20 rejected",
+      "caught": true,
+      "sub_results": {
+        "plane_19": {
+          "valid": true,
+          "errors": []
+        },
+        "plane_20": {
+          "valid": false,
+          "errors": [
+            "hard_constraints[0]: plane 20 does not exist"
+          ]
+        }
+      }
+    },
+    {
+      "id": "adv-6.3",
+      "category": "boundary_exploitation",
+      "description": "Latency boundary: 500ms (achievable) vs 1.9ms (below physical min)",
+      "expected": "500ms accepted, 1.9ms rejected",
+      "caught": true,
+      "sub_results": {
+        "lat_500": {
+          "valid": true,
+          "errors": []
+        },
+        "lat_1.9": {
+          "valid": false,
+          "errors": [
+            "hard_constraints[0]: latency 1.9ms below physical minimum (~2.5ms single hop)"
+          ]
+        }
+      }
+    },
+    {
+      "id": "adv-6.4",
+      "category": "boundary_exploitation",
+      "description": "Utilization boundaries: 0.0/0.5/1.0/1.1",
+      "expected": "0.0 rejected, 0.5 accepted, 1.0 accepted, 1.1 rejected",
+      "caught": true,
+      "sub_results": [
+        {
+          "value": 0.0,
+          "expected_valid": false,
+          "actual_valid": false,
+          "errors": [
+            "soft_constraints[0]: utilization 0.0 must be in (0, 1]"
+          ]
+        },
+        {
+          "value": 0.5,
+          "expected_valid": true,
+          "actual_valid": true,
+          "errors": []
+        },
+        {
+          "value": 1.0,
+          "expected_valid": true,
+          "actual_valid": true,
+          "errors": []
+        },
+        {
+          "value": 1.1,
+          "expected_valid": false,
+          "actual_valid": false,
+          "errors": [
+            "soft_constraints[0]: utilization 1.1 must be in (0, 1]"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adv-6.5",
+      "category": "boundary_exploitation",
+      "description": "Hallucinated region name (ATLANTIS)",
+      "expected": "reject (unknown region)",
+      "caught": true,
+      "errors": [
+        "flow_selectors[0]: unknown src_region 'ATLANTIS'"
+      ],
+      "warnings": [],
+      "valid": false
+    }
+  ]
+}

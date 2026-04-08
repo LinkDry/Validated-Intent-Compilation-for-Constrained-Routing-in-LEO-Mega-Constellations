@@ -1,0 +1,3449 @@
+{
+  "three_way_matrix": {
+    "overall": {
+      "ACCEPT": 58,
+      "REJECT": 54,
+      "ABSTAIN": 128
+    },
+    "by_category": {
+      "single": {
+        "ACCEPT": 10,
+        "REJECT": 5,
+        "ABSTAIN": 65,
+        "total": 80
+      },
+      "compositional": {
+        "ACCEPT": 40,
+        "REJECT": 25,
+        "ABSTAIN": 35,
+        "total": 100
+      },
+      "conditional": {
+        "ACCEPT": 8,
+        "REJECT": 2,
+        "ABSTAIN": 20,
+        "total": 30
+      },
+      "infeasible": {
+        "ACCEPT": 0,
+        "REJECT": 22,
+        "ABSTAIN": 8,
+        "total": 30
+      }
+    },
+    "feasible": {
+      "ACCEPT": 58,
+      "REJECT": 32,
+      "ABSTAIN": 120
+    },
+    "infeasible": {
+      "ACCEPT": 0,
+      "REJECT": 22,
+      "ABSTAIN": 8
+    }
+  },
+  "safety": {
+    "infeasible_unsafe_accept": 0,
+    "infeasible_unsafe_accept_rate": 0.0,
+    "feasible_unsafe_accept": 0,
+    "note": "ABSTAIN counts as non-accept (safe)"
+  },
+  "coverage": {
+    "decided": 112,
+    "abstain": 128,
+    "total": 240,
+    "coverage_rate": 46.7
+  },
+  "fragment_breakdown": {
+    "F2": 58
+  },
+  "infeasible_certification": {
+    "pending": 22,
+    "abstain": 8
+  },
+  "overall_total": 240,
+  "pass_8_note": "8-pass pipeline with constructive feasibility certification (F1-F5)",
+  "details": [
+    {
+      "id": "single_001",
+      "category": "single",
+      "intent": "Disable node 240 immediately",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_002",
+      "category": "single",
+      "intent": "Shut down node 372",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_003",
+      "category": "single",
+      "intent": "Disable node 155 immediately",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_004",
+      "category": "single",
+      "intent": "Pull satellite 370 out of service",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_005",
+      "category": "single",
+      "intent": "Remove sat 387 from the routing mesh",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_006",
+      "category": "single",
+      "intent": "Disable node 272 immediately",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_007",
+      "category": "single",
+      "intent": "Pull satellite 325 out of service",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_008",
+      "category": "single",
+      "intent": "Pull satellite 181 out of service",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_009",
+      "category": "single",
+      "intent": "Shut down node 269",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_010",
+      "category": "single",
+      "intent": "Remove sat 111 from the routing mesh",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_011",
+      "category": "single",
+      "intent": "Remove all satellites in plane 17 from routing",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_012",
+      "category": "single",
+      "intent": "Disable orbital plane 16",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_013",
+      "category": "single",
+      "intent": "Shut down the entire plane 6",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_014",
+      "category": "single",
+      "intent": "Plane 4 is undergoing maintenance, disable it",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_015",
+      "category": "single",
+      "intent": "Shut down the entire plane 6",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_016",
+      "category": "single",
+      "intent": "Remove all satellites in plane 1 from routing",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_017",
+      "category": "single",
+      "intent": "Shut down the entire plane 13",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_018",
+      "category": "single",
+      "intent": "Take plane 3 offline for orbit adjustment",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_019",
+      "category": "single",
+      "intent": "Shut down the entire plane 10",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_020",
+      "category": "single",
+      "intent": "Remove all satellites in plane 10 from routing",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_021",
+      "category": "single",
+      "intent": "Keep traffic away from SHANGHAI airspace",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_022",
+      "category": "single",
+      "intent": "Reroute all flows around SYDNEY",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_023",
+      "category": "single",
+      "intent": "Bypass the SAO_PAULO area completely",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_024",
+      "category": "single",
+      "intent": "Reroute all flows around SHANGHAI",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_025",
+      "category": "single",
+      "intent": "Do not use links near SHANGHAI",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_026",
+      "category": "single",
+      "intent": "Do not use links near NYC",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_027",
+      "category": "single",
+      "intent": "Keep traffic away from NYC airspace",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_028",
+      "category": "single",
+      "intent": "Keep traffic away from FRANKFURT airspace",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_029",
+      "category": "single",
+      "intent": "Reroute all flows around PARIS",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_030",
+      "category": "single",
+      "intent": "Avoid routing through the PARIS region",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_031",
+      "category": "single",
+      "intent": "Polar avoidance: cut links above 75 degrees",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_032",
+      "category": "single",
+      "intent": "Disable inter-satellite links in polar regions above 70\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_033",
+      "category": "single",
+      "intent": "No routing through latitudes higher than 80",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_034",
+      "category": "single",
+      "intent": "Disable inter-satellite links in polar regions above 70\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_035",
+      "category": "single",
+      "intent": "Keep traffic below 75\u00b0 latitude",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_036",
+      "category": "single",
+      "intent": "No routing through latitudes higher than 70",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_037",
+      "category": "single",
+      "intent": "Polar avoidance: cut links above 80 degrees",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_038",
+      "category": "single",
+      "intent": "No routing through latitudes higher than 75",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_039",
+      "category": "single",
+      "intent": "Disable inter-satellite links in polar regions above 80\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_040",
+      "category": "single",
+      "intent": "No routing through latitudes higher than 70",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_041",
+      "category": "single",
+      "intent": "Ensure emergency traffic from SHANGHAI to LONDON stays under 40ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "single_042",
+      "category": "single",
+      "intent": "Max latency 80ms for video flows between TOKYO and DUBAI",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "single_043",
+      "category": "single",
+      "intent": "SLA: 50ms latency cap on bulk from LONDON to SHANGHAI",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "single_044",
+      "category": "single",
+      "intent": "SLA: 100ms latency cap on military from PARIS to MUMBAI",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "single_045",
+      "category": "single",
+      "intent": "Bulk traffic SHANGHAI to LONDON must not exceed 60ms end-to-end",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "single_046",
+      "category": "single",
+      "intent": "Max latency 150ms for emergency flows between TOKYO and MUMBAI",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "single_047",
+      "category": "single",
+      "intent": "Telemetry traffic SHANGHAI to SYDNEY must not exceed 50ms end-to-end",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "single_048",
+      "category": "single",
+      "intent": "Ensure maritime traffic from SAO_PAULO to NYC stays under 30ms",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=146, dst=133)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "single_049",
+      "category": "single",
+      "intent": "Keep SHANGHAI-NYC telemetry latency below 50 milliseconds",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=333, dst=133)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "single_050",
+      "category": "single",
+      "intent": "SLA: 50ms latency cap on telemetry from LONDON to FRANKFURT",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "single_051",
+      "category": "single",
+      "intent": "Max latency 30ms for telemetry flows between PARIS and TOKYO",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=214, dst=354)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "single_052",
+      "category": "single",
+      "intent": "Keep PARIS-LONDON financial latency below 30 milliseconds",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "single_053",
+      "category": "single",
+      "intent": "Ensure control_plane traffic from TOKYO to FRANKFURT stays under 20ms",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=354, dst=215)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "single_054",
+      "category": "single",
+      "intent": "Ensure telemetry traffic from MUMBAI to NYC stays under 20ms",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=291, dst=133)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "single_055",
+      "category": "single",
+      "intent": "SLA: 50ms latency cap on video from PARIS to SHANGHAI",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "single_056",
+      "category": "single",
+      "intent": "Divert flows around node 95",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_057",
+      "category": "single",
+      "intent": "Avoid using satellite 160 as a relay",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_058",
+      "category": "single",
+      "intent": "Divert flows around node 375",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_059",
+      "category": "single",
+      "intent": "Divert flows around node 324",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_060",
+      "category": "single",
+      "intent": "Node 366 is degraded, shift traffic elsewhere",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_061",
+      "category": "single",
+      "intent": "Node 204 showing errors, reroute away",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_062",
+      "category": "single",
+      "intent": "Divert flows around node 229",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_063",
+      "category": "single",
+      "intent": "Node 304 is degraded, shift traffic elsewhere",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_064",
+      "category": "single",
+      "intent": "Node 107 is degraded, shift traffic elsewhere",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_065",
+      "category": "single",
+      "intent": "Divert flows around node 159",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_066",
+      "category": "single",
+      "intent": "Keep all ISL utilization below 60 percent",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_067",
+      "category": "single",
+      "intent": "Set a 70% utilization ceiling on all edges",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_068",
+      "category": "single",
+      "intent": "Cap link utilization at 50%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_069",
+      "category": "single",
+      "intent": "Cap link utilization at 70%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_070",
+      "category": "single",
+      "intent": "Limit bandwidth usage to 60% across the mesh",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_071",
+      "category": "single",
+      "intent": "Cap link utilization at 80%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_072",
+      "category": "single",
+      "intent": "Limit bandwidth usage to 60% across the mesh",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_073",
+      "category": "single",
+      "intent": "Limit bandwidth usage to 80% across the mesh",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_074",
+      "category": "single",
+      "intent": "Limit bandwidth usage to 80% across the mesh",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_075",
+      "category": "single",
+      "intent": "Set a 50% utilization ceiling on all edges",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_076",
+      "category": "single",
+      "intent": "Spread traffic as uniformly as possible",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_077",
+      "category": "single",
+      "intent": "Balance load evenly across all inter-plane links",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_078",
+      "category": "single",
+      "intent": "Equalize utilization across orbital planes",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_079",
+      "category": "single",
+      "intent": "Spread traffic as uniformly as possible",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "single_080",
+      "category": "single",
+      "intent": "Equalize utilization across orbital planes",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_001",
+      "category": "compositional",
+      "intent": "Disable node 130 and ensure emergency traffic from TOKYO to SHANGHAI stays under 100ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_002",
+      "category": "compositional",
+      "intent": "Disable node 34 and ensure financial traffic from TOKYO to PARIS stays under 80ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_003",
+      "category": "compositional",
+      "intent": "Disable node 157 and ensure telemetry traffic from MUMBAI to DUBAI stays under 80ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_004",
+      "category": "compositional",
+      "intent": "Disable node 238 and ensure control_plane traffic from SYDNEY to DUBAI stays under 40ms",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=365, dst=272)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_005",
+      "category": "compositional",
+      "intent": "Disable node 19 and ensure control_plane traffic from LONDON to PARIS stays under 100ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_006",
+      "category": "compositional",
+      "intent": "Disable node 325 and ensure emergency traffic from TOKYO to FRANKFURT stays under 20ms",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=354, dst=215)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_007",
+      "category": "compositional",
+      "intent": "Disable node 337 and ensure bulk traffic from SYDNEY to NYC stays under 50ms",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=365, dst=133)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_008",
+      "category": "compositional",
+      "intent": "Disable node 60 and ensure telemetry traffic from SAO_PAULO to FRANKFURT stays under 50ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_009",
+      "category": "compositional",
+      "intent": "Disable node 291 and ensure maritime traffic from PARIS to LONDON stays under 30ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_010",
+      "category": "compositional",
+      "intent": "Disable node 306 and ensure telemetry traffic from MUMBAI to SYDNEY stays under 50ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_011",
+      "category": "compositional",
+      "intent": "Disable node 0 and ensure video traffic from FRANKFURT to LONDON stays under 100ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_012",
+      "category": "compositional",
+      "intent": "Disable node 274 and ensure military traffic from PARIS to SYDNEY stays under 40ms",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=214, dst=365)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_013",
+      "category": "compositional",
+      "intent": "Disable node 330 and ensure bulk traffic from SHANGHAI to FRANKFURT stays under 60ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_014",
+      "category": "compositional",
+      "intent": "Disable node 302 and ensure emergency traffic from SAO_PAULO to DUBAI stays under 100ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_015",
+      "category": "compositional",
+      "intent": "Disable node 203 and ensure video traffic from MUMBAI to SAO_PAULO stays under 50ms",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=291, dst=146)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_016",
+      "category": "compositional",
+      "intent": "Avoid the SAO_PAULO region and keep utilization below 60%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_017",
+      "category": "compositional",
+      "intent": "Avoid the SYDNEY region and keep utilization below 80%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_018",
+      "category": "compositional",
+      "intent": "Avoid the PARIS region and keep utilization below 70%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_019",
+      "category": "compositional",
+      "intent": "Avoid the MUMBAI region and keep utilization below 60%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_020",
+      "category": "compositional",
+      "intent": "Avoid the DUBAI region and keep utilization below 90%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_021",
+      "category": "compositional",
+      "intent": "Avoid the NYC region and keep utilization below 70%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_022",
+      "category": "compositional",
+      "intent": "Avoid the SYDNEY region and keep utilization below 60%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_023",
+      "category": "compositional",
+      "intent": "Avoid the MUMBAI region and keep utilization below 80%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_024",
+      "category": "compositional",
+      "intent": "Avoid the FRANKFURT region and keep utilization below 60%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_025",
+      "category": "compositional",
+      "intent": "Avoid the SAO_PAULO region and keep utilization below 70%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_026",
+      "category": "compositional",
+      "intent": "Disable plane 17 and avoid polar links above 70\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_027",
+      "category": "compositional",
+      "intent": "Disable plane 2 and avoid polar links above 70\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_028",
+      "category": "compositional",
+      "intent": "Disable plane 14 and avoid polar links above 75\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_029",
+      "category": "compositional",
+      "intent": "Disable plane 9 and avoid polar links above 70\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_030",
+      "category": "compositional",
+      "intent": "Disable plane 16 and avoid polar links above 80\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_031",
+      "category": "compositional",
+      "intent": "Disable plane 9 and avoid polar links above 70\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_032",
+      "category": "compositional",
+      "intent": "Disable plane 15 and avoid polar links above 75\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_033",
+      "category": "compositional",
+      "intent": "Disable plane 0 and avoid polar links above 80\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_034",
+      "category": "compositional",
+      "intent": "Disable plane 2 and avoid polar links above 70\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_035",
+      "category": "compositional",
+      "intent": "Disable plane 3 and avoid polar links above 80\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_036",
+      "category": "compositional",
+      "intent": "Route video from PARIS to SAO_PAULO under 30ms while avoiding MUMBAI",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=214, dst=146)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_037",
+      "category": "compositional",
+      "intent": "Route video from NYC to MUMBAI under 100ms while avoiding SHANGHAI",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_038",
+      "category": "compositional",
+      "intent": "Route bulk from SHANGHAI to DUBAI under 30ms while avoiding PARIS",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_039",
+      "category": "compositional",
+      "intent": "Route bulk from LONDON to PARIS under 40ms while avoiding DUBAI",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_040",
+      "category": "compositional",
+      "intent": "Route video from PARIS to LONDON under 50ms while avoiding SHANGHAI",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_041",
+      "category": "compositional",
+      "intent": "Route maritime from MUMBAI to TOKYO under 30ms while avoiding SHANGHAI",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=291, dst=354)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_042",
+      "category": "compositional",
+      "intent": "Route control_plane from SAO_PAULO to SYDNEY under 80ms while avoiding SHANGHAI",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_043",
+      "category": "compositional",
+      "intent": "Route maritime from NYC to MUMBAI under 40ms while avoiding SYDNEY",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=133, dst=291)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_044",
+      "category": "compositional",
+      "intent": "Route bulk from TOKYO to FRANKFURT under 50ms while avoiding SHANGHAI",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=354, dst=215)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_045",
+      "category": "compositional",
+      "intent": "Route video from SYDNEY to FRANKFURT under 40ms while avoiding TOKYO",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=365, dst=215)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_046",
+      "category": "compositional",
+      "intent": "Route financial from SHANGHAI to MUMBAI under 30ms while avoiding FRANKFURT",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_047",
+      "category": "compositional",
+      "intent": "Route financial from FRANKFURT to SYDNEY under 150ms while avoiding TOKYO",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_048",
+      "category": "compositional",
+      "intent": "Route military from MUMBAI to SAO_PAULO under 80ms while avoiding SYDNEY",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_049",
+      "category": "compositional",
+      "intent": "Route financial from DUBAI to PARIS under 60ms while avoiding TOKYO",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_050",
+      "category": "compositional",
+      "intent": "Route control_plane from SYDNEY to DUBAI under 150ms while avoiding SAO_PAULO",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_051",
+      "category": "compositional",
+      "intent": "Disable node 80, avoid LONDON, and guarantee video from PARIS to SAO_PAULO under 40ms",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=214, dst=146)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_052",
+      "category": "compositional",
+      "intent": "Disable node 225, avoid DUBAI, and guarantee telemetry from SAO_PAULO to NYC under 30ms",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=146, dst=133)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_053",
+      "category": "compositional",
+      "intent": "Disable node 216, avoid NYC, and guarantee emergency from SAO_PAULO to TOKYO under 150ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_054",
+      "category": "compositional",
+      "intent": "Disable node 236, avoid SHANGHAI, and guarantee control_plane from PARIS to MUMBAI under 60ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_055",
+      "category": "compositional",
+      "intent": "Disable node 249, avoid MUMBAI, and guarantee military from NYC to SHANGHAI under 50ms",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=133, dst=333)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_056",
+      "category": "compositional",
+      "intent": "Disable node 158, avoid SAO_PAULO, and guarantee financial from MUMBAI to SYDNEY under 40ms",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=291, dst=365)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_057",
+      "category": "compositional",
+      "intent": "Disable node 318, avoid FRANKFURT, and guarantee control_plane from PARIS to MUMBAI under 80ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_058",
+      "category": "compositional",
+      "intent": "Disable node 77, avoid NYC, and guarantee control_plane from SYDNEY to LONDON under 80ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_059",
+      "category": "compositional",
+      "intent": "Disable node 100, avoid TOKYO, and guarantee financial from SAO_PAULO to FRANKFURT under 40ms",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=146, dst=215)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_060",
+      "category": "compositional",
+      "intent": "Disable node 51, avoid DUBAI, and guarantee financial from MUMBAI to SYDNEY under 100ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_061",
+      "category": "compositional",
+      "intent": "Disable node 102, avoid TOKYO, and guarantee financial from SHANGHAI to SYDNEY under 150ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_062",
+      "category": "compositional",
+      "intent": "Disable node 184, avoid SYDNEY, and guarantee control_plane from SHANGHAI to LONDON under 150ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_063",
+      "category": "compositional",
+      "intent": "Disable node 167, avoid NYC, and guarantee military from PARIS to DUBAI under 50ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_064",
+      "category": "compositional",
+      "intent": "Disable node 65, avoid LONDON, and guarantee military from PARIS to DUBAI under 100ms",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_065",
+      "category": "compositional",
+      "intent": "Disable node 254, avoid DUBAI, and guarantee military from SHANGHAI to NYC under 30ms",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=333, dst=133)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_066",
+      "category": "compositional",
+      "intent": "Take plane 8 offline, avoid polar links above 65\u00b0, and cap utilization at 70%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_067",
+      "category": "compositional",
+      "intent": "Take plane 17 offline, avoid polar links above 75\u00b0, and cap utilization at 50%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_068",
+      "category": "compositional",
+      "intent": "Take plane 10 offline, avoid polar links above 80\u00b0, and cap utilization at 90%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_069",
+      "category": "compositional",
+      "intent": "Take plane 18 offline, avoid polar links above 80\u00b0, and cap utilization at 70%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_070",
+      "category": "compositional",
+      "intent": "Take plane 13 offline, avoid polar links above 80\u00b0, and cap utilization at 90%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_071",
+      "category": "compositional",
+      "intent": "Take plane 8 offline, avoid polar links above 65\u00b0, and cap utilization at 50%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_072",
+      "category": "compositional",
+      "intent": "Take plane 7 offline, avoid polar links above 80\u00b0, and cap utilization at 60%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_073",
+      "category": "compositional",
+      "intent": "Take plane 4 offline, avoid polar links above 70\u00b0, and cap utilization at 50%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_074",
+      "category": "compositional",
+      "intent": "Take plane 0 offline, avoid polar links above 75\u00b0, and cap utilization at 50%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_075",
+      "category": "compositional",
+      "intent": "Take plane 3 offline, avoid polar links above 75\u00b0, and cap utilization at 60%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_076",
+      "category": "compositional",
+      "intent": "Take plane 7 offline, avoid polar links above 70\u00b0, and cap utilization at 90%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_077",
+      "category": "compositional",
+      "intent": "Take plane 8 offline, avoid polar links above 65\u00b0, and cap utilization at 60%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_078",
+      "category": "compositional",
+      "intent": "Take plane 1 offline, avoid polar links above 75\u00b0, and cap utilization at 70%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_079",
+      "category": "compositional",
+      "intent": "Take plane 2 offline, avoid polar links above 75\u00b0, and cap utilization at 90%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_080",
+      "category": "compositional",
+      "intent": "Take plane 5 offline, avoid polar links above 65\u00b0, and cap utilization at 70%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "compositional_081",
+      "category": "compositional",
+      "intent": "Disable node 129 and plane 0, ensure maritime from PARIS to FRANKFURT under 150ms, cap utilization at 90%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_082",
+      "category": "compositional",
+      "intent": "Disable node 385 and plane 7, ensure control_plane from NYC to TOKYO under 60ms, cap utilization at 90%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_083",
+      "category": "compositional",
+      "intent": "Disable node 1 and plane 14, ensure military from SHANGHAI to SAO_PAULO under 20ms, cap utilization at 60%",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=333, dst=146)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_084",
+      "category": "compositional",
+      "intent": "Disable node 107 and plane 10, ensure military from LONDON to PARIS under 30ms, cap utilization at 50%",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: no reachable node for src (LONDON)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_085",
+      "category": "compositional",
+      "intent": "Disable node 117 and plane 0, ensure military from LONDON to TOKYO under 50ms, cap utilization at 60%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_086",
+      "category": "compositional",
+      "intent": "Disable node 118 and plane 15, ensure maritime from SYDNEY to LONDON under 100ms, cap utilization at 90%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_087",
+      "category": "compositional",
+      "intent": "Disable node 136 and plane 4, ensure video from SHANGHAI to SAO_PAULO under 40ms, cap utilization at 80%",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=333, dst=146)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_088",
+      "category": "compositional",
+      "intent": "Disable node 10 and plane 4, ensure video from MUMBAI to SYDNEY under 100ms, cap utilization at 80%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_089",
+      "category": "compositional",
+      "intent": "Disable node 348 and plane 5, ensure military from SYDNEY to PARIS under 30ms, cap utilization at 70%",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=365, dst=214)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_090",
+      "category": "compositional",
+      "intent": "Disable node 278 and plane 8, ensure control_plane from PARIS to TOKYO under 30ms, cap utilization at 70%",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=214, dst=354)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_091",
+      "category": "compositional",
+      "intent": "Disable node 41 and plane 11, ensure video from DUBAI to LONDON under 40ms, cap utilization at 90%",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=272, dst=215)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_092",
+      "category": "compositional",
+      "intent": "Disable node 71 and plane 14, ensure military from LONDON to SYDNEY under 100ms, cap utilization at 80%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_093",
+      "category": "compositional",
+      "intent": "Disable node 249 and plane 10, ensure video from PARIS to SAO_PAULO under 40ms, cap utilization at 60%",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: no reachable node for src (PARIS)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_094",
+      "category": "compositional",
+      "intent": "Disable node 314 and plane 13, ensure military from NYC to FRANKFURT under 80ms, cap utilization at 50%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_095",
+      "category": "compositional",
+      "intent": "Disable node 156 and plane 5, ensure video from PARIS to MUMBAI under 50ms, cap utilization at 90%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_096",
+      "category": "compositional",
+      "intent": "Disable node 330 and plane 18, ensure control_plane from SYDNEY to DUBAI under 30ms, cap utilization at 80%",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=386, dst=272)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_097",
+      "category": "compositional",
+      "intent": "Disable node 336 and plane 9, ensure video from SAO_PAULO to NYC under 150ms, cap utilization at 60%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_098",
+      "category": "compositional",
+      "intent": "Disable node 329 and plane 9, ensure emergency from DUBAI to SYDNEY under 40ms, cap utilization at 80%",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=272, dst=365)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "compositional_099",
+      "category": "compositional",
+      "intent": "Disable node 333 and plane 17, ensure bulk from SYDNEY to MUMBAI under 80ms, cap utilization at 50%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "compositional_100",
+      "category": "compositional",
+      "intent": "Disable node 78 and plane 6, ensure financial from LONDON to FRANKFURT under 150ms, cap utilization at 60%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "conditional_001",
+      "category": "conditional",
+      "intent": "If a solar storm occurs, disable plane 5",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_002",
+      "category": "conditional",
+      "intent": "If a solar storm occurs, disable plane 8",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_003",
+      "category": "conditional",
+      "intent": "If a node failure occurs, disable plane 4",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_004",
+      "category": "conditional",
+      "intent": "If a node failure occurs, disable plane 9",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_005",
+      "category": "conditional",
+      "intent": "If a node failure occurs, disable plane 10",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_006",
+      "category": "conditional",
+      "intent": "If a node failure occurs, disable plane 5",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_007",
+      "category": "conditional",
+      "intent": "If a node failure occurs, disable plane 7",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_008",
+      "category": "conditional",
+      "intent": "If a node failure occurs, disable plane 14",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_009",
+      "category": "conditional",
+      "intent": "If a solar storm occurs, disable plane 16",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_010",
+      "category": "conditional",
+      "intent": "If a solar storm occurs, disable plane 1",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_011",
+      "category": "conditional",
+      "intent": "During a scheduled maintenance, reroute away from node 145 and avoid polar links above 70\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_012",
+      "category": "conditional",
+      "intent": "During a node failure, reroute away from node 23 and avoid polar links above 65\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_013",
+      "category": "conditional",
+      "intent": "During a traffic overload, reroute away from node 71 and avoid polar links above 70\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_014",
+      "category": "conditional",
+      "intent": "During a solar storm, reroute away from node 95 and avoid polar links above 65\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_015",
+      "category": "conditional",
+      "intent": "During a solar storm, reroute away from node 173 and avoid polar links above 65\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_016",
+      "category": "conditional",
+      "intent": "During a solar storm, reroute away from node 285 and avoid polar links above 70\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_017",
+      "category": "conditional",
+      "intent": "During a traffic overload, reroute away from node 311 and avoid polar links above 80\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_018",
+      "category": "conditional",
+      "intent": "During a node failure, reroute away from node 244 and avoid polar links above 70\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_019",
+      "category": "conditional",
+      "intent": "During a solar storm, reroute away from node 156 and avoid polar links above 75\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_020",
+      "category": "conditional",
+      "intent": "During a scheduled maintenance, reroute away from node 392 and avoid polar links above 75\u00b0",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "conditional_021",
+      "category": "conditional",
+      "intent": "When solar storm is detected, enforce 80ms latency on military from LONDON to FRANKFURT and cap utilization at 70%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "conditional_022",
+      "category": "conditional",
+      "intent": "When scheduled maintenance is detected, enforce 40ms latency on military from FRANKFURT to SHANGHAI and cap utilization at 50%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "conditional_023",
+      "category": "conditional",
+      "intent": "When gateway failure is detected, enforce 80ms latency on video from LONDON to TOKYO and cap utilization at 90%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "conditional_024",
+      "category": "conditional",
+      "intent": "When node failure is detected, enforce 50ms latency on control_plane from SYDNEY to TOKYO and cap utilization at 60%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "conditional_025",
+      "category": "conditional",
+      "intent": "When scheduled maintenance is detected, enforce 20ms latency on video from LONDON to TOKYO and cap utilization at 70%",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=215, dst=354)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "conditional_026",
+      "category": "conditional",
+      "intent": "When solar storm is detected, enforce 80ms latency on military from PARIS to SHANGHAI and cap utilization at 80%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "conditional_027",
+      "category": "conditional",
+      "intent": "When node failure is detected, enforce 50ms latency on bulk from NYC to PARIS and cap utilization at 70%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "conditional_028",
+      "category": "conditional",
+      "intent": "When scheduled maintenance is detected, enforce 50ms latency on financial from PARIS to SHANGHAI and cap utilization at 50%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "conditional_029",
+      "category": "conditional",
+      "intent": "When traffic overload is detected, enforce 150ms latency on bulk from SHANGHAI to DUBAI and cap utilization at 90%",
+      "is_infeasible": false,
+      "verifier_accepted": true,
+      "certification_status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "feasibility_details": [
+        "flow[0]: certified feasible (F2)"
+      ],
+      "decision": "ACCEPT"
+    },
+    {
+      "id": "conditional_030",
+      "category": "conditional",
+      "intent": "When node failure is detected, enforce 20ms latency on financial from FRANKFURT to SAO_PAULO and cap utilization at 80%",
+      "is_infeasible": false,
+      "verifier_accepted": false,
+      "certification_status": "rejected",
+      "errors": [
+        "flow[0]: infeasible \u2014 no routing satisfies F2 constraints on constrained graph (src=215, dst=146)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_001",
+      "category": "infeasible",
+      "intent": "Guarantee maritime from SYDNEY to SAO_PAULO under 1.0ms",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "hard_constraints[0]: latency 1.0ms below physical minimum (~2.5ms single hop)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_002",
+      "category": "infeasible",
+      "intent": "Guarantee telemetry from LONDON to PARIS under 1.0ms",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "hard_constraints[0]: latency 1.0ms below physical minimum (~2.5ms single hop)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_003",
+      "category": "infeasible",
+      "intent": "Guarantee telemetry from PARIS to MUMBAI under 1.5ms",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "hard_constraints[0]: latency 1.5ms below physical minimum (~2.5ms single hop)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_004",
+      "category": "infeasible",
+      "intent": "Guarantee control_plane from PARIS to LONDON under 1.0ms",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "hard_constraints[0]: latency 1.0ms below physical minimum (~2.5ms single hop)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_005",
+      "category": "infeasible",
+      "intent": "Guarantee maritime from SHANGHAI to NYC under 1.5ms",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "hard_constraints[0]: latency 1.5ms below physical minimum (~2.5ms single hop)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_006",
+      "category": "infeasible",
+      "intent": "Guarantee control_plane from TOKYO to SYDNEY under 0.5ms",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "hard_constraints[0]: latency 0.5ms below physical minimum (~2.5ms single hop)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_007",
+      "category": "infeasible",
+      "intent": "Guarantee telemetry from NYC to SYDNEY under 1.5ms",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "hard_constraints[0]: latency 1.5ms below physical minimum (~2.5ms single hop)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_008",
+      "category": "infeasible",
+      "intent": "Guarantee video from SAO_PAULO to LONDON under 0.5ms",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "hard_constraints[0]: latency 0.5ms below physical minimum (~2.5ms single hop)"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_009",
+      "category": "infeasible",
+      "intent": "Disable planes 4, 9, 0, 15, 11 and 12 more for maintenance",
+      "is_infeasible": true,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [
+        "Severe capacity loss: 340/400 nodes (85%) disabled \u2014 network likely non-functional",
+        "After disabling nodes/planes, 20 nodes are unreachable from the main component"
+      ],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "infeasible_010",
+      "category": "infeasible",
+      "intent": "Disable planes 7, 16, 15, 5, 0 and 14 more for maintenance",
+      "is_infeasible": true,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [
+        "Severe capacity loss: 380/400 nodes (95%) disabled \u2014 network likely non-functional"
+      ],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "infeasible_011",
+      "category": "infeasible",
+      "intent": "Disable planes 1, 17, 3, 7, 13 and 14 more for maintenance",
+      "is_infeasible": true,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [
+        "Severe capacity loss: 380/400 nodes (95%) disabled \u2014 network likely non-functional"
+      ],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "infeasible_012",
+      "category": "infeasible",
+      "intent": "Disable planes 19, 1, 15, 17, 14 and 14 more for maintenance",
+      "is_infeasible": true,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [
+        "Severe capacity loss: 380/400 nodes (95%) disabled \u2014 network likely non-functional"
+      ],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "infeasible_013",
+      "category": "infeasible",
+      "intent": "Disable planes 9, 16, 19, 12, 0 and 10 more for maintenance",
+      "is_infeasible": true,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [
+        "Severe capacity loss: 300/400 nodes (75%) disabled \u2014 network likely non-functional",
+        "After disabling nodes/planes, 20 nodes are unreachable from the main component"
+      ],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "infeasible_014",
+      "category": "infeasible",
+      "intent": "Disable planes 10, 4, 11, 6, 14 and 12 more for maintenance",
+      "is_infeasible": true,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [
+        "Severe capacity loss: 340/400 nodes (85%) disabled \u2014 network likely non-functional",
+        "After disabling nodes/planes, 40 nodes are unreachable from the main component"
+      ],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "infeasible_015",
+      "category": "infeasible",
+      "intent": "Disable planes 15, 1, 0, 3, 12 and 11 more for maintenance",
+      "is_infeasible": true,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [
+        "Severe capacity loss: 320/400 nodes (80%) disabled \u2014 network likely non-functional",
+        "After disabling nodes/planes, 60 nodes are unreachable from the main component"
+      ],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "infeasible_016",
+      "category": "infeasible",
+      "intent": "Disable planes 13, 8, 1, 14, 17 and 13 more for maintenance",
+      "is_infeasible": true,
+      "verifier_accepted": true,
+      "certification_status": "abstain",
+      "errors": [],
+      "warnings": [
+        "Severe capacity loss: 360/400 nodes (90%) disabled \u2014 network likely non-functional",
+        "After disabling nodes/planes, 20 nodes are unreachable from the main component"
+      ],
+      "feasibility_details": [
+        "topology-only program: no flow selectors to certify against"
+      ],
+      "decision": "ABSTAIN"
+    },
+    {
+      "id": "infeasible_017",
+      "category": "infeasible",
+      "intent": "Disable node 201 but also reroute critical traffic through node 201",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "Contradictory constraints: nodes both disabled and reroute target: {'node:201'}"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_018",
+      "category": "infeasible",
+      "intent": "Disable node 163 but also reroute critical traffic through node 163",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "Contradictory constraints: nodes both disabled and reroute target: {'node:163'}"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_019",
+      "category": "infeasible",
+      "intent": "Disable node 37 but also reroute critical traffic through node 37",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "Contradictory constraints: nodes both disabled and reroute target: {'node:37'}"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_020",
+      "category": "infeasible",
+      "intent": "Disable node 167 but also reroute critical traffic through node 167",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "Contradictory constraints: nodes both disabled and reroute target: {'node:167'}"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_021",
+      "category": "infeasible",
+      "intent": "Disable node 360 but also reroute critical traffic through node 360",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "Contradictory constraints: nodes both disabled and reroute target: {'node:360'}"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_022",
+      "category": "infeasible",
+      "intent": "Disable node 284 but also reroute critical traffic through node 284",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "Contradictory constraints: nodes both disabled and reroute target: {'node:284'}"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_023",
+      "category": "infeasible",
+      "intent": "Disable node 169 but also reroute critical traffic through node 169",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "Contradictory constraints: nodes both disabled and reroute target: {'node:169'}"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_024",
+      "category": "infeasible",
+      "intent": "Disable satellite 454",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "hard_constraints[0]: node 454 does not exist"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_025",
+      "category": "infeasible",
+      "intent": "Disable satellite 489",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "hard_constraints[0]: node 489 does not exist"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_026",
+      "category": "infeasible",
+      "intent": "Disable satellite 437",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "hard_constraints[0]: node 437 does not exist"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_027",
+      "category": "infeasible",
+      "intent": "Disable satellite 451",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "hard_constraints[0]: node 451 does not exist"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_028",
+      "category": "infeasible",
+      "intent": "Take plane 29 offline",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "hard_constraints[0]: plane 29 does not exist"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_029",
+      "category": "infeasible",
+      "intent": "Take plane 21 offline",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "hard_constraints[0]: plane 21 does not exist"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    },
+    {
+      "id": "infeasible_030",
+      "category": "infeasible",
+      "intent": "Take plane 24 offline",
+      "is_infeasible": true,
+      "verifier_accepted": false,
+      "certification_status": "pending",
+      "errors": [
+        "hard_constraints[0]: plane 24 does not exist"
+      ],
+      "warnings": [],
+      "feasibility_details": [],
+      "decision": "REJECT"
+    }
+  ]
+}

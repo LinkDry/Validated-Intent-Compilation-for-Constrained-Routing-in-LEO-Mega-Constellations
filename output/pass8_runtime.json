@@ -1,0 +1,94 @@
+{
+  "all": {
+    "n": 240,
+    "median_ms": 0.72,
+    "p95_ms": 1.58,
+    "max_ms": 1.898,
+    "mean_ms": 0.775,
+    "min_ms": 0.006
+  },
+  "with_flow_selectors": {
+    "n": 98,
+    "median_ms": 1.059,
+    "p95_ms": 1.738,
+    "max_ms": 1.898,
+    "mean_ms": 1.002,
+    "min_ms": 0.006
+  },
+  "without_flow_selectors": {
+    "n": 142,
+    "median_ms": 0.437,
+    "p95_ms": 1.501,
+    "max_ms": 1.629,
+    "mean_ms": 0.618,
+    "min_ms": 0.008
+  },
+  "by_certification": {
+    "abstain": {
+      "n": 128,
+      "median_ms": 0.428,
+      "p95_ms": 1.507,
+      "max_ms": 1.629,
+      "mean_ms": 0.632,
+      "min_ms": 0.008
+    },
+    "accepted": {
+      "n": 58,
+      "median_ms": 1.044,
+      "p95_ms": 1.738,
+      "max_ms": 1.812,
+      "mean_ms": 1.062,
+      "min_ms": 0.529
+    },
+    "rejected": {
+      "n": 32,
+      "median_ms": 1.135,
+      "p95_ms": 1.757,
+      "max_ms": 1.898,
+      "mean_ms": 1.14,
+      "min_ms": 0.464
+    },
+    "pending": {
+      "n": 22,
+      "median_ms": 0.442,
+      "p95_ms": 0.561,
+      "max_ms": 0.938,
+      "mean_ms": 0.321,
+      "min_ms": 0.006
+    }
+  },
+  "by_category": {
+    "single": {
+      "n": 80,
+      "median_ms": 0.405,
+      "p95_ms": 1.011,
+      "max_ms": 1.81,
+      "mean_ms": 0.426,
+      "min_ms": 0.008
+    },
+    "compositional": {
+      "n": 100,
+      "median_ms": 1.269,
+      "p95_ms": 1.68,
+      "max_ms": 1.898,
+      "mean_ms": 1.187,
+      "min_ms": 0.293
+    },
+    "conditional": {
+      "n": 30,
+      "median_ms": 0.664,
+      "p95_ms": 1.164,
+      "max_ms": 1.508,
+      "mean_ms": 0.746,
+      "min_ms": 0.437
+    },
+    "infeasible": {
+      "n": 30,
+      "median_ms": 0.433,
+      "p95_ms": 0.706,
+      "max_ms": 0.938,
+      "mean_ms": 0.36,
+      "min_ms": 0.006
+    }
+  }
+}

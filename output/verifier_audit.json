@@ -1,0 +1,102 @@
+{
+  "ground_truth_errors": 15,
+  "total_intents": 240,
+  "per_pass_stats": {
+    "schema": {
+      "caught": 0,
+      "total": 240
+    },
+    "entity_grounding": {
+      "caught": 0,
+      "total": 240
+    },
+    "type_safety": {
+      "caught": 0,
+      "total": 240
+    },
+    "value_ranges": {
+      "caught": 0,
+      "total": 240
+    },
+    "conflicts": {
+      "caught": 0,
+      "total": 240
+    },
+    "physical_admissibility": {
+      "caught": 15,
+      "total": 240
+    },
+    "reachability": {
+      "caught": 0,
+      "total": 240
+    }
+  },
+  "category_stats": {
+    "single": {
+      "total": 80,
+      "any_error": 0
+    },
+    "compositional": {
+      "total": 100,
+      "any_error": 0
+    },
+    "conditional": {
+      "total": 30,
+      "any_error": 0
+    },
+    "infeasible": {
+      "total": 30,
+      "any_error": 15
+    }
+  },
+  "corruption_results": {
+    "out_of_range_node": {
+      "tested": 30,
+      "caught_by": {
+        "physical_admissibility": 30
+      }
+    },
+    "out_of_range_plane": {
+      "tested": 30,
+      "caught_by": {
+        "physical_admissibility": 30
+      }
+    },
+    "invalid_region": {
+      "tested": 30,
+      "caught_by": {
+        "entity_grounding": 30
+      }
+    },
+    "invalid_traffic_class": {
+      "tested": 30,
+      "caught_by": {
+        "entity_grounding": 30
+      }
+    },
+    "wrong_target_type": {
+      "tested": 30,
+      "caught_by": {
+        "type_safety": 30
+      }
+    },
+    "impossible_latency": {
+      "tested": 30,
+      "caught_by": {
+        "physical_admissibility": 30
+      }
+    },
+    "missing_intent_id": {
+      "tested": 30,
+      "caught_by": {
+        "schema": 30
+      }
+    },
+    "negative_penalty": {
+      "tested": 30,
+      "caught_by": {
+        "schema": 30
+      }
+    }
+  }
+}

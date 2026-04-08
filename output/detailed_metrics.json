@@ -1,0 +1,152 @@
+{
+  "snapshots": [
+    {
+      "exact_match_rate": 0.9411716791979949,
+      "loop_rate": 0.0,
+      "mean_hop_stretch": 1.0,
+      "mean_delay_stretch": 1.0017353936839788,
+      "p95_delay_stretch": 1.0098031029709953,
+      "p99_delay_stretch": 1.0210219662151832,
+      "mean_hops_gnn": 10.025062656641603,
+      "mean_hops_dijkstra": 10.025062656641603,
+      "total_pairs": 159600
+    },
+    {
+      "exact_match_rate": 0.9421052631578948,
+      "loop_rate": 0.0,
+      "mean_hop_stretch": 1.0,
+      "mean_delay_stretch": 1.0016149424122203,
+      "p95_delay_stretch": 1.009246962624965,
+      "p99_delay_stretch": 1.0208555616591435,
+      "mean_hops_gnn": 10.025062656641603,
+      "mean_hops_dijkstra": 10.025062656641603,
+      "total_pairs": 159600
+    },
+    {
+      "exact_match_rate": 0.9498496240601504,
+      "loop_rate": 0.0,
+      "mean_hop_stretch": 1.0,
+      "mean_delay_stretch": 1.0011202433211166,
+      "p95_delay_stretch": 1.0064811956934168,
+      "p99_delay_stretch": 1.0158318467911012,
+      "mean_hops_gnn": 10.025062656641603,
+      "mean_hops_dijkstra": 10.025062656641603,
+      "total_pairs": 159600
+    },
+    {
+      "exact_match_rate": 0.9583709273182958,
+      "loop_rate": 0.0,
+      "mean_hop_stretch": 1.0,
+      "mean_delay_stretch": 1.0006682852747404,
+      "p95_delay_stretch": 1.0036575386136353,
+      "p99_delay_stretch": 1.012393236325575,
+      "mean_hops_gnn": 10.025062656641603,
+      "mean_hops_dijkstra": 10.025062656641603,
+      "total_pairs": 159600
+    },
+    {
+      "exact_match_rate": 0.9694423558897243,
+      "loop_rate": 0.0,
+      "mean_hop_stretch": 1.0,
+      "mean_delay_stretch": 1.000482845562803,
+      "p95_delay_stretch": 1.0017446523631808,
+      "p99_delay_stretch": 1.0131431525786259,
+      "mean_hops_gnn": 10.025062656641603,
+      "mean_hops_dijkstra": 10.025062656641603,
+      "total_pairs": 159600
+    },
+    {
+      "exact_match_rate": 0.9794360902255639,
+      "loop_rate": 0.0,
+      "mean_hop_stretch": 1.0,
+      "mean_delay_stretch": 1.000426564270023,
+      "p95_delay_stretch": 1.0014535638473707,
+      "p99_delay_stretch": 1.0123320645923948,
+      "mean_hops_gnn": 10.025062656641603,
+      "mean_hops_dijkstra": 10.025062656641603,
+      "total_pairs": 159600
+    },
+    {
+      "exact_match_rate": 0.9704699248120301,
+      "loop_rate": 0.0,
+      "mean_hop_stretch": 1.0,
+      "mean_delay_stretch": 1.0004750542915586,
+      "p95_delay_stretch": 1.002136392243741,
+      "p99_delay_stretch": 1.0120946501480574,
+      "mean_hops_gnn": 10.025062656641603,
+      "mean_hops_dijkstra": 10.025062656641603,
+      "total_pairs": 159600
+    },
+    {
+      "exact_match_rate": 0.9632957393483709,
+      "loop_rate": 0.0,
+      "mean_hop_stretch": 1.0,
+      "mean_delay_stretch": 1.000672396726532,
+      "p95_delay_stretch": 1.0040084269765297,
+      "p99_delay_stretch": 1.012261669324363,
+      "mean_hops_gnn": 10.025062656641603,
+      "mean_hops_dijkstra": 10.025062656641603,
+      "total_pairs": 159600
+    },
+    {
+      "exact_match_rate": 0.956798245614035,
+      "loop_rate": 0.0,
+      "mean_hop_stretch": 1.0,
+      "mean_delay_stretch": 1.0010210907828985,
+      "p95_delay_stretch": 1.0061365643370008,
+      "p99_delay_stretch": 1.0140614041680975,
+      "mean_hops_gnn": 10.025062656641603,
+      "mean_hops_dijkstra": 10.025062656641603,
+      "total_pairs": 159600
+    },
+    {
+      "exact_match_rate": 0.9456641604010025,
+      "loop_rate": 0.0,
+      "mean_hop_stretch": 1.0,
+      "mean_delay_stretch": 1.0014097266931894,
+      "p95_delay_stretch": 1.0084663870577992,
+      "p99_delay_stretch": 1.0184770601750723,
+      "mean_hops_gnn": 10.025062656641603,
+      "mean_hops_dijkstra": 10.025062656641603,
+      "total_pairs": 159600
+    }
+  ],
+  "aggregate": {
+    "exact_match_rate": {
+      "mean": 0.9576604010025062,
+      "std": 0.012364637015642206
+    },
+    "loop_rate": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "mean_hop_stretch": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "mean_delay_stretch": {
+      "mean": 1.0009626543019063,
+      "std": 0.0004665826913323242
+    },
+    "p95_delay_stretch": {
+      "mean": 1.0053134786728637,
+      "std": 0.0029964233003854585
+    },
+    "p99_delay_stretch": {
+      "mean": 1.0152472611977614,
+      "std": 0.003419117844024914
+    },
+    "mean_hops_gnn": {
+      "mean": 10.025062656641605,
+      "std": 1.7763568394002505e-15
+    },
+    "mean_hops_dijkstra": {
+      "mean": 10.025062656641605,
+      "std": 1.7763568394002505e-15
+    },
+    "total_pairs": {
+      "mean": 159600.0,
+      "std": 0.0
+    }
+  }
+}

@@ -1,0 +1,90 @@
+% ConstraintProgram IR Formal Definition
+% For inclusion in paper Section III (System Design)
+
+% Definition 1: ConstraintProgram
+\begin{definition}[ConstraintProgram]
+A \textit{ConstraintProgram} $\mathcal{P}$ is a typed intermediate representation
+that captures operator intent as a tuple:
+\begin{equation}
+\mathcal{P} = \langle \mathcal{F}, \mathcal{H}, \mathcal{S}, \mathcal{E}, \omega, \pi \rangle
+\end{equation}
+where $\mathcal{F}$ is a set of flow selectors, $\mathcal{H}$ is a set of hard constraints,
+$\mathcal{S}$ is a set of soft constraints, $\mathcal{E}$ is a set of event conditions,
+$\omega$ is an objective weight vector, and $\pi \in \{\texttt{critical}, \texttt{high},
+\texttt{medium}, \texttt{low}\}$ is the priority level.
+\end{definition}
+
+% Definition 2: Flow Selector
+\begin{definition}[Flow Selector]
+A flow selector $f \in \mathcal{F}$ identifies a subset of traffic flows:
+\begin{equation}
+f = \langle \tau, r_s, r_d, n_s, n_d, p_s, p_d \rangle
+\end{equation}
+where $\tau \in \mathcal{T}$ is a traffic class (e.g., \texttt{financial}, \texttt{emergency}),
+$r_s, r_d \in \mathcal{R} \cup \{\bot\}$ are source/destination regions,
+$n_s, n_d \in [0, N) \cup \{\bot\}$ are source/destination node IDs,
+and $p_s, p_d \in [0, P) \cup \{\bot\}$ are source/destination orbital planes.
+\end{definition}
+
+% Definition 3: Hard Constraint
+\begin{definition}[Hard Constraint]
+A hard constraint $h \in \mathcal{H}$ must be satisfied; violation renders the
+program infeasible:
+\begin{equation}
+h = \langle t_h, \sigma, v, c \rangle
+\end{equation}
+where $t_h \in \mathcal{T}_H$ is the constraint type, $\sigma$ is the target specifier,
+$v$ is the constraint value, and $c \in \mathcal{E} \cup \{\bot\}$ is an optional
+event condition.
+
+The hard constraint type set is:
+\begin{align}
+\mathcal{T}_H = \{&\texttt{disable\_node}, \texttt{disable\_plane}, \texttt{disable\_edge}, \nonumber \\
+                   &\texttt{avoid\_region}, \texttt{avoid\_latitude}, \texttt{reroute\_away}, \nonumber \\
+                   &\texttt{max\_latency\_ms}, \texttt{max\_hops}, \nonumber \\
+                   &\texttt{k\_edge\_disjoint}, \texttt{min\_capacity\_reserve}\}
+\end{align}
+\end{definition}
+
+% Definition 4: Constraint Grounding
+\begin{definition}[Constraint Grounding]
+Given a constellation graph $G = (V, E)$ with $|V| = N$ nodes and topology
+state at time $t$, the grounding function $\Gamma$ maps a ConstraintProgram
+to topology modifications:
+\begin{equation}
+\Gamma(\mathcal{P}, G, t) = \langle M_V, M_E, \mathbf{u}, \mathbf{d} \rangle
+\end{equation}
+where $M_V \in \{0,1\}^N$ is a node mask, $M_E \in \{0,1\}^{|E|}$ is an edge mask,
+$\mathbf{u} \in [0,1]^{|E|}$ is a per-edge utilization cap vector, and
+$\mathbf{d}: \mathcal{F} \to \mathbb{R}^+$ maps flow selectors to deadline values.
+
+Grounding rules for topology-modifying constraints:
+\begin{itemize}
+\item $\texttt{disable\_node}(n)$: $M_V[n] \leftarrow 0$, propagate to incident edges
+\item $\texttt{disable\_plane}(p)$: $\forall s \in [0, S): M_V[p \cdot S + s] \leftarrow 0$
+\item $\texttt{avoid\_latitude}(\theta)$: $\forall (u,v) \in E: |\phi_u| > \theta \lor |\phi_v| > \theta \Rightarrow M_E[(u,v)] \leftarrow 0$
+\item $\texttt{avoid\_region}(r)$: $\forall (u,v) \in E: u \in \mathcal{N}_r \lor v \in \mathcal{N}_r \Rightarrow M_E[(u,v)] \leftarrow 0$
+\end{itemize}
+where $\phi_n$ is the latitude of node $n$ and $\mathcal{N}_r$ is the set of nodes
+within region $r$.
+\end{definition}
+
+% Table: Constraint Types and Grounding Semantics
+\begin{table}[t]
+\centering
+\caption{ConstraintProgram hard constraint types and their grounding semantics.}
+\label{tab:constraint_types}
+\begin{tabular}{lll}
+\toprule
+\textbf{Type} & \textbf{Target} & \textbf{Grounding} \\
+\midrule
+\texttt{disable\_node} & \texttt{node:$n$} & $M_V[n] \leftarrow 0$ \\
+\texttt{disable\_plane} & \texttt{plane:$p$} & $M_V[pS{:}(p{+}1)S] \leftarrow 0$ \\
+\texttt{avoid\_latitude} & \texttt{edges:ALL} & $M_E[(u,v)] \leftarrow 0$ if $|\phi| > \theta$ \\
+\texttt{avoid\_region} & \texttt{region:$r$} & $M_E[(u,v)] \leftarrow 0$ if $u,v \in \mathcal{N}_r$ \\
+\texttt{reroute\_away} & \texttt{node:$n$} & $M_V[n] \leftarrow 0$ (transit) \\
+\texttt{max\_latency\_ms} & \texttt{flow\_sel:$i$} & $\mathbf{d}[f_i] \leftarrow v$ \\
+\texttt{max\_hops} & \texttt{flow\_sel:$i$} & hop limit on path \\
+\bottomrule
+\end{tabular}
+\end{table}

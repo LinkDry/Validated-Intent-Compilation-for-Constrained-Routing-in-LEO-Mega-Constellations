@@ -1,0 +1,1006 @@
+{
+  "title": "Expert Review Package: LEO Intent Routing Benchmark",
+  "version": "1.0",
+  "date": "2026-04-08",
+  "total_benchmark_size": 240,
+  "review_subset_size": 40,
+  "category_distribution": {
+    "single": 12,
+    "compositional": 15,
+    "conditional": 8,
+    "infeasible": 5
+  },
+  "evaluation_rubric": {
+    "realism": {
+      "description": "Would a real LEO constellation operator plausibly issue this intent?",
+      "scale": "1-5 (1=unrealistic, 5=highly realistic)"
+    },
+    "clarity": {
+      "description": "Is the intent unambiguous and well-specified?",
+      "scale": "1-5 (1=ambiguous, 5=perfectly clear)"
+    },
+    "constraint_correctness": {
+      "description": "Does the ground truth constraint program correctly capture the intent semantics?",
+      "scale": "1-5 (1=wrong, 5=perfect match)"
+    },
+    "difficulty_rating": {
+      "description": "How difficult is this intent to parse into executable constraints?",
+      "scale": "1-5 (1=trivial, 5=very challenging)"
+    },
+    "infeasibility_judgment": {
+      "description": "(Infeasible intents only) Is this intent genuinely infeasible for a 400-node Walker Delta constellation?",
+      "scale": "yes/no/uncertain"
+    }
+  },
+  "instructions": "For each intent below, please rate on the rubric dimensions. Focus on whether these intents represent realistic operator needs for a LEO mega-constellation (400 satellites, 20 planes x 20 sats, 550km altitude, 53 deg inclination, 4 ISL neighbors per satellite). The ground truth constraint program is provided for reference. Please also flag any intents that seem synthetic or unrealistic.",
+  "items": [
+    {
+      "id": "single_060",
+      "category": "single",
+      "difficulty": "easy",
+      "intent_text": "Node 366 is degraded, shift traffic elsewhere",
+      "tags": [
+        "reroute_away"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "reroute_away",
+            "target": "node:366",
+            "value": null
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "single_071",
+      "category": "single",
+      "difficulty": "easy",
+      "intent_text": "Cap link utilization at 80%",
+      "tags": [
+        "max_utilization"
+      ],
+      "ground_truth_constraints": {
+        "hard": [],
+        "soft": [
+          {
+            "type": "max_utilization",
+            "target": "edges:ALL",
+            "value": 0.8
+          }
+        ]
+      }
+    },
+    {
+      "id": "single_008",
+      "category": "single",
+      "difficulty": "easy",
+      "intent_text": "Pull satellite 181 out of service",
+      "tags": [
+        "disable_node"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_node",
+            "target": "node:181",
+            "value": null
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "single_024",
+      "category": "single",
+      "difficulty": "easy",
+      "intent_text": "Reroute all flows around SHANGHAI",
+      "tags": [
+        "avoid_region"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "avoid_region",
+            "target": "edges:ALL",
+            "value": "SHANGHAI"
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "single_062",
+      "category": "single",
+      "difficulty": "easy",
+      "intent_text": "Divert flows around node 229",
+      "tags": [
+        "reroute_away"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "reroute_away",
+            "target": "node:229",
+            "value": null
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "single_040",
+      "category": "single",
+      "difficulty": "easy",
+      "intent_text": "No routing through latitudes higher than 70",
+      "tags": [
+        "avoid_latitude"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "avoid_latitude",
+            "target": "edges:ALL",
+            "value": 70
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "single_051",
+      "category": "single",
+      "difficulty": "medium",
+      "intent_text": "Max latency 30ms for telemetry flows between PARIS and TOKYO",
+      "tags": [
+        "max_latency_ms"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "max_latency_ms",
+            "target": "flow_selector:0",
+            "value": 30
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "single_041",
+      "category": "single",
+      "difficulty": "medium",
+      "intent_text": "Ensure emergency traffic from SHANGHAI to LONDON stays under 40ms",
+      "tags": [
+        "max_latency_ms"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "max_latency_ms",
+            "target": "flow_selector:0",
+            "value": 40
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "single_055",
+      "category": "single",
+      "difficulty": "medium",
+      "intent_text": "SLA: 50ms latency cap on video from PARIS to SHANGHAI",
+      "tags": [
+        "max_latency_ms"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "max_latency_ms",
+            "target": "flow_selector:0",
+            "value": 50
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "single_049",
+      "category": "single",
+      "difficulty": "medium",
+      "intent_text": "Keep SHANGHAI-NYC telemetry latency below 50 milliseconds",
+      "tags": [
+        "max_latency_ms"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "max_latency_ms",
+            "target": "flow_selector:0",
+            "value": 50
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "single_053",
+      "category": "single",
+      "difficulty": "medium",
+      "intent_text": "Ensure control_plane traffic from TOKYO to FRANKFURT stays under 20ms",
+      "tags": [
+        "max_latency_ms"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "max_latency_ms",
+            "target": "flow_selector:0",
+            "value": 20
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "single_052",
+      "category": "single",
+      "difficulty": "medium",
+      "intent_text": "Keep PARIS-LONDON financial latency below 30 milliseconds",
+      "tags": [
+        "max_latency_ms"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "max_latency_ms",
+            "target": "flow_selector:0",
+            "value": 30
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "compositional_099",
+      "category": "compositional",
+      "difficulty": "hard",
+      "intent_text": "Disable node 333 and plane 17, ensure bulk from SYDNEY to MUMBAI under 80ms, cap utilization at 50%",
+      "tags": [
+        "disable_node",
+        "disable_plane",
+        "max_latency_ms",
+        "max_utilization"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_node",
+            "target": "node:333",
+            "value": null
+          },
+          {
+            "type": "disable_plane",
+            "target": "plane:17",
+            "value": null
+          },
+          {
+            "type": "max_latency_ms",
+            "target": "flow_selector:0",
+            "value": 80
+          }
+        ],
+        "soft": [
+          {
+            "type": "max_utilization",
+            "target": "edges:ALL",
+            "value": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "compositional_079",
+      "category": "compositional",
+      "difficulty": "hard",
+      "intent_text": "Take plane 2 offline, avoid polar links above 75°, and cap utilization at 90%",
+      "tags": [
+        "disable_plane",
+        "avoid_latitude",
+        "max_utilization"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_plane",
+            "target": "plane:2",
+            "value": null
+          },
+          {
+            "type": "avoid_latitude",
+            "target": "edges:ALL",
+            "value": 75
+          }
+        ],
+        "soft": [
+          {
+            "type": "max_utilization",
+            "target": "edges:ALL",
+            "value": 0.9
+          }
+        ]
+      }
+    },
+    {
+      "id": "compositional_056",
+      "category": "compositional",
+      "difficulty": "hard",
+      "intent_text": "Disable node 158, avoid SAO_PAULO, and guarantee financial from MUMBAI to SYDNEY under 40ms",
+      "tags": [
+        "disable_node",
+        "avoid_region",
+        "max_latency_ms"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_node",
+            "target": "node:158",
+            "value": null
+          },
+          {
+            "type": "avoid_region",
+            "target": "edges:ALL",
+            "value": "SAO_PAULO"
+          },
+          {
+            "type": "max_latency_ms",
+            "target": "flow_selector:0",
+            "value": 40
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "compositional_064",
+      "category": "compositional",
+      "difficulty": "hard",
+      "intent_text": "Disable node 65, avoid LONDON, and guarantee military from PARIS to DUBAI under 100ms",
+      "tags": [
+        "disable_node",
+        "avoid_region",
+        "max_latency_ms"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_node",
+            "target": "node:65",
+            "value": null
+          },
+          {
+            "type": "avoid_region",
+            "target": "edges:ALL",
+            "value": "LONDON"
+          },
+          {
+            "type": "max_latency_ms",
+            "target": "flow_selector:0",
+            "value": 100
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "compositional_088",
+      "category": "compositional",
+      "difficulty": "hard",
+      "intent_text": "Disable node 10 and plane 4, ensure video from MUMBAI to SYDNEY under 100ms, cap utilization at 80%",
+      "tags": [
+        "disable_node",
+        "disable_plane",
+        "max_latency_ms",
+        "max_utilization"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_node",
+            "target": "node:10",
+            "value": null
+          },
+          {
+            "type": "disable_plane",
+            "target": "plane:4",
+            "value": null
+          },
+          {
+            "type": "max_latency_ms",
+            "target": "flow_selector:0",
+            "value": 100
+          }
+        ],
+        "soft": [
+          {
+            "type": "max_utilization",
+            "target": "edges:ALL",
+            "value": 0.8
+          }
+        ]
+      }
+    },
+    {
+      "id": "compositional_075",
+      "category": "compositional",
+      "difficulty": "hard",
+      "intent_text": "Take plane 3 offline, avoid polar links above 75°, and cap utilization at 60%",
+      "tags": [
+        "disable_plane",
+        "avoid_latitude",
+        "max_utilization"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_plane",
+            "target": "plane:3",
+            "value": null
+          },
+          {
+            "type": "avoid_latitude",
+            "target": "edges:ALL",
+            "value": 75
+          }
+        ],
+        "soft": [
+          {
+            "type": "max_utilization",
+            "target": "edges:ALL",
+            "value": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "compositional_073",
+      "category": "compositional",
+      "difficulty": "hard",
+      "intent_text": "Take plane 4 offline, avoid polar links above 70°, and cap utilization at 50%",
+      "tags": [
+        "disable_plane",
+        "avoid_latitude",
+        "max_utilization"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_plane",
+            "target": "plane:4",
+            "value": null
+          },
+          {
+            "type": "avoid_latitude",
+            "target": "edges:ALL",
+            "value": 70
+          }
+        ],
+        "soft": [
+          {
+            "type": "max_utilization",
+            "target": "edges:ALL",
+            "value": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "compositional_027",
+      "category": "compositional",
+      "difficulty": "medium",
+      "intent_text": "Disable plane 2 and avoid polar links above 70°",
+      "tags": [
+        "disable_plane",
+        "avoid_latitude"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_plane",
+            "target": "plane:2",
+            "value": null
+          },
+          {
+            "type": "avoid_latitude",
+            "target": "edges:ALL",
+            "value": 70
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "compositional_031",
+      "category": "compositional",
+      "difficulty": "medium",
+      "intent_text": "Disable plane 9 and avoid polar links above 70°",
+      "tags": [
+        "disable_plane",
+        "avoid_latitude"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_plane",
+            "target": "plane:9",
+            "value": null
+          },
+          {
+            "type": "avoid_latitude",
+            "target": "edges:ALL",
+            "value": 70
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "compositional_024",
+      "category": "compositional",
+      "difficulty": "medium",
+      "intent_text": "Avoid the FRANKFURT region and keep utilization below 60%",
+      "tags": [
+        "avoid_region",
+        "max_utilization"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "avoid_region",
+            "target": "edges:ALL",
+            "value": "FRANKFURT"
+          }
+        ],
+        "soft": [
+          {
+            "type": "max_utilization",
+            "target": "edges:ALL",
+            "value": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "compositional_019",
+      "category": "compositional",
+      "difficulty": "medium",
+      "intent_text": "Avoid the MUMBAI region and keep utilization below 60%",
+      "tags": [
+        "avoid_region",
+        "max_utilization"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "avoid_region",
+            "target": "edges:ALL",
+            "value": "MUMBAI"
+          }
+        ],
+        "soft": [
+          {
+            "type": "max_utilization",
+            "target": "edges:ALL",
+            "value": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "compositional_040",
+      "category": "compositional",
+      "difficulty": "medium",
+      "intent_text": "Route video from PARIS to LONDON under 50ms while avoiding SHANGHAI",
+      "tags": [
+        "max_latency_ms",
+        "avoid_region"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "max_latency_ms",
+            "target": "flow_selector:0",
+            "value": 50
+          },
+          {
+            "type": "avoid_region",
+            "target": "edges:ALL",
+            "value": "SHANGHAI"
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "compositional_026",
+      "category": "compositional",
+      "difficulty": "medium",
+      "intent_text": "Disable plane 17 and avoid polar links above 70°",
+      "tags": [
+        "disable_plane",
+        "avoid_latitude"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_plane",
+            "target": "plane:17",
+            "value": null
+          },
+          {
+            "type": "avoid_latitude",
+            "target": "edges:ALL",
+            "value": 70
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "compositional_033",
+      "category": "compositional",
+      "difficulty": "medium",
+      "intent_text": "Disable plane 0 and avoid polar links above 80°",
+      "tags": [
+        "disable_plane",
+        "avoid_latitude"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_plane",
+            "target": "plane:0",
+            "value": null
+          },
+          {
+            "type": "avoid_latitude",
+            "target": "edges:ALL",
+            "value": 80
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "compositional_051",
+      "category": "compositional",
+      "difficulty": "hard",
+      "intent_text": "Disable node 80, avoid LONDON, and guarantee video from PARIS to SAO_PAULO under 40ms",
+      "tags": [
+        "disable_node",
+        "avoid_region",
+        "max_latency_ms"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_node",
+            "target": "node:80",
+            "value": null
+          },
+          {
+            "type": "avoid_region",
+            "target": "edges:ALL",
+            "value": "LONDON"
+          },
+          {
+            "type": "max_latency_ms",
+            "target": "flow_selector:0",
+            "value": 40
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "conditional_017",
+      "category": "conditional",
+      "difficulty": "hard",
+      "intent_text": "During a traffic overload, reroute away from node 311 and avoid polar links above 80°",
+      "tags": [
+        "reroute_away",
+        "avoid_latitude",
+        "overload"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "reroute_away",
+            "target": "node:311",
+            "value": null
+          },
+          {
+            "type": "avoid_latitude",
+            "target": "edges:ALL",
+            "value": 80
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "conditional_024",
+      "category": "conditional",
+      "difficulty": "hard",
+      "intent_text": "When node failure is detected, enforce 50ms latency on control_plane from SYDNEY to TOKYO and cap utilization at 60%",
+      "tags": [
+        "max_latency_ms",
+        "max_utilization",
+        "node_failure"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "max_latency_ms",
+            "target": "flow_selector:0",
+            "value": 50
+          }
+        ],
+        "soft": [
+          {
+            "type": "max_utilization",
+            "target": "edges:ALL",
+            "value": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "conditional_028",
+      "category": "conditional",
+      "difficulty": "hard",
+      "intent_text": "When scheduled maintenance is detected, enforce 50ms latency on financial from PARIS to SHANGHAI and cap utilization at 50%",
+      "tags": [
+        "max_latency_ms",
+        "max_utilization",
+        "maintenance"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "max_latency_ms",
+            "target": "flow_selector:0",
+            "value": 50
+          }
+        ],
+        "soft": [
+          {
+            "type": "max_utilization",
+            "target": "edges:ALL",
+            "value": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "conditional_016",
+      "category": "conditional",
+      "difficulty": "hard",
+      "intent_text": "During a solar storm, reroute away from node 285 and avoid polar links above 70°",
+      "tags": [
+        "reroute_away",
+        "avoid_latitude",
+        "solar_storm"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "reroute_away",
+            "target": "node:285",
+            "value": null
+          },
+          {
+            "type": "avoid_latitude",
+            "target": "edges:ALL",
+            "value": 70
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "conditional_007",
+      "category": "conditional",
+      "difficulty": "medium",
+      "intent_text": "If a node failure occurs, disable plane 7",
+      "tags": [
+        "disable_plane",
+        "node_failure"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_plane",
+            "target": "plane:7",
+            "value": null
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "conditional_002",
+      "category": "conditional",
+      "difficulty": "medium",
+      "intent_text": "If a solar storm occurs, disable plane 8",
+      "tags": [
+        "disable_plane",
+        "solar_storm"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_plane",
+            "target": "plane:8",
+            "value": null
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "conditional_010",
+      "category": "conditional",
+      "difficulty": "medium",
+      "intent_text": "If a solar storm occurs, disable plane 1",
+      "tags": [
+        "disable_plane",
+        "solar_storm"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_plane",
+            "target": "plane:1",
+            "value": null
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "conditional_001",
+      "category": "conditional",
+      "difficulty": "medium",
+      "intent_text": "If a solar storm occurs, disable plane 5",
+      "tags": [
+        "disable_plane",
+        "solar_storm"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_plane",
+            "target": "plane:5",
+            "value": null
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "infeasible_007",
+      "category": "infeasible",
+      "difficulty": "hard",
+      "intent_text": "Guarantee telemetry from NYC to SYDNEY under 1.5ms",
+      "tags": [
+        "max_latency_ms",
+        "infeasible"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "max_latency_ms",
+            "target": "flow_selector:0",
+            "value": 1.5
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "infeasible_021",
+      "category": "infeasible",
+      "difficulty": "hard",
+      "intent_text": "Disable node 360 but also reroute critical traffic through node 360",
+      "tags": [
+        "disable_node",
+        "reroute_away",
+        "conflicting"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_node",
+            "target": "node:360",
+            "value": null
+          },
+          {
+            "type": "reroute_away",
+            "target": "node:360",
+            "value": null
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "infeasible_027",
+      "category": "infeasible",
+      "difficulty": "medium",
+      "intent_text": "Disable satellite 451",
+      "tags": [
+        "disable_node",
+        "out_of_range"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_node",
+            "target": "node:451",
+            "value": null
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "infeasible_030",
+      "category": "infeasible",
+      "difficulty": "medium",
+      "intent_text": "Take plane 24 offline",
+      "tags": [
+        "disable_plane",
+        "out_of_range"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_plane",
+            "target": "plane:24",
+            "value": null
+          }
+        ],
+        "soft": []
+      }
+    },
+    {
+      "id": "infeasible_022",
+      "category": "infeasible",
+      "difficulty": "hard",
+      "intent_text": "Disable node 284 but also reroute critical traffic through node 284",
+      "tags": [
+        "disable_node",
+        "reroute_away",
+        "conflicting"
+      ],
+      "ground_truth_constraints": {
+        "hard": [
+          {
+            "type": "disable_node",
+            "target": "node:284",
+            "value": null
+          },
+          {
+            "type": "reroute_away",
+            "target": "node:284",
+            "value": null
+          }
+        ],
+        "soft": []
+      }
+    }
+  ]
+}

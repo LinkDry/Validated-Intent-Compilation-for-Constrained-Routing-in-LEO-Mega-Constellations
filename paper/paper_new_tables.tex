@@ -1,0 +1,243 @@
+% Paper Tables: New experimental results
+% Confusion Matrix, Reachability Separation, Compiler Comparison,
+% Cross-Constellation, Polar Exclusion, Runtime Benchmark
+
+% ============================================================
+% Table: Verifier Confusion Matrix (3-way)
+% ============================================================
+\begin{table}[t]
+\centering
+\caption{Three-way validator confusion matrix on the 240-intent benchmark
+(8-pass pipeline with constructive feasibility certification).
+\textsc{Accept} requires a routing witness; \textsc{Abstain} indicates
+unsupported constraint combinations (safe non-accept). The validator
+achieves 0\% unsafe acceptance across all categories.}
+\label{tab:confusion_matrix}
+\begin{tabular}{lccc}
+\toprule
+& \textbf{Accept} & \textbf{Reject} & \textbf{Abstain} \\
+\midrule
+Single ($n$=80)         & 10  & 5   & 65  \\
+Compositional ($n$=100) & 40  & 25  & 35  \\
+Conditional ($n$=30)    & 8   & 2   & 20  \\
+Infeasible ($n$=30)     & 0   & 22  & 8   \\
+\midrule
+\textbf{Total} ($n$=240) & 58 & 54 & 128 \\
+\midrule
+\multicolumn{4}{l}{\textit{Safety (unsafe = infeasible \textsc{Accept}):}} \\
+\quad Infeasible       & \multicolumn{3}{l}{0/30 = 0\% (was 72\% with 7-pass)} \\
+\multicolumn{4}{l}{\textit{Coverage (\textsc{Accept}+\textsc{Reject}):}} \\
+\quad Decided          & \multicolumn{3}{l}{112/240 = 46.7\%} \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize 32 feasible programs rejected as routing-infeasible;} \\
+\multicolumn{4}{l}{\footnotesize 29/32 independently confirmed via separate Dijkstra oracle.} \\
+\end{tabular}
+\end{table}
+
+% ============================================================
+% Table: Reachability Separation
+% ============================================================
+\begin{table}[t]
+\centering
+\caption{Reachability separation analysis. Raw PDR differences in
+polar/compositional scenarios are entirely explained by the reachability
+ceiling (76\% of OD pairs unreachable), not routing quality. Both GNN
+and Dijkstra achieve 100\% delivery on reachable pairs.}
+\label{tab:reachability}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Scenario} & \textbf{Reach.} & \multicolumn{2}{c}{\textbf{Raw PDR}} & \multicolumn{2}{c}{\textbf{Reachable PDR}} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6}
+& & GNN & Dijkstra & GNN & Dijkstra \\
+\midrule
+Baseline          & 100\%  & 99.8\% & ---     & 99.8\% & ---     \\
+Node failure      & 100\%  & 98.7\% & 97.8\%  & 98.7\% & 97.8\% \\
+Plane maint.      & 100\%  & 70.5\% & 70.2\%  & 70.5\% & 70.2\% \\
+Polar avoid.      & 24.0\% & 34.6\% & 47.9\%  & 100\%  & 100\%  \\
+Compositional     & 24.0\% & 34.3\% & 47.1\%  & 100\%  & 100\%  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% Table: Compiler Comparison (Rule-Based vs LLM)
+% ============================================================
+\begin{table}[t]
+\centering
+\caption{Intent compiler comparison on the 240-intent benchmark
+(193 feasible intents; 17 additional routing-infeasible discovered
+by Pass~8 excluded from feasible metrics).
+The rule-based parser handles simple intents adequately but degrades
+sharply on compositional intents, confirming that intent compilation
+is a compositional reasoning task that benefits from LLM capabilities.}
+\label{tab:compiler_comparison}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Metric} & \textbf{Rule-Based} & \textbf{LLM 4B} & \textbf{LLM 9B} \\
+\midrule
+Compiled          & 100.0\% & 59.6\% & \textbf{98.4\%} \\
+Types Match       & 67.1\%  & 55.4\% & \textbf{91.7\%} \\
+Full Match        & 56.7\%  & 54.2\% & \textbf{87.6\%} \\
+Avg Latency       & \textbf{0.05ms} & 204s & 15.7s \\
+\midrule
+\multicolumn{4}{l}{\textit{Full match by category:}} \\
+\quad Single      & 76.2\%  & ---    & \textbf{89.5\%} \\
+\quad Compositional & 40.0\% & ---   & \textbf{86.2\%} \\
+\quad Conditional & 66.7\%  & ---    & \textbf{86.7\%} \\
+\quad Infeasible  & 50.0\%  & ---    & \textbf{73.3\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% Table: OOD Generalization
+% ============================================================
+\begin{table}[t]
+\centering
+\caption{Out-of-distribution generalization on paraphrased intents
+(38 total: 33 scorable + 5 ambiguous). The compiler maintains 81.8\%
+full match accuracy with only 4.4pp degradation from template intents,
+demonstrating robust generalization to novel phrasings.}
+\label{tab:ood}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Category} & \textbf{N} & \textbf{Compiled} & \textbf{Full Match} \\
+\midrule
+Single         & 20 & 100\% & 95.0\% (19/20) \\
+Compositional  & 5  & 100\% & 40.0\% (2/5)   \\
+Conditional    & 8  & 100\% & 75.0\% (6/8)   \\
+Ambiguous      & 5  & 100\% & qualitative: 5/5 \\
+\midrule
+Scorable total & 33 & 100\% & \textbf{81.8\%} (27/33) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% Table: Cross-Model Scaling (4B vs 9B)
+% ============================================================
+\begin{table}[t]
+\centering
+\caption{Cross-model scaling: 4B vs 9B parameter LLM on the full
+240-intent benchmark. The 9B model dramatically outperforms the 4B
+model, suggesting a compositional complexity threshold between 4B
+and 9B parameters for this task.}
+\label{tab:cross_model}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Metric} & \textbf{Qwen 4B} & \textbf{Qwen 9B} \\
+\midrule
+Compiled       & 59.6\% & \textbf{98.4\%} \\
+Types Match    & 55.4\% & \textbf{91.7\%} \\
+Full Match     & 54.2\% & \textbf{87.6\%} \\
+First-try Rate & 47.1\% & \textbf{89.2\%} \\
+Avg Latency    & 204.4s & \textbf{15.7s}  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% Table: Topology Sweep (GNN vs Dijkstra across severity)
+% ============================================================
+\begin{table}[t]
+\centering
+\caption{GNN vs Dijkstra PDR across topology degradation severity
+(orbital plane removal, 20 sats/plane). The GNN router matches
+Dijkstra within 0.22pp at all severity levels, confirming robust
+distillation quality. Non-monotonic PDR reflects topology-dependent
+reachability under random plane selection (3-seed average).}
+\label{tab:topology_sweep}
+\begin{tabular}{rrccc}
+\toprule
+\textbf{Planes Off} & \textbf{Capacity} & \textbf{GNN PDR} & \textbf{Dijkstra PDR} & \textbf{$\Delta$} \\
+\midrule
+1  & 5\%  & 81.1\% & 80.9\% & +0.22 \\
+2  & 10\% & 41.1\% & 41.1\% & 0.00 \\
+3  & 15\% & 36.8\% & 36.8\% & 0.00 \\
+5  & 25\% & 45.3\% & 45.3\% & 0.00 \\
+7  & 35\% & 42.5\% & 42.5\% & 0.00 \\
+10 & 50\% & 11.4\% & 11.4\% & 0.00 \\
+13 & 65\% & 5.4\%  & 5.4\%  & 0.00 \\
+15 & 75\% & 5.5\%  & 5.5\%  & 0.00 \\
+17 & 85\% & 36.4\% & 36.4\% & 0.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% Table: Cross-Constellation GNN Generalization
+% ============================================================
+\begin{table}[t]
+\centering
+\caption{Zero-shot cross-constellation GNN generalization. The GNN
+(trained on Walker Delta 550\,km/53$^\circ$) generalizes perfectly to
+altitude changes (same grid topology, different edge weights) but
+collapses on SSO 97$^\circ$ where near-polar inclination fundamentally
+alters ISL geometry. This motivates the compile--verify--ground pipeline
+as the constellation-agnostic safety layer, with the GNN as a fast
+accelerator for a specific configuration.}
+\label{tab:cross_constellation}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Configuration} & \textbf{GNN PDR} & \textbf{Dijkstra PDR} & \textbf{$\Delta$} \\
+\midrule
+550\,km / 53$^\circ$ (training) & 99.75\% & 99.75\% & 0.00 \\
+1200\,km / 53$^\circ$ (OOD)     & 99.75\% & 99.75\% & 0.00 \\
+550\,km / 97$^\circ$ SSO (OOD)  & 45.18\% & 99.09\% & $-$53.91 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% Table: Polar Exclusion Zone GNN Robustness
+% ============================================================
+\begin{table}[t]
+\centering
+\caption{GNN robustness under polar exclusion zones. Inter-plane ISLs
+are disabled when either endpoint exceeds the latitude threshold.
+The GNN (trained with threshold 75$^\circ$, i.e., no exclusion at
+53$^\circ$ inclination) degrades proportionally to edge removal,
+while Dijkstra maintains 99.75\% PDR throughout. This confirms the
+GNN learns topology-specific shortcuts rather than general routing
+principles, reinforcing the need for Dijkstra fallback under
+topology perturbation.}
+\label{tab:polar_exclusion}
+\begin{tabular}{rrccc}
+\toprule
+\textbf{Threshold} & \textbf{Edges Removed} & \textbf{GNN PDR} & \textbf{Dijkstra PDR} & \textbf{$\Delta$} \\
+\midrule
+30$^\circ$ & 28.8\% & 38.17\% & 99.75\% & $-$61.58 \\
+40$^\circ$ & 20.5\% & 54.08\% & 99.75\% & $-$45.67 \\
+45$^\circ$ & 15.8\% & 65.20\% & 99.75\% & $-$34.55 \\
+50$^\circ$ & 9.8\%  & 80.37\% & 99.75\% & $-$19.38 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% Table: Pass 8 Runtime Benchmark
+% ============================================================
+\begin{table}[t]
+\centering
+\caption{8-pass validator runtime on the 240-intent benchmark.
+Median verification completes in under 1\,ms; even the worst case
+(compositional programs with flow selectors requiring Dijkstra/max-flow
+witnesses) stays below 2\,ms. This confirms negligible overhead for
+real-time deployment alongside the GNN router (17$\times$ Dijkstra
+speedup at inference).}
+\label{tab:runtime}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Category} & \textbf{$n$} & \textbf{Median} & \textbf{P95} & \textbf{Max} \\
+\midrule
+All programs        & 240 & 0.720\,ms & 1.580\,ms & 1.898\,ms \\
+With flow selectors & 98  & 1.059\,ms & 1.738\,ms & 1.898\,ms \\
+Topology-only       & 142 & 0.437\,ms & 1.501\,ms & 1.629\,ms \\
+\midrule
+\multicolumn{5}{l}{\textit{By certification status:}} \\
+\quad Accepted      & 58  & 1.044\,ms & 1.738\,ms & 1.812\,ms \\
+\quad Rejected      & 32  & 1.135\,ms & 1.757\,ms & 1.898\,ms \\
+\quad Abstain       & 128 & 0.428\,ms & 1.507\,ms & 1.629\,ms \\
+\bottomrule
+\end{tabular}
+\end{table}

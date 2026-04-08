@@ -1,0 +1,3618 @@
+{
+  "config": "model_4b",
+  "total_time_min": 817.6970145821572,
+  "total_intents": 240,
+  "compiled_rate": 0.5958333333333333,
+  "first_try_rate": 0.42916666666666664,
+  "types_match_rate": 0.575,
+  "targets_match_rate": 0.5833333333333334,
+  "full_match_rate": 0.5416666666666666,
+  "avg_latency_ms": 204423.4164506197,
+  "avg_attempts": 2.0416666666666665,
+  "results": [
+    {
+      "id": "single_001",
+      "category": "single",
+      "intent": "Disable node 240 immediately",
+      "compiled": true,
+      "attempts": 3,
+      "latency_ms": 141163.15913200378,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "single_002",
+      "category": "single",
+      "intent": "Shut down node 372",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 47110.92948913574,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_003",
+      "category": "single",
+      "intent": "Disable node 155 immediately",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 37705.976247787476,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_004",
+      "category": "single",
+      "intent": "Pull satellite 370 out of service",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 7645.017147064209,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_005",
+      "category": "single",
+      "intent": "Remove sat 387 from the routing mesh",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 7791.069746017456,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_006",
+      "category": "single",
+      "intent": "Disable node 272 immediately",
+      "compiled": true,
+      "attempts": 3,
+      "latency_ms": 158645.66469192505,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "single_007",
+      "category": "single",
+      "intent": "Pull satellite 325 out of service",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 10892.139911651611,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_008",
+      "category": "single",
+      "intent": "Pull satellite 181 out of service",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 8615.47827720642,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_009",
+      "category": "single",
+      "intent": "Shut down node 269",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 49314.62478637695,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_010",
+      "category": "single",
+      "intent": "Remove sat 111 from the routing mesh",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 25559.9844455719,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_011",
+      "category": "single",
+      "intent": "Remove all satellites in plane 17 from routing",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 47682.543992996216,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_012",
+      "category": "single",
+      "intent": "Disable orbital plane 16",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 33808.42399597168,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_013",
+      "category": "single",
+      "intent": "Shut down the entire plane 6",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 38640.799045562744,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_014",
+      "category": "single",
+      "intent": "Plane 4 is undergoing maintenance, disable it",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 47267.1115398407,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_015",
+      "category": "single",
+      "intent": "Shut down the entire plane 6",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 33511.67035102844,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_016",
+      "category": "single",
+      "intent": "Remove all satellites in plane 1 from routing",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 115269.27590370178,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "single_017",
+      "category": "single",
+      "intent": "Shut down the entire plane 13",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 39013.86475563049,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_018",
+      "category": "single",
+      "intent": "Take plane 3 offline for orbit adjustment",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 8954.882860183716,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_019",
+      "category": "single",
+      "intent": "Shut down the entire plane 10",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 23869.22597885132,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_020",
+      "category": "single",
+      "intent": "Remove all satellites in plane 10 from routing",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 8914.039611816406,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_021",
+      "category": "single",
+      "intent": "Keep traffic away from SHANGHAI airspace",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 56383.61310958862,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_022",
+      "category": "single",
+      "intent": "Reroute all flows around SYDNEY",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 235265.3193473816,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "single_023",
+      "category": "single",
+      "intent": "Bypass the SAO_PAULO area completely",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 42751.39880180359,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_024",
+      "category": "single",
+      "intent": "Reroute all flows around SHANGHAI",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 239420.015335083,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "single_025",
+      "category": "single",
+      "intent": "Do not use links near SHANGHAI",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 42197.56627082825,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_026",
+      "category": "single",
+      "intent": "Do not use links near NYC",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 81959.80095863342,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_027",
+      "category": "single",
+      "intent": "Keep traffic away from NYC airspace",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 13554.317951202393,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_028",
+      "category": "single",
+      "intent": "Keep traffic away from FRANKFURT airspace",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 109386.4209651947,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_029",
+      "category": "single",
+      "intent": "Reroute all flows around PARIS",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 432517.4753665924,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "single_030",
+      "category": "single",
+      "intent": "Avoid routing through the PARIS region",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 116277.80151367188,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_031",
+      "category": "single",
+      "intent": "Polar avoidance: cut links above 75 degrees",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 144328.9544582367,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: JSON parse error: intent.schema.EdgeSelector() argument after ** must be a mapping, not str"
+      ]
+    },
+    {
+      "id": "single_032",
+      "category": "single",
+      "intent": "Disable inter-satellite links in polar regions above 70°",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 442948.27151298523,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "single_033",
+      "category": "single",
+      "intent": "No routing through latitudes higher than 80",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 157854.96711730957,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_034",
+      "category": "single",
+      "intent": "Disable inter-satellite links in polar regions above 70°",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 55301.99933052063,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_035",
+      "category": "single",
+      "intent": "Keep traffic below 75° latitude",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 80711.57002449036,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_036",
+      "category": "single",
+      "intent": "No routing through latitudes higher than 70",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 99847.71418571472,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_037",
+      "category": "single",
+      "intent": "Polar avoidance: cut links above 80 degrees",
+      "compiled": true,
+      "attempts": 3,
+      "latency_ms": 354258.7146759033,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "single_038",
+      "category": "single",
+      "intent": "No routing through latitudes higher than 75",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 123920.54224014282,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_039",
+      "category": "single",
+      "intent": "Disable inter-satellite links in polar regions above 80°",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 145596.72665596008,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_040",
+      "category": "single",
+      "intent": "No routing through latitudes higher than 70",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 99592.83065795898,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_041",
+      "category": "single",
+      "intent": "Ensure emergency traffic from SHANGHAI to LONDON stays under 40ms",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 121964.29777145386,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_042",
+      "category": "single",
+      "intent": "Max latency 80ms for video flows between TOKYO and DUBAI",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 97650.96616744995,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_043",
+      "category": "single",
+      "intent": "SLA: 50ms latency cap on bulk from LONDON to SHANGHAI",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 115194.40245628357,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_044",
+      "category": "single",
+      "intent": "SLA: 100ms latency cap on military from PARIS to MUMBAI",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 214343.86944770813,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "single_045",
+      "category": "single",
+      "intent": "Bulk traffic SHANGHAI to LONDON must not exceed 60ms end-to-end",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 735004.9965381622,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: LLM API call failed",
+        "Attempt 3: LLM API call failed"
+      ]
+    },
+    {
+      "id": "single_046",
+      "category": "single",
+      "intent": "Max latency 150ms for emergency flows between TOKYO and MUMBAI",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 900322.7348327637,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: LLM API call failed",
+        "Attempt 2: LLM API call failed",
+        "Attempt 3: LLM API call failed"
+      ]
+    },
+    {
+      "id": "single_047",
+      "category": "single",
+      "intent": "Telemetry traffic SHANGHAI to SYDNEY must not exceed 50ms end-to-end",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 900310.3942871094,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: LLM API call failed",
+        "Attempt 2: LLM API call failed",
+        "Attempt 3: LLM API call failed"
+      ]
+    },
+    {
+      "id": "single_048",
+      "category": "single",
+      "intent": "Ensure maritime traffic from SAO_PAULO to NYC stays under 30ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 900310.7371330261,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: LLM API call failed",
+        "Attempt 2: LLM API call failed",
+        "Attempt 3: LLM API call failed"
+      ]
+    },
+    {
+      "id": "single_049",
+      "category": "single",
+      "intent": "Keep SHANGHAI-NYC telemetry latency below 50 milliseconds",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 542528.5201072693,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: LLM API call failed"
+      ]
+    },
+    {
+      "id": "single_050",
+      "category": "single",
+      "intent": "SLA: 50ms latency cap on telemetry from LONDON to FRANKFURT",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 176635.25581359863,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_051",
+      "category": "single",
+      "intent": "Max latency 30ms for telemetry flows between PARIS and TOKYO",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 246966.29309654236,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_052",
+      "category": "single",
+      "intent": "Keep PARIS-LONDON financial latency below 30 milliseconds",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 126006.83569908142,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_053",
+      "category": "single",
+      "intent": "Ensure control_plane traffic from TOKYO to FRANKFURT stays under 20ms",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 167632.60912895203,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_054",
+      "category": "single",
+      "intent": "Ensure telemetry traffic from MUMBAI to NYC stays under 20ms",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 191075.86288452148,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_055",
+      "category": "single",
+      "intent": "SLA: 50ms latency cap on video from PARIS to SHANGHAI",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 189105.7481765747,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_056",
+      "category": "single",
+      "intent": "Divert flows around node 95",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 292735.26334762573,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_057",
+      "category": "single",
+      "intent": "Avoid using satellite 160 as a relay",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 298393.4814929962,
+      "types_match": false,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": false,
+      "errors": []
+    },
+    {
+      "id": "single_058",
+      "category": "single",
+      "intent": "Divert flows around node 375",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 183541.72348976135,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_059",
+      "category": "single",
+      "intent": "Divert flows around node 324",
+      "compiled": true,
+      "attempts": 3,
+      "latency_ms": 871961.0986709595,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: LLM API call failed",
+        "Attempt 2: LLM API call failed"
+      ]
+    },
+    {
+      "id": "single_060",
+      "category": "single",
+      "intent": "Node 366 is degraded, shift traffic elsewhere",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 900215.8315181732,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: LLM API call failed",
+        "Attempt 2: LLM API call failed",
+        "Attempt 3: LLM API call failed"
+      ]
+    },
+    {
+      "id": "single_061",
+      "category": "single",
+      "intent": "Node 204 showing errors, reroute away",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 533400.1898765564,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: LLM API call failed"
+      ]
+    },
+    {
+      "id": "single_062",
+      "category": "single",
+      "intent": "Divert flows around node 229",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 554545.0763702393,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: LLM API call failed"
+      ]
+    },
+    {
+      "id": "single_063",
+      "category": "single",
+      "intent": "Node 304 is degraded, shift traffic elsewhere",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 582671.6389656067,
+      "types_match": false,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: LLM API call failed"
+      ]
+    },
+    {
+      "id": "single_064",
+      "category": "single",
+      "intent": "Node 107 is degraded, shift traffic elsewhere",
+      "compiled": true,
+      "attempts": 3,
+      "latency_ms": 761720.1192378998,
+      "types_match": false,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: LLM API call failed",
+        "Attempt 2: LLM API call failed"
+      ]
+    },
+    {
+      "id": "single_065",
+      "category": "single",
+      "intent": "Divert flows around node 159",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 121008.43024253845,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_066",
+      "category": "single",
+      "intent": "Keep all ISL utilization below 60 percent",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 620664.1850471497,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: LLM API call failed"
+      ]
+    },
+    {
+      "id": "single_067",
+      "category": "single",
+      "intent": "Set a 70% utilization ceiling on all edges",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 550658.9405536652,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: LLM API call failed"
+      ]
+    },
+    {
+      "id": "single_068",
+      "category": "single",
+      "intent": "Cap link utilization at 50%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 900307.4841499329,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: LLM API call failed",
+        "Attempt 2: LLM API call failed",
+        "Attempt 3: LLM API call failed"
+      ]
+    },
+    {
+      "id": "single_069",
+      "category": "single",
+      "intent": "Cap link utilization at 70%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 187741.47748947144,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_070",
+      "category": "single",
+      "intent": "Limit bandwidth usage to 60% across the mesh",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 594568.8931941986,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: LLM API call failed"
+      ]
+    },
+    {
+      "id": "single_071",
+      "category": "single",
+      "intent": "Cap link utilization at 80%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 130347.49937057495,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_072",
+      "category": "single",
+      "intent": "Limit bandwidth usage to 60% across the mesh",
+      "compiled": true,
+      "attempts": 3,
+      "latency_ms": 431086.8082046509,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "single_073",
+      "category": "single",
+      "intent": "Limit bandwidth usage to 80% across the mesh",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 124284.6429347992,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_074",
+      "category": "single",
+      "intent": "Limit bandwidth usage to 80% across the mesh",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 417332.6597213745,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "single_075",
+      "category": "single",
+      "intent": "Set a 50% utilization ceiling on all edges",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 154364.69841003418,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "single_076",
+      "category": "single",
+      "intent": "Spread traffic as uniformly as possible",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 39381.76774978638,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": false,
+      "full_match": false,
+      "errors": []
+    },
+    {
+      "id": "single_077",
+      "category": "single",
+      "intent": "Balance load evenly across all inter-plane links",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 41314.98742103577,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": false,
+      "full_match": false,
+      "errors": []
+    },
+    {
+      "id": "single_078",
+      "category": "single",
+      "intent": "Equalize utilization across orbital planes",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 67400.29454231262,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: JSON parse error: ObjectiveWeights.__init__() got an unexpected keyword argument 'utilization_variance'"
+      ]
+    },
+    {
+      "id": "single_079",
+      "category": "single",
+      "intent": "Spread traffic as uniformly as possible",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 58076.398611068726,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: JSON parse error: ObjectiveWeights.__init__() got an unexpected keyword argument 'uniformity'"
+      ]
+    },
+    {
+      "id": "single_080",
+      "category": "single",
+      "intent": "Equalize utilization across orbital planes",
+      "compiled": true,
+      "attempts": 3,
+      "latency_ms": 196800.44746398926,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: JSON parse error: ObjectiveWeights.__init__() got an unexpected keyword argument 'plane_utilization_variance'",
+        "Attempt 2: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_001",
+      "category": "compositional",
+      "intent": "Disable node 130 and ensure emergency traffic from TOKYO to SHANGHAI stays under 100ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 383076.119184494,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_002",
+      "category": "compositional",
+      "intent": "Disable node 34 and ensure financial traffic from TOKYO to PARIS stays under 80ms",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 90352.75053977966,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_003",
+      "category": "compositional",
+      "intent": "Disable node 157 and ensure telemetry traffic from MUMBAI to DUBAI stays under 80ms",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 101870.46718597412,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_004",
+      "category": "compositional",
+      "intent": "Disable node 238 and ensure control_plane traffic from SYDNEY to DUBAI stays under 40ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 452252.50148773193,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_005",
+      "category": "compositional",
+      "intent": "Disable node 19 and ensure control_plane traffic from LONDON to PARIS stays under 100ms",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 141777.9085636139,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_006",
+      "category": "compositional",
+      "intent": "Disable node 325 and ensure emergency traffic from TOKYO to FRANKFURT stays under 20ms",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 200831.03561401367,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_007",
+      "category": "compositional",
+      "intent": "Disable node 337 and ensure bulk traffic from SYDNEY to NYC stays under 50ms",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 169672.75953292847,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_008",
+      "category": "compositional",
+      "intent": "Disable node 60 and ensure telemetry traffic from SAO_PAULO to FRANKFURT stays under 50ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 422998.459815979,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_009",
+      "category": "compositional",
+      "intent": "Disable node 291 and ensure maritime traffic from PARIS to LONDON stays under 30ms",
+      "compiled": true,
+      "attempts": 3,
+      "latency_ms": 415350.71063041687,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_010",
+      "category": "compositional",
+      "intent": "Disable node 306 and ensure telemetry traffic from MUMBAI to SYDNEY stays under 50ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 488058.8393211365,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_011",
+      "category": "compositional",
+      "intent": "Disable node 0 and ensure video traffic from FRANKFURT to LONDON stays under 100ms",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 115519.84405517578,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_012",
+      "category": "compositional",
+      "intent": "Disable node 274 and ensure military traffic from PARIS to SYDNEY stays under 40ms",
+      "compiled": true,
+      "attempts": 3,
+      "latency_ms": 459017.7104473114,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_013",
+      "category": "compositional",
+      "intent": "Disable node 330 and ensure bulk traffic from SHANGHAI to FRANKFURT stays under 60ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 408594.09856796265,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_014",
+      "category": "compositional",
+      "intent": "Disable node 302 and ensure emergency traffic from SAO_PAULO to DUBAI stays under 100ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 370142.67086982727,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: JSON parse error: NodeSelector.__init__() got an unexpected keyword argument 'type'"
+      ]
+    },
+    {
+      "id": "compositional_015",
+      "category": "compositional",
+      "intent": "Disable node 203 and ensure video traffic from MUMBAI to SAO_PAULO stays under 50ms",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 120830.06262779236,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_016",
+      "category": "compositional",
+      "intent": "Avoid the SAO_PAULO region and keep utilization below 60%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 100182.24906921387,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_017",
+      "category": "compositional",
+      "intent": "Avoid the SYDNEY region and keep utilization below 80%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 101017.05813407898,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_018",
+      "category": "compositional",
+      "intent": "Avoid the PARIS region and keep utilization below 70%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 151487.50376701355,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_019",
+      "category": "compositional",
+      "intent": "Avoid the MUMBAI region and keep utilization below 60%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 462065.08803367615,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_020",
+      "category": "compositional",
+      "intent": "Avoid the DUBAI region and keep utilization below 90%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 405882.2498321533,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_021",
+      "category": "compositional",
+      "intent": "Avoid the NYC region and keep utilization below 70%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 403586.91573143005,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_022",
+      "category": "compositional",
+      "intent": "Avoid the SYDNEY region and keep utilization below 60%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 171399.36757087708,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_023",
+      "category": "compositional",
+      "intent": "Avoid the MUMBAI region and keep utilization below 80%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 488803.4756183624,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_024",
+      "category": "compositional",
+      "intent": "Avoid the FRANKFURT region and keep utilization below 60%",
+      "compiled": true,
+      "attempts": 3,
+      "latency_ms": 379024.7724056244,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_025",
+      "category": "compositional",
+      "intent": "Avoid the SAO_PAULO region and keep utilization below 70%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 442971.8358516693,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_026",
+      "category": "compositional",
+      "intent": "Disable plane 17 and avoid polar links above 70°",
+      "compiled": true,
+      "attempts": 3,
+      "latency_ms": 456613.3003234863,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_027",
+      "category": "compositional",
+      "intent": "Disable plane 2 and avoid polar links above 70°",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 92969.36249732971,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_028",
+      "category": "compositional",
+      "intent": "Disable plane 14 and avoid polar links above 75°",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 182480.01670837402,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_029",
+      "category": "compositional",
+      "intent": "Disable plane 9 and avoid polar links above 70°",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 441448.70924949646,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_030",
+      "category": "compositional",
+      "intent": "Disable plane 16 and avoid polar links above 80°",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 160316.62392616272,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_031",
+      "category": "compositional",
+      "intent": "Disable plane 9 and avoid polar links above 70°",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 434754.7221183777,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_032",
+      "category": "compositional",
+      "intent": "Disable plane 15 and avoid polar links above 75°",
+      "compiled": true,
+      "attempts": 3,
+      "latency_ms": 473542.3424243927,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_033",
+      "category": "compositional",
+      "intent": "Disable plane 0 and avoid polar links above 80°",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 131289.99018669128,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_034",
+      "category": "compositional",
+      "intent": "Disable plane 2 and avoid polar links above 70°",
+      "compiled": true,
+      "attempts": 3,
+      "latency_ms": 401600.0735759735,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_035",
+      "category": "compositional",
+      "intent": "Disable plane 3 and avoid polar links above 80°",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 109642.37952232361,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_036",
+      "category": "compositional",
+      "intent": "Route video from PARIS to SAO_PAULO under 30ms while avoiding MUMBAI",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 185677.56819725037,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_037",
+      "category": "compositional",
+      "intent": "Route video from NYC to MUMBAI under 100ms while avoiding SHANGHAI",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 113934.46946144104,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_038",
+      "category": "compositional",
+      "intent": "Route bulk from SHANGHAI to DUBAI under 30ms while avoiding PARIS",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 126194.40698623657,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_039",
+      "category": "compositional",
+      "intent": "Route bulk from LONDON to PARIS under 40ms while avoiding DUBAI",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 114797.38688468933,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_040",
+      "category": "compositional",
+      "intent": "Route video from PARIS to LONDON under 50ms while avoiding SHANGHAI",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 132318.26162338257,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_041",
+      "category": "compositional",
+      "intent": "Route maritime from MUMBAI to TOKYO under 30ms while avoiding SHANGHAI",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 113683.51221084595,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_042",
+      "category": "compositional",
+      "intent": "Route control_plane from SAO_PAULO to SYDNEY under 80ms while avoiding SHANGHAI",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 431149.8668193817,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_043",
+      "category": "compositional",
+      "intent": "Route maritime from NYC to MUMBAI under 40ms while avoiding SYDNEY",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 119730.72218894958,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_044",
+      "category": "compositional",
+      "intent": "Route bulk from TOKYO to FRANKFURT under 50ms while avoiding SHANGHAI",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 150925.78792572021,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_045",
+      "category": "compositional",
+      "intent": "Route video from SYDNEY to FRANKFURT under 40ms while avoiding TOKYO",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 140418.26939582825,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_046",
+      "category": "compositional",
+      "intent": "Route financial from SHANGHAI to MUMBAI under 30ms while avoiding FRANKFURT",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 152582.34190940857,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_047",
+      "category": "compositional",
+      "intent": "Route financial from FRANKFURT to SYDNEY under 150ms while avoiding TOKYO",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 100717.71812438965,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_048",
+      "category": "compositional",
+      "intent": "Route military from MUMBAI to SAO_PAULO under 80ms while avoiding SYDNEY",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 123192.16966629028,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_049",
+      "category": "compositional",
+      "intent": "Route financial from DUBAI to PARIS under 60ms while avoiding TOKYO",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 137780.0030708313,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_050",
+      "category": "compositional",
+      "intent": "Route control_plane from SYDNEY to DUBAI under 150ms while avoiding SAO_PAULO",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 200248.68512153625,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_051",
+      "category": "compositional",
+      "intent": "Disable node 80, avoid LONDON, and guarantee video from PARIS to SAO_PAULO under 40ms",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 184579.27584648132,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_052",
+      "category": "compositional",
+      "intent": "Disable node 225, avoid DUBAI, and guarantee telemetry from SAO_PAULO to NYC under 30ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 477586.9438648224,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_053",
+      "category": "compositional",
+      "intent": "Disable node 216, avoid NYC, and guarantee emergency from SAO_PAULO to TOKYO under 150ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 427639.09339904785,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_054",
+      "category": "compositional",
+      "intent": "Disable node 236, avoid SHANGHAI, and guarantee control_plane from PARIS to MUMBAI under 60ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 459458.5726261139,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_055",
+      "category": "compositional",
+      "intent": "Disable node 249, avoid MUMBAI, and guarantee military from NYC to SHANGHAI under 50ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 509304.2004108429,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_056",
+      "category": "compositional",
+      "intent": "Disable node 158, avoid SAO_PAULO, and guarantee financial from MUMBAI to SYDNEY under 40ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 316506.78062438965,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_057",
+      "category": "compositional",
+      "intent": "Disable node 318, avoid FRANKFURT, and guarantee control_plane from PARIS to MUMBAI under 80ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 194160.3648662567,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_058",
+      "category": "compositional",
+      "intent": "Disable node 77, avoid NYC, and guarantee control_plane from SYDNEY to LONDON under 80ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 195173.03586006165,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_059",
+      "category": "compositional",
+      "intent": "Disable node 100, avoid TOKYO, and guarantee financial from SAO_PAULO to FRANKFURT under 40ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 193915.43292999268,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_060",
+      "category": "compositional",
+      "intent": "Disable node 51, avoid DUBAI, and guarantee financial from MUMBAI to SYDNEY under 100ms",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 80986.0451221466,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_061",
+      "category": "compositional",
+      "intent": "Disable node 102, avoid TOKYO, and guarantee financial from SHANGHAI to SYDNEY under 150ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 193549.70145225525,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_062",
+      "category": "compositional",
+      "intent": "Disable node 184, avoid SYDNEY, and guarantee control_plane from SHANGHAI to LONDON under 150ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 186849.02930259705,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_063",
+      "category": "compositional",
+      "intent": "Disable node 167, avoid NYC, and guarantee military from PARIS to DUBAI under 50ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187198.61006736755,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_064",
+      "category": "compositional",
+      "intent": "Disable node 65, avoid LONDON, and guarantee military from PARIS to DUBAI under 100ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187000.15020370483,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_065",
+      "category": "compositional",
+      "intent": "Disable node 254, avoid DUBAI, and guarantee military from SHANGHAI to NYC under 30ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 185681.2243461609,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_066",
+      "category": "compositional",
+      "intent": "Take plane 8 offline, avoid polar links above 65°, and cap utilization at 70%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 43180.86886405945,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_067",
+      "category": "compositional",
+      "intent": "Take plane 17 offline, avoid polar links above 75°, and cap utilization at 50%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 46942.84701347351,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_068",
+      "category": "compositional",
+      "intent": "Take plane 10 offline, avoid polar links above 80°, and cap utilization at 90%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187086.55452728271,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_069",
+      "category": "compositional",
+      "intent": "Take plane 18 offline, avoid polar links above 80°, and cap utilization at 70%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187516.0527229309,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_070",
+      "category": "compositional",
+      "intent": "Take plane 13 offline, avoid polar links above 80°, and cap utilization at 90%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 188043.9112186432,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_071",
+      "category": "compositional",
+      "intent": "Take plane 8 offline, avoid polar links above 65°, and cap utilization at 50%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187635.5152130127,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_072",
+      "category": "compositional",
+      "intent": "Take plane 7 offline, avoid polar links above 80°, and cap utilization at 60%",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 75722.92566299438,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_073",
+      "category": "compositional",
+      "intent": "Take plane 4 offline, avoid polar links above 70°, and cap utilization at 50%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 51672.39999771118,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_074",
+      "category": "compositional",
+      "intent": "Take plane 0 offline, avoid polar links above 75°, and cap utilization at 50%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 186729.80284690857,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_075",
+      "category": "compositional",
+      "intent": "Take plane 3 offline, avoid polar links above 75°, and cap utilization at 60%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 54836.46655082703,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_076",
+      "category": "compositional",
+      "intent": "Take plane 7 offline, avoid polar links above 70°, and cap utilization at 90%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 186827.81720161438,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_077",
+      "category": "compositional",
+      "intent": "Take plane 8 offline, avoid polar links above 65°, and cap utilization at 60%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187957.63421058655,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_078",
+      "category": "compositional",
+      "intent": "Take plane 1 offline, avoid polar links above 75°, and cap utilization at 70%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 38808.409214019775,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_079",
+      "category": "compositional",
+      "intent": "Take plane 2 offline, avoid polar links above 75°, and cap utilization at 90%",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 78346.67015075684,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_080",
+      "category": "compositional",
+      "intent": "Take plane 5 offline, avoid polar links above 65°, and cap utilization at 70%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 186912.26530075073,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_081",
+      "category": "compositional",
+      "intent": "Disable node 129 and plane 0, ensure maritime from PARIS to FRANKFURT under 150ms, cap utilization at 90%",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 77779.62279319763,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_082",
+      "category": "compositional",
+      "intent": "Disable node 385 and plane 7, ensure control_plane from NYC to TOKYO under 60ms, cap utilization at 90%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 58086.47632598877,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_083",
+      "category": "compositional",
+      "intent": "Disable node 1 and plane 14, ensure military from SHANGHAI to SAO_PAULO under 20ms, cap utilization at 60%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 45353.816986083984,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_084",
+      "category": "compositional",
+      "intent": "Disable node 107 and plane 10, ensure military from LONDON to PARIS under 30ms, cap utilization at 50%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187277.42314338684,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_085",
+      "category": "compositional",
+      "intent": "Disable node 117 and plane 0, ensure military from LONDON to TOKYO under 50ms, cap utilization at 60%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 190395.15328407288,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_086",
+      "category": "compositional",
+      "intent": "Disable node 118 and plane 15, ensure maritime from SYDNEY to LONDON under 100ms, cap utilization at 90%",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 79337.6853466034,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_087",
+      "category": "compositional",
+      "intent": "Disable node 136 and plane 4, ensure video from SHANGHAI to SAO_PAULO under 40ms, cap utilization at 80%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 59112.412452697754,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_088",
+      "category": "compositional",
+      "intent": "Disable node 10 and plane 4, ensure video from MUMBAI to SYDNEY under 100ms, cap utilization at 80%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187237.46418952942,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_089",
+      "category": "compositional",
+      "intent": "Disable node 348 and plane 5, ensure military from SYDNEY to PARIS under 30ms, cap utilization at 70%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 60345.492362976074,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_090",
+      "category": "compositional",
+      "intent": "Disable node 278 and plane 8, ensure control_plane from PARIS to TOKYO under 30ms, cap utilization at 70%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 53236.50050163269,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_091",
+      "category": "compositional",
+      "intent": "Disable node 41 and plane 11, ensure video from DUBAI to LONDON under 40ms, cap utilization at 90%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 188050.85492134094,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_092",
+      "category": "compositional",
+      "intent": "Disable node 71 and plane 14, ensure military from LONDON to SYDNEY under 100ms, cap utilization at 80%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 59840.06977081299,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_093",
+      "category": "compositional",
+      "intent": "Disable node 249 and plane 10, ensure video from PARIS to SAO_PAULO under 40ms, cap utilization at 60%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 46352.95510292053,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_094",
+      "category": "compositional",
+      "intent": "Disable node 314 and plane 13, ensure military from NYC to FRANKFURT under 80ms, cap utilization at 50%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187899.6753692627,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_095",
+      "category": "compositional",
+      "intent": "Disable node 156 and plane 5, ensure video from PARIS to MUMBAI under 50ms, cap utilization at 90%",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 88276.3192653656,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_096",
+      "category": "compositional",
+      "intent": "Disable node 330 and plane 18, ensure control_plane from SYDNEY to DUBAI under 30ms, cap utilization at 80%",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 60664.41988945007,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "compositional_097",
+      "category": "compositional",
+      "intent": "Disable node 336 and plane 9, ensure video from SAO_PAULO to NYC under 150ms, cap utilization at 60%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 188133.2926750183,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_098",
+      "category": "compositional",
+      "intent": "Disable node 329 and plane 9, ensure emergency from DUBAI to SYDNEY under 40ms, cap utilization at 80%",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 112220.0837135315,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_099",
+      "category": "compositional",
+      "intent": "Disable node 333 and plane 17, ensure bulk from SYDNEY to MUMBAI under 80ms, cap utilization at 50%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 197675.43745040894,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "compositional_100",
+      "category": "compositional",
+      "intent": "Disable node 78 and plane 6, ensure financial from LONDON to FRANKFURT under 150ms, cap utilization at 60%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 194472.7427959442,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_001",
+      "category": "conditional",
+      "intent": "If a solar storm occurs, disable plane 5",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 34887.10403442383,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "conditional_002",
+      "category": "conditional",
+      "intent": "If a solar storm occurs, disable plane 8",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 33478.96599769592,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "conditional_003",
+      "category": "conditional",
+      "intent": "If a node failure occurs, disable plane 4",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 63175.10008811951,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "conditional_004",
+      "category": "conditional",
+      "intent": "If a node failure occurs, disable plane 9",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 54605.09276390076,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "conditional_005",
+      "category": "conditional",
+      "intent": "If a node failure occurs, disable plane 10",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 58733.50214958191,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "conditional_006",
+      "category": "conditional",
+      "intent": "If a node failure occurs, disable plane 5",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 202649.50799942017,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_007",
+      "category": "conditional",
+      "intent": "If a node failure occurs, disable plane 7",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 84472.84126281738,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_008",
+      "category": "conditional",
+      "intent": "If a node failure occurs, disable plane 14",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 64100.15797615051,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "conditional_009",
+      "category": "conditional",
+      "intent": "If a solar storm occurs, disable plane 16",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 66596.48370742798,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "conditional_010",
+      "category": "conditional",
+      "intent": "If a solar storm occurs, disable plane 1",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 52542.65379905701,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "conditional_011",
+      "category": "conditional",
+      "intent": "During a scheduled maintenance, reroute away from node 145 and avoid polar links above 70°",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 195144.9418067932,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_012",
+      "category": "conditional",
+      "intent": "During a node failure, reroute away from node 23 and avoid polar links above 65°",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 69275.5024433136,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "conditional_013",
+      "category": "conditional",
+      "intent": "During a traffic overload, reroute away from node 71 and avoid polar links above 70°",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 83042.52743721008,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": [
+        "Attempt 1: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_014",
+      "category": "conditional",
+      "intent": "During a solar storm, reroute away from node 95 and avoid polar links above 65°",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 64593.177318573,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "conditional_015",
+      "category": "conditional",
+      "intent": "During a solar storm, reroute away from node 173 and avoid polar links above 65°",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 51347.56112098694,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "conditional_016",
+      "category": "conditional",
+      "intent": "During a solar storm, reroute away from node 285 and avoid polar links above 70°",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 162232.08832740784,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_017",
+      "category": "conditional",
+      "intent": "During a traffic overload, reroute away from node 311 and avoid polar links above 80°",
+      "compiled": true,
+      "attempts": 1,
+      "latency_ms": 59367.3300743103,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": true,
+      "full_match": true,
+      "errors": []
+    },
+    {
+      "id": "conditional_018",
+      "category": "conditional",
+      "intent": "During a node failure, reroute away from node 244 and avoid polar links above 70°",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 190104.76446151733,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_019",
+      "category": "conditional",
+      "intent": "During a solar storm, reroute away from node 156 and avoid polar links above 75°",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 192649.6968269348,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_020",
+      "category": "conditional",
+      "intent": "During a scheduled maintenance, reroute away from node 392 and avoid polar links above 75°",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 189696.7523097992,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_021",
+      "category": "conditional",
+      "intent": "When solar storm is detected, enforce 80ms latency on military from LONDON to FRANKFURT and cap utilization at 70%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 188298.46715927124,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_022",
+      "category": "conditional",
+      "intent": "When scheduled maintenance is detected, enforce 40ms latency on military from FRANKFURT to SHANGHAI and cap utilization at 50%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 190195.4448223114,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_023",
+      "category": "conditional",
+      "intent": "When gateway failure is detected, enforce 80ms latency on video from LONDON to TOKYO and cap utilization at 90%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187855.5736541748,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_024",
+      "category": "conditional",
+      "intent": "When node failure is detected, enforce 50ms latency on control_plane from SYDNEY to TOKYO and cap utilization at 60%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187384.04250144958,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_025",
+      "category": "conditional",
+      "intent": "When scheduled maintenance is detected, enforce 20ms latency on video from LONDON to TOKYO and cap utilization at 70%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187838.036775589,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_026",
+      "category": "conditional",
+      "intent": "When solar storm is detected, enforce 80ms latency on military from PARIS to SHANGHAI and cap utilization at 80%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 188191.75219535828,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_027",
+      "category": "conditional",
+      "intent": "When node failure is detected, enforce 50ms latency on bulk from NYC to PARIS and cap utilization at 70%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187878.6587715149,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_028",
+      "category": "conditional",
+      "intent": "When scheduled maintenance is detected, enforce 50ms latency on financial from PARIS to SHANGHAI and cap utilization at 50%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187623.48198890686,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_029",
+      "category": "conditional",
+      "intent": "When traffic overload is detected, enforce 150ms latency on bulk from SHANGHAI to DUBAI and cap utilization at 90%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187817.09218025208,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "conditional_030",
+      "category": "conditional",
+      "intent": "When node failure is detected, enforce 20ms latency on financial from FRANKFURT to SAO_PAULO and cap utilization at 80%",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187970.4074859619,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_001",
+      "category": "infeasible",
+      "intent": "Guarantee maritime from SYDNEY to SAO_PAULO under 1.0ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 136199.95522499084,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: Verification failed: hard_constraints[0]: latency 1.0ms below physical minimum (~2.5ms single hop)",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_002",
+      "category": "infeasible",
+      "intent": "Guarantee telemetry from LONDON to PARIS under 1.0ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 167752.27332115173,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: Verification failed: hard_constraints[0]: latency 1.0ms below physical minimum (~2.5ms single hop)",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_003",
+      "category": "infeasible",
+      "intent": "Guarantee telemetry from PARIS to MUMBAI under 1.5ms",
+      "compiled": true,
+      "attempts": 3,
+      "latency_ms": 125524.41072463989,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: Verification failed: hard_constraints[0]: latency 1.5ms below physical minimum (~2.5ms single hop)"
+      ]
+    },
+    {
+      "id": "infeasible_004",
+      "category": "infeasible",
+      "intent": "Guarantee control_plane from PARIS to LONDON under 1.0ms",
+      "compiled": true,
+      "attempts": 3,
+      "latency_ms": 167476.19724273682,
+      "types_match": true,
+      "targets_match": true,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: Verification failed: hard_constraints[0]: latency 1.0ms below physical minimum (~2.5ms single hop)",
+        "Attempt 2: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_005",
+      "category": "infeasible",
+      "intent": "Guarantee maritime from SHANGHAI to NYC under 1.5ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 176110.06784439087,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: Verification failed: hard_constraints[0]: latency 1.5ms below physical minimum (~2.5ms single hop)",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_006",
+      "category": "infeasible",
+      "intent": "Guarantee control_plane from TOKYO to SYDNEY under 0.5ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 174291.8975353241,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: Verification failed: hard_constraints[0]: latency 0.5ms below physical minimum (~2.5ms single hop)",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_007",
+      "category": "infeasible",
+      "intent": "Guarantee telemetry from NYC to SYDNEY under 1.5ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 176633.98051261902,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: Verification failed: hard_constraints[0]: latency 1.5ms below physical minimum (~2.5ms single hop)",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_008",
+      "category": "infeasible",
+      "intent": "Guarantee video from SAO_PAULO to LONDON under 0.5ms",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 175259.44137573242,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: Verification failed: hard_constraints[0]: latency 0.5ms below physical minimum (~2.5ms single hop)",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_009",
+      "category": "infeasible",
+      "intent": "Disable planes 4, 9, 0, 15, 11 and 12 more for maintenance",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 204134.03582572937,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_010",
+      "category": "infeasible",
+      "intent": "Disable planes 7, 16, 15, 5, 0 and 14 more for maintenance",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 194422.593832016,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_011",
+      "category": "infeasible",
+      "intent": "Disable planes 1, 17, 3, 7, 13 and 14 more for maintenance",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 197086.0195159912,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_012",
+      "category": "infeasible",
+      "intent": "Disable planes 19, 1, 15, 17, 14 and 14 more for maintenance",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 194045.87864875793,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_013",
+      "category": "infeasible",
+      "intent": "Disable planes 9, 16, 19, 12, 0 and 10 more for maintenance",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 202769.72436904907,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_014",
+      "category": "infeasible",
+      "intent": "Disable planes 10, 4, 11, 6, 14 and 12 more for maintenance",
+      "compiled": true,
+      "attempts": 3,
+      "latency_ms": 155565.67573547363,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_015",
+      "category": "infeasible",
+      "intent": "Disable planes 15, 1, 0, 3, 12 and 11 more for maintenance",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 190286.90195083618,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_016",
+      "category": "infeasible",
+      "intent": "Disable planes 13, 8, 1, 14, 17 and 13 more for maintenance",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 188193.46570968628,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_017",
+      "category": "infeasible",
+      "intent": "Disable node 201 but also reroute critical traffic through node 201",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187339.32280540466,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_018",
+      "category": "infeasible",
+      "intent": "Disable node 163 but also reroute critical traffic through node 163",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 187846.40264511108,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_019",
+      "category": "infeasible",
+      "intent": "Disable node 37 but also reroute critical traffic through node 37",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 191478.96361351013,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_020",
+      "category": "infeasible",
+      "intent": "Disable node 167 but also reroute critical traffic through node 167",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 194642.73595809937,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_021",
+      "category": "infeasible",
+      "intent": "Disable node 360 but also reroute critical traffic through node 360",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 190761.74640655518,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_022",
+      "category": "infeasible",
+      "intent": "Disable node 284 but also reroute critical traffic through node 284",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 190838.50765228271,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_023",
+      "category": "infeasible",
+      "intent": "Disable node 169 but also reroute critical traffic through node 169",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 190692.18468666077,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_024",
+      "category": "infeasible",
+      "intent": "Disable satellite 454",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 189453.61185073853,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: Verification failed: hard_constraints[0]: node 454 does not exist",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_025",
+      "category": "infeasible",
+      "intent": "Disable satellite 489",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 81167.92464256287,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: No valid JSON in response",
+        "Attempt 2: JSON parse error: NodeSelector.__init__() got an unexpected keyword argument 'type'",
+        "Attempt 3: JSON parse error: intent.schema.NodeSelector() argument after ** must be a mapping, not str"
+      ]
+    },
+    {
+      "id": "infeasible_026",
+      "category": "infeasible",
+      "intent": "Disable satellite 437",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 172333.06074142456,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: Verification failed: hard_constraints[0]: node 437 does not exist",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_027",
+      "category": "infeasible",
+      "intent": "Disable satellite 451",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 138932.57474899292,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: Verification failed: hard_constraints[0]: node 451 does not exist",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_028",
+      "category": "infeasible",
+      "intent": "Take plane 29 offline",
+      "compiled": true,
+      "attempts": 2,
+      "latency_ms": 96706.69412612915,
+      "types_match": true,
+      "targets_match": false,
+      "values_match": true,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: Verification failed: hard_constraints[0]: plane 29 does not exist"
+      ]
+    },
+    {
+      "id": "infeasible_029",
+      "category": "infeasible",
+      "intent": "Take plane 21 offline",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 148886.84034347534,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: Verification failed: hard_constraints[0]: plane 21 does not exist",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    },
+    {
+      "id": "infeasible_030",
+      "category": "infeasible",
+      "intent": "Take plane 24 offline",
+      "compiled": false,
+      "attempts": 3,
+      "latency_ms": 151677.0405769348,
+      "types_match": false,
+      "targets_match": false,
+      "values_match": false,
+      "full_match": false,
+      "errors": [
+        "Attempt 1: Verification failed: hard_constraints[0]: plane 24 does not exist",
+        "Attempt 2: No valid JSON in response",
+        "Attempt 3: No valid JSON in response"
+      ]
+    }
+  ]
+}

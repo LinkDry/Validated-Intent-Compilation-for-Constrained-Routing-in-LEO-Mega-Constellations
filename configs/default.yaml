@@ -1,0 +1,47 @@
+# LEO GNN Routing - Default Configuration
+
+constellation:
+  num_planes: 20
+  sats_per_plane: 20
+  altitude_km: 550.0
+  inclination_deg: 53.0
+
+isl:
+  max_range_km: 5016.0
+  polar_lat_threshold_deg: 75.0
+
+env:
+  max_queue: 1000
+  max_hops: 20
+  scenario: uniform
+  w_delivery: 1.0
+  w_latency: 0.3
+  w_drop: 0.5
+  w_balance: 0.1
+  max_acceptable_delay_ms: 100.0
+
+policy:
+  hidden_dim: 128
+  num_heads: 4
+  num_layers: 3
+  dropout: 0.1
+
+ppo:
+  lr: 1.0e-4
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_eps: 0.1
+  entropy_coef: 0.001
+  value_coef: 0.5
+  max_grad_norm: 0.5
+  n_epochs: 4
+  batch_size: 8
+
+training:
+  total_episodes: 500
+  rollout_steps: 192
+  eval_interval: 10
+  eval_episodes: 3
+  log_interval: 1
+  seed: 42
+  output_dir: output

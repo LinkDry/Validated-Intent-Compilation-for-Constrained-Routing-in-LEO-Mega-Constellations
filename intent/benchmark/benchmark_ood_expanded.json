@@ -1,0 +1,2430 @@
+[
+  {
+    "id": "ood_single_node_0",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "Kill sat 327, it's broken",
+    "original_pattern": "disable_node",
+    "constraint_program": {
+      "intent_id": "ood-node-327",
+      "source_text": "Kill sat 327, it's broken",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:327",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_node_1",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "node 57 is toast, yank it from the mesh",
+    "original_pattern": "disable_node",
+    "constraint_program": {
+      "intent_id": "ood-node-57",
+      "source_text": "node 57 is toast, yank it from the mesh",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:57",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_node_2",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "pls take 12 offline asap",
+    "original_pattern": "disable_node",
+    "constraint_program": {
+      "intent_id": "ood-node-12",
+      "source_text": "pls take 12 offline asap",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:12",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_node_3",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "satellite number 379 needs to go dark right now",
+    "original_pattern": "disable_node",
+    "constraint_program": {
+      "intent_id": "ood-node-379",
+      "source_text": "satellite number 379 needs to go dark right now",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:379",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_node_4",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "can we pull node 140 out? hardware issue",
+    "original_pattern": "disable_node",
+    "constraint_program": {
+      "intent_id": "ood-node-140",
+      "source_text": "can we pull node 140 out? hardware issue",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:140",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_node_5",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "Node 125 should be removed from active routing",
+    "original_pattern": "disable_node",
+    "constraint_program": {
+      "intent_id": "ood-node-125",
+      "source_text": "Node 125 should be removed from active routing",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:125",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_node_6",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "Satellite 114 must be isolated from the network",
+    "original_pattern": "disable_node",
+    "constraint_program": {
+      "intent_id": "ood-node-114",
+      "source_text": "Satellite 114 must be isolated from the network",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:114",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_node_7",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "disable note 71 immediately",
+    "original_pattern": "disable_node",
+    "constraint_program": {
+      "intent_id": "ood-node-71",
+      "source_text": "disable note 71 immediately",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:71",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_node_8",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "shut down know 377",
+    "original_pattern": "disable_node",
+    "constraint_program": {
+      "intent_id": "ood-node-377",
+      "source_text": "shut down know 377",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:377",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_node_9",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "We've detected an anomaly on satellite 52, please ensure no traffic is routed through it",
+    "original_pattern": "disable_node",
+    "constraint_program": {
+      "intent_id": "ood-node-52",
+      "source_text": "We've detected an anomaly on satellite 52, please ensure no traffic is routed through it",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:52",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_plane_10",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "orbital plane 17 is having issues, take the whole thing down",
+    "original_pattern": "disable_plane",
+    "constraint_program": {
+      "intent_id": "ood-plane-17",
+      "source_text": "orbital plane 17 is having issues, take the whole thing down",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_plane",
+          "target": "plane:17",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_plane_11",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "ground all sats in plane 2",
+    "original_pattern": "disable_plane",
+    "constraint_program": {
+      "intent_id": "ood-plane-2",
+      "source_text": "ground all sats in plane 2",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_plane",
+          "target": "plane:2",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_plane_12",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "plane 18 maintenance window starting now, disable everything",
+    "original_pattern": "disable_plane",
+    "constraint_program": {
+      "intent_id": "ood-plane-18",
+      "source_text": "plane 18 maintenance window starting now, disable everything",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_plane",
+          "target": "plane:18",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_plane_13",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "pull plane number 13 for servicing",
+    "original_pattern": "disable_plane",
+    "constraint_program": {
+      "intent_id": "ood-plane-13",
+      "source_text": "pull plane number 13 for servicing",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_plane",
+          "target": "plane:13",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_plane_14",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "we need plane 1 offline, orbit correction maneuver",
+    "original_pattern": "disable_plane",
+    "constraint_program": {
+      "intent_id": "ood-plane-1",
+      "source_text": "we need plane 1 offline, orbit correction maneuver",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_plane",
+          "target": "plane:1",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_region_15",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "stay away from NYC, there's interference",
+    "original_pattern": "avoid_region",
+    "constraint_program": {
+      "intent_id": "ood-avoid-nyc",
+      "source_text": "stay away from NYC, there's interference",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "avoid_region",
+          "target": "edges:ALL",
+          "value": "NYC",
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_region_16",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "no links near LONDON please",
+    "original_pattern": "avoid_region",
+    "constraint_program": {
+      "intent_id": "ood-avoid-london",
+      "source_text": "no links near LONDON please",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "avoid_region",
+          "target": "edges:ALL",
+          "value": "LONDON",
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_region_17",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "route around the SHANGHAI area, we have a ground station issue",
+    "original_pattern": "avoid_region",
+    "constraint_program": {
+      "intent_id": "ood-avoid-shanghai",
+      "source_text": "route around the SHANGHAI area, we have a ground station issue",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "avoid_region",
+          "target": "edges:ALL",
+          "value": "SHANGHAI",
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_region_18",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "avoid SHANGHAI airspace for the next hour",
+    "original_pattern": "avoid_region",
+    "constraint_program": {
+      "intent_id": "ood-avoid-shanghai",
+      "source_text": "avoid SHANGHAI airspace for the next hour",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "avoid_region",
+          "target": "edges:ALL",
+          "value": "SHANGHAI",
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_single_region_19",
+    "category": "single",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "NYC is a no-go zone right now",
+    "original_pattern": "avoid_region",
+    "constraint_program": {
+      "intent_id": "ood-avoid-nyc",
+      "source_text": "NYC is a no-go zone right now",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "avoid_region",
+          "target": "edges:ALL",
+          "value": "NYC",
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_0",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "node 287 is down and we need emergency traffic from MUMBAI to SHANGHAI under 50ms, make it happen",
+    "original_pattern": "node_disable+latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-287-emergency-mumbai-shanghai",
+      "source_text": "node 287 is down and we need emergency traffic from MUMBAI to SHANGHAI under 50ms, make it happen",
+      "priority": "critical",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "emergency",
+          "src_region": "MUMBAI",
+          "dst_region": "SHANGHAI",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:287",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 50.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_1",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "ok so video from NYC to LONDON needs to be under 80 milliseconds and also kill node 229 and keep utilization below 80 percent",
+    "original_pattern": "node_disable+latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-229-video-nyc-london",
+      "source_text": "ok so video from NYC to LONDON needs to be under 80 milliseconds and also kill node 229 and keep utilization below 80 percent",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "video",
+          "src_region": "NYC",
+          "dst_region": "LONDON",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:229",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 80.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_2",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "n174 down. video LONDON->MUMBAI <60ms. util cap 80%.",
+    "original_pattern": "node_disable+latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-174-video-london-mumbai",
+      "source_text": "n174 down. video LONDON->MUMBAI <60ms. util cap 80%.",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "video",
+          "src_region": "LONDON",
+          "dst_region": "MUMBAI",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:174",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 60.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_3",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "Can you disable node 52 and make sure financial traffic between SHANGHAI and NYC stays under 60ms?",
+    "original_pattern": "node_disable+latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-52-financial-shanghai-nyc",
+      "source_text": "Can you disable node 52 and make sure financial traffic between SHANGHAI and NYC stays under 60ms?",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "financial",
+          "src_region": "SHANGHAI",
+          "dst_region": "NYC",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:52",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 60.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_4",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "We have a situation: satellite 176 has failed and we need to ensure that video class traffic originating from the NYC region destined for SHANGHAI maintains latency below 100 milliseconds",
+    "original_pattern": "node_disable+latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-176-video-nyc-shanghai",
+      "source_text": "We have a situation: satellite 176 has failed and we need to ensure that video class traffic originating from the NYC region destined for SHANGHAI maintains latency below 100 milliseconds",
+      "priority": "critical",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "video",
+          "src_region": "NYC",
+          "dst_region": "SHANGHAI",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:176",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 100.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_cond_0",
+    "category": "conditional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "when solar activity spikes, shut down plane 12",
+    "original_pattern": "conditional_disable_plane",
+    "constraint_program": {
+      "intent_id": "ood-cond-solar_storm-disable_plane",
+      "source_text": "when solar activity spikes, shut down plane 12",
+      "priority": "critical",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_plane",
+          "target": "plane:12",
+          "value": null,
+          "condition": {
+            "event_type": "solar_storm",
+            "active": false
+          }
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": [
+        {
+          "event_type": "solar_storm",
+          "active": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "ood_cond_1",
+    "category": "conditional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "if we get hit by a solar storm take plane 17 offline",
+    "original_pattern": "conditional_disable_plane",
+    "constraint_program": {
+      "intent_id": "ood-cond-solar_storm-disable_plane",
+      "source_text": "if we get hit by a solar storm take plane 17 offline",
+      "priority": "critical",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_plane",
+          "target": "plane:17",
+          "value": null,
+          "condition": {
+            "event_type": "solar_storm",
+            "active": false
+          }
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": [
+        {
+          "event_type": "solar_storm",
+          "active": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "ood_cond_2",
+    "category": "conditional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "solar event contingency: ground plane 19",
+    "original_pattern": "conditional_disable_plane",
+    "constraint_program": {
+      "intent_id": "ood-cond-solar_storm-disable_plane",
+      "source_text": "solar event contingency: ground plane 19",
+      "priority": "critical",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_plane",
+          "target": "plane:19",
+          "value": null,
+          "condition": {
+            "event_type": "solar_storm",
+            "active": false
+          }
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": [
+        {
+          "event_type": "solar_storm",
+          "active": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "ood_cond_3",
+    "category": "conditional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "in case of node failure on 185, reroute everything away from it",
+    "original_pattern": "conditional_reroute_away",
+    "constraint_program": {
+      "intent_id": "ood-cond-node_failure-reroute_away",
+      "source_text": "in case of node failure on 185, reroute everything away from it",
+      "priority": "critical",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "reroute_away",
+          "target": "node:185",
+          "value": null,
+          "condition": {
+            "event_type": "node_failure",
+            "active": false
+          }
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": [
+        {
+          "event_type": "node_failure",
+          "active": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "ood_cond_4",
+    "category": "conditional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "if node 98 goes down redirect traffic around it",
+    "original_pattern": "conditional_reroute_away",
+    "constraint_program": {
+      "intent_id": "ood-cond-node_failure-reroute_away",
+      "source_text": "if node 98 goes down redirect traffic around it",
+      "priority": "critical",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "reroute_away",
+          "target": "node:98",
+          "value": null,
+          "condition": {
+            "event_type": "node_failure",
+            "active": false
+          }
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": [
+        {
+          "event_type": "node_failure",
+          "active": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "ood_cond_5",
+    "category": "conditional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "maintenance alert: when we start work on plane 7, disable it automatically",
+    "original_pattern": "conditional_disable_plane",
+    "constraint_program": {
+      "intent_id": "ood-cond-maintenance-disable_plane",
+      "source_text": "maintenance alert: when we start work on plane 7, disable it automatically",
+      "priority": "critical",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_plane",
+          "target": "plane:7",
+          "value": null,
+          "condition": {
+            "event_type": "maintenance",
+            "active": false
+          }
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": [
+        {
+          "event_type": "maintenance",
+          "active": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "ood_cond_6",
+    "category": "conditional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "prepare contingency for gateway failure: avoid node 395",
+    "original_pattern": "conditional_reroute_away",
+    "constraint_program": {
+      "intent_id": "ood-cond-gateway_failure-reroute_away",
+      "source_text": "prepare contingency for gateway failure: avoid node 395",
+      "priority": "critical",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "reroute_away",
+          "target": "node:395",
+          "value": null,
+          "condition": {
+            "event_type": "gateway_failure",
+            "active": false
+          }
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": [
+        {
+          "event_type": "gateway_failure",
+          "active": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "ood_cond_7",
+    "category": "conditional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "overload protection: if traffic spikes, cap utilization at 70%",
+    "original_pattern": "conditional_max_utilization",
+    "constraint_program": {
+      "intent_id": "ood-cond-overload-max_utilization",
+      "source_text": "overload protection: if traffic spikes, cap utilization at 70%",
+      "priority": "critical",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [],
+      "soft_constraints": [
+        {
+          "type": "max_utilization",
+          "target": "edges:ALL",
+          "value": 0.7,
+          "penalty": 2.0,
+          "condition": {
+            "event_type": "overload",
+            "active": false
+          }
+        }
+      ],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": [
+        {
+          "event_type": "overload",
+          "active": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "ood_ambig_0",
+    "category": "ambiguous",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "Make the network faster",
+    "original_pattern": "ambiguous_optimization",
+    "constraint_program": null,
+    "notes": "Could mean: minimize latency, increase throughput, reduce hops. Accept any reasonable interpretation."
+  },
+  {
+    "id": "ood_ambig_1",
+    "category": "ambiguous",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "Fix the routing around Tokyo",
+    "original_pattern": "ambiguous_region",
+    "constraint_program": null,
+    "notes": "Could mean: avoid TOKYO, optimize TOKYO routes, or reroute away from TOKYO. Accept any."
+  },
+  {
+    "id": "ood_ambig_2",
+    "category": "ambiguous",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "Something is wrong with plane 3, handle it",
+    "original_pattern": "ambiguous_plane",
+    "constraint_program": null,
+    "notes": "Could mean: disable plane 3, reroute away, or investigate. Accept disable_plane as reasonable."
+  },
+  {
+    "id": "ood_ambig_3",
+    "category": "ambiguous",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "Protect the financial links",
+    "original_pattern": "ambiguous_traffic",
+    "constraint_program": null,
+    "notes": "Could mean: prioritize financial traffic, add redundancy, reduce latency. Accept any financial-related constraint."
+  },
+  {
+    "id": "ood_ambig_4",
+    "category": "ambiguous",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "We're expecting bad weather over the poles, prepare the network",
+    "original_pattern": "ambiguous_polar",
+    "constraint_program": null,
+    "notes": "Could mean: avoid polar links, reduce polar utilization, add backup paths. Accept any polar-related constraint."
+  },
+  {
+    "id": "ood_comp_5",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "shut down sat 39 and keep all traffic away from SAO_PAULO, this is urgent",
+    "original_pattern": "node_disable+avoid_region",
+    "constraint_program": {
+      "intent_id": "ood-comp-5",
+      "source_text": "shut down sat 39 and keep all traffic away from SAO_PAULO, this is urgent",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:39",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "avoid_region",
+          "target": "region:SAO_PAULO",
+          "value": "SAO_PAULO",
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_6",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "please disable node 208 and also avoid routing through the FRANKFURT area",
+    "original_pattern": "node_disable+avoid_region",
+    "constraint_program": {
+      "intent_id": "ood-comp-6",
+      "source_text": "please disable node 208 and also avoid routing through the FRANKFURT area",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:208",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "avoid_region",
+          "target": "region:FRANKFURT",
+          "value": "FRANKFURT",
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_7",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "node 260 offline. additionally bypass LONDON region entirely.",
+    "original_pattern": "node_disable+avoid_region",
+    "constraint_program": {
+      "intent_id": "ood-comp-7",
+      "source_text": "node 260 offline. additionally bypass LONDON region entirely.",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:260",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "avoid_region",
+          "target": "region:LONDON",
+          "value": "LONDON",
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_8",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "take satellite 364 out of the mesh and reroute everything around SHANGHAI",
+    "original_pattern": "node_disable+avoid_region",
+    "constraint_program": {
+      "intent_id": "ood-comp-8",
+      "source_text": "take satellite 364 out of the mesh and reroute everything around SHANGHAI",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:364",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "avoid_region",
+          "target": "region:SHANGHAI",
+          "value": "SHANGHAI",
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_9",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "kill 364, avoid PARIS",
+    "original_pattern": "node_disable+avoid_region",
+    "constraint_program": {
+      "intent_id": "ood-comp-9",
+      "source_text": "kill 364, avoid PARIS",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_node",
+          "target": "node:364",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "avoid_region",
+          "target": "region:PARIS",
+          "value": "PARIS",
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_10",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "cut all polar links above 80 degrees and guarantee maritime from PARIS to FRANKFURT stays under 150ms",
+    "original_pattern": "avoid_latitude+latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-10",
+      "source_text": "cut all polar links above 80 degrees and guarantee maritime from PARIS to FRANKFURT stays under 150ms",
+      "priority": "medium",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "maritime",
+          "src_region": "PARIS",
+          "dst_region": "FRANKFURT",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "avoid_latitude",
+          "target": "edges:ALL",
+          "value": 80.0,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 150.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_11",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "no ISLs above 75deg latitude. also military SHANGHAI to NYC must be below 80 milliseconds",
+    "original_pattern": "avoid_latitude+latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-11",
+      "source_text": "no ISLs above 75deg latitude. also military SHANGHAI to NYC must be below 80 milliseconds",
+      "priority": "medium",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "military",
+          "src_region": "SHANGHAI",
+          "dst_region": "NYC",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "avoid_latitude",
+          "target": "edges:ALL",
+          "value": 75.0,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 80.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_12",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "disable high-latitude links (>60 degrees) and ensure emergency traffic from MUMBAI to LONDON remains within 60ms",
+    "original_pattern": "avoid_latitude+latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-12",
+      "source_text": "disable high-latitude links (>60 degrees) and ensure emergency traffic from MUMBAI to LONDON remains within 60ms",
+      "priority": "medium",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "emergency",
+          "src_region": "MUMBAI",
+          "dst_region": "LONDON",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "avoid_latitude",
+          "target": "edges:ALL",
+          "value": 60.0,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 60.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_13",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "polar avoidance at 60 degrees plus military SLA SAO_PAULO to SHANGHAI under 60ms please",
+    "original_pattern": "avoid_latitude+latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-13",
+      "source_text": "polar avoidance at 60 degrees plus military SLA SAO_PAULO to SHANGHAI under 60ms please",
+      "priority": "medium",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "military",
+          "src_region": "SAO_PAULO",
+          "dst_region": "SHANGHAI",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "avoid_latitude",
+          "target": "edges:ALL",
+          "value": 60.0,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 60.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_14",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "hey, we need to avoid links above 70 degrees and also keep control_plane from SAO_PAULO to SYDNEY under 100ms",
+    "original_pattern": "avoid_latitude+latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-14",
+      "source_text": "hey, we need to avoid links above 70 degrees and also keep control_plane from SAO_PAULO to SYDNEY under 100ms",
+      "priority": "medium",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "control_plane",
+          "src_region": "SAO_PAULO",
+          "dst_region": "SYDNEY",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "avoid_latitude",
+          "target": "edges:ALL",
+          "value": 70.0,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 100.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_15",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "maintenance on plane 16, also node 260 is failing, cap utilization at 50%",
+    "original_pattern": "plane+node+utilization",
+    "constraint_program": {
+      "intent_id": "ood-comp-15",
+      "source_text": "maintenance on plane 16, also node 260 is failing, cap utilization at 50%",
+      "priority": "medium",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_plane",
+          "target": "plane:16",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "disable_node",
+          "target": "node:260",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [
+        {
+          "type": "max_utilization",
+          "target": "edges:ALL",
+          "value": 0.5,
+          "penalty": 1.0,
+          "condition": null
+        }
+      ],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_16",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "take plane 10 offline and disable node 26. oh and limit util to 90 percent",
+    "original_pattern": "plane+node+utilization",
+    "constraint_program": {
+      "intent_id": "ood-comp-16",
+      "source_text": "take plane 10 offline and disable node 26. oh and limit util to 90 percent",
+      "priority": "medium",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_plane",
+          "target": "plane:10",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "disable_node",
+          "target": "node:26",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [
+        {
+          "type": "max_utilization",
+          "target": "edges:ALL",
+          "value": 0.9,
+          "penalty": 1.0,
+          "condition": null
+        }
+      ],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_17",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "plane 17 down for maintenance. node 117 also offline. max utilization 70%.",
+    "original_pattern": "plane+node+utilization",
+    "constraint_program": {
+      "intent_id": "ood-comp-17",
+      "source_text": "plane 17 down for maintenance. node 117 also offline. max utilization 70%.",
+      "priority": "medium",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_plane",
+          "target": "plane:17",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "disable_node",
+          "target": "node:117",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [
+        {
+          "type": "max_utilization",
+          "target": "edges:ALL",
+          "value": 0.7,
+          "penalty": 1.0,
+          "condition": null
+        }
+      ],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_18",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "we need to pull plane 14 and node 52 out of service, and keep link utilization under 90%",
+    "original_pattern": "plane+node+utilization",
+    "constraint_program": {
+      "intent_id": "ood-comp-18",
+      "source_text": "we need to pull plane 14 and node 52 out of service, and keep link utilization under 90%",
+      "priority": "medium",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_plane",
+          "target": "plane:14",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "disable_node",
+          "target": "node:52",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [
+        {
+          "type": "max_utilization",
+          "target": "edges:ALL",
+          "value": 0.9,
+          "penalty": 1.0,
+          "condition": null
+        }
+      ],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_19",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "disable orbital plane 9, shut down satellite 0, utilization ceiling 70%",
+    "original_pattern": "plane+node+utilization",
+    "constraint_program": {
+      "intent_id": "ood-comp-19",
+      "source_text": "disable orbital plane 9, shut down satellite 0, utilization ceiling 70%",
+      "priority": "medium",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "disable_plane",
+          "target": "plane:9",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "disable_node",
+          "target": "node:0",
+          "value": null,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [
+        {
+          "type": "max_utilization",
+          "target": "edges:ALL",
+          "value": 0.7,
+          "penalty": 1.0,
+          "condition": null
+        }
+      ],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_20",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "reroute around node 143, avoid polar above 75 degrees, and maritime LONDON to SYDNEY under 80ms",
+    "original_pattern": "reroute+latitude+latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-20",
+      "source_text": "reroute around node 143, avoid polar above 75 degrees, and maritime LONDON to SYDNEY under 80ms",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "maritime",
+          "src_region": "LONDON",
+          "dst_region": "SYDNEY",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "reroute_away",
+          "target": "node:143",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "avoid_latitude",
+          "target": "edges:ALL",
+          "value": 75.0,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 80.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_21",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "keep traffic away from satellite 221. also no links above 75 degrees. emergency from SYDNEY to FRANKFURT must stay below 150ms.",
+    "original_pattern": "reroute+latitude+latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-21",
+      "source_text": "keep traffic away from satellite 221. also no links above 75 degrees. emergency from SYDNEY to FRANKFURT must stay below 150ms.",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "emergency",
+          "src_region": "SYDNEY",
+          "dst_region": "FRANKFURT",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "reroute_away",
+          "target": "node:221",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "avoid_latitude",
+          "target": "edges:ALL",
+          "value": 75.0,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 150.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_22",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "node 312 is compromised - reroute away. cut polar links above 80 degrees. military SLA: SYDNEY to FRANKFURT under 50ms",
+    "original_pattern": "reroute+latitude+latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-22",
+      "source_text": "node 312 is compromised - reroute away. cut polar links above 80 degrees. military SLA: SYDNEY to FRANKFURT under 50ms",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "military",
+          "src_region": "SYDNEY",
+          "dst_region": "FRANKFURT",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "reroute_away",
+          "target": "node:312",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "avoid_latitude",
+          "target": "edges:ALL",
+          "value": 80.0,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 50.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_23",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "three things: avoid node 351, disable polar ISLs above 75 degrees, guarantee military FRANKFURT to PARIS within 150ms",
+    "original_pattern": "reroute+latitude+latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-23",
+      "source_text": "three things: avoid node 351, disable polar ISLs above 75 degrees, guarantee military FRANKFURT to PARIS within 150ms",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "military",
+          "src_region": "FRANKFURT",
+          "dst_region": "PARIS",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "reroute_away",
+          "target": "node:351",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "avoid_latitude",
+          "target": "edges:ALL",
+          "value": 75.0,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 150.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_24",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "bypass sat 0, polar cutoff 80 degrees, video latency TOKYO to NYC max 100ms",
+    "original_pattern": "reroute+latitude+latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-24",
+      "source_text": "bypass sat 0, polar cutoff 80 degrees, video latency TOKYO to NYC max 100ms",
+      "priority": "high",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "video",
+          "src_region": "TOKYO",
+          "dst_region": "NYC",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "reroute_away",
+          "target": "node:0",
+          "value": null,
+          "condition": null
+        },
+        {
+          "type": "avoid_latitude",
+          "target": "edges:ALL",
+          "value": 80.0,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 100.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_25",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "emergency from PARIS to SYDNEY under 60ms and control_plane from DUBAI to LONDON under 40ms",
+    "original_pattern": "dual_latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-25",
+      "source_text": "emergency from PARIS to SYDNEY under 60ms and control_plane from DUBAI to LONDON under 40ms",
+      "priority": "medium",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "emergency",
+          "src_region": "PARIS",
+          "dst_region": "SYDNEY",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        },
+        {
+          "traffic_class": "control_plane",
+          "src_region": "DUBAI",
+          "dst_region": "LONDON",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 60.0,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:1",
+          "value": 40.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_26",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "two SLAs: emergency DUBAI to PARIS under 60ms, control_plane MUMBAI to FRANKFURT under 100ms",
+    "original_pattern": "dual_latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-26",
+      "source_text": "two SLAs: emergency DUBAI to PARIS under 60ms, control_plane MUMBAI to FRANKFURT under 100ms",
+      "priority": "medium",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "emergency",
+          "src_region": "DUBAI",
+          "dst_region": "PARIS",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        },
+        {
+          "traffic_class": "control_plane",
+          "src_region": "MUMBAI",
+          "dst_region": "FRANKFURT",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 60.0,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:1",
+          "value": 100.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_27",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "ensure both bulk traffic FRANKFURT to DUBAI stays below 40ms and military traffic SYDNEY to SHANGHAI stays below 50ms",
+    "original_pattern": "dual_latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-27",
+      "source_text": "ensure both bulk traffic FRANKFURT to DUBAI stays below 40ms and military traffic SYDNEY to SHANGHAI stays below 50ms",
+      "priority": "medium",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "bulk",
+          "src_region": "FRANKFURT",
+          "dst_region": "DUBAI",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        },
+        {
+          "traffic_class": "military",
+          "src_region": "SYDNEY",
+          "dst_region": "SHANGHAI",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 40.0,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:1",
+          "value": 50.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_28",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "we need bulk NYC to TOKYO under 80 milliseconds plus financial DUBAI to SYDNEY under 60 milliseconds",
+    "original_pattern": "dual_latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-28",
+      "source_text": "we need bulk NYC to TOKYO under 80 milliseconds plus financial DUBAI to SYDNEY under 60 milliseconds",
+      "priority": "medium",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "bulk",
+          "src_region": "NYC",
+          "dst_region": "TOKYO",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        },
+        {
+          "traffic_class": "financial",
+          "src_region": "DUBAI",
+          "dst_region": "SYDNEY",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 80.0,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:1",
+          "value": 60.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  },
+  {
+    "id": "ood_comp_29",
+    "category": "compositional",
+    "subcategory": "ood_paraphrase",
+    "intent_text": "latency requirements: control_plane from MUMBAI to DUBAI max 150ms, emergency from FRANKFURT to PARIS max 60ms",
+    "original_pattern": "dual_latency",
+    "constraint_program": {
+      "intent_id": "ood-comp-29",
+      "source_text": "latency requirements: control_plane from MUMBAI to DUBAI max 150ms, emergency from FRANKFURT to PARIS max 60ms",
+      "priority": "medium",
+      "time_window": {
+        "start": "now",
+        "duration_min": null
+      },
+      "flow_selectors": [
+        {
+          "traffic_class": "control_plane",
+          "src_region": "MUMBAI",
+          "dst_region": "DUBAI",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        },
+        {
+          "traffic_class": "emergency",
+          "src_region": "FRANKFURT",
+          "dst_region": "PARIS",
+          "src_node": null,
+          "dst_node": null,
+          "src_plane": null,
+          "dst_plane": null,
+          "corridor": null
+        }
+      ],
+      "edge_selectors": [],
+      "node_selectors": [],
+      "hard_constraints": [
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:0",
+          "value": 150.0,
+          "condition": null
+        },
+        {
+          "type": "max_latency_ms",
+          "target": "flow_selector:1",
+          "value": 60.0,
+          "condition": null
+        }
+      ],
+      "soft_constraints": [],
+      "objective_weights": {},
+      "fallback_policy": "reject_if_hard_infeasible",
+      "event_conditions": []
+    }
+  }
+]

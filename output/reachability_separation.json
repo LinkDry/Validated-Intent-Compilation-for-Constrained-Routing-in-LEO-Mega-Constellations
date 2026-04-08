@@ -1,0 +1,128 @@
+{
+  "baseline": {
+    "active_nodes": 400,
+    "active_edges": 1600,
+    "total_edges": 1600,
+    "reachable_pairs": 159600,
+    "total_pairs": 159600,
+    "reachability_fraction": 1.0,
+    "methods": {
+      "unconstrained_gnn": {
+        "raw_pdr": 0.997524,
+        "reachable_pdr": 0.997524
+      }
+    }
+  },
+  "node_failure": {
+    "active_nodes": 399,
+    "active_edges": 1592,
+    "total_edges": 1600,
+    "reachable_pairs": 158802,
+    "total_pairs": 158802,
+    "reachability_fraction": 1.0,
+    "methods": {
+      "unconstrained_gnn": {
+        "raw_pdr": 0.997524,
+        "reachable_pdr": 0.997524
+      },
+      "constrained_gnn": {
+        "raw_pdr": 0.986914,
+        "reachable_pdr": 0.986914
+      },
+      "constrained_dijkstra": {
+        "raw_pdr": 0.978284,
+        "reachable_pdr": 0.978284
+      }
+    },
+    "gap_decomposition": {
+      "raw_pdr_gap": -0.00863,
+      "reachable_pdr_gap": -0.00863,
+      "unreachable_fraction": 0.0,
+      "reachability_explains_pct": 0.0
+    }
+  },
+  "plane_maintenance": {
+    "active_nodes": 380,
+    "active_edges": 1480,
+    "total_edges": 1600,
+    "reachable_pairs": 144020,
+    "total_pairs": 144020,
+    "reachability_fraction": 1.0,
+    "methods": {
+      "unconstrained_gnn": {
+        "raw_pdr": 0.997524,
+        "reachable_pdr": 0.997524
+      },
+      "constrained_gnn": {
+        "raw_pdr": 0.705097,
+        "reachable_pdr": 0.705097
+      },
+      "constrained_dijkstra": {
+        "raw_pdr": 0.702171,
+        "reachable_pdr": 0.702171
+      }
+    },
+    "gap_decomposition": {
+      "raw_pdr_gap": -0.002926,
+      "reachable_pdr_gap": -0.002926,
+      "unreachable_fraction": 0.0,
+      "reachability_explains_pct": 0.0
+    }
+  },
+  "polar_avoidance": {
+    "active_nodes": 400,
+    "active_edges": 1024,
+    "total_edges": 1600,
+    "reachable_pairs": 38364,
+    "total_pairs": 159600,
+    "reachability_fraction": 0.240376,
+    "methods": {
+      "unconstrained_gnn": {
+        "raw_pdr": 0.997524,
+        "reachable_pdr": 1.0
+      },
+      "constrained_gnn": {
+        "raw_pdr": 0.346315,
+        "reachable_pdr": 1.0
+      },
+      "constrained_dijkstra": {
+        "raw_pdr": 0.478554,
+        "reachable_pdr": 1.0
+      }
+    },
+    "gap_decomposition": {
+      "raw_pdr_gap": 0.132239,
+      "reachable_pdr_gap": 0.0,
+      "unreachable_fraction": 0.759624,
+      "reachability_explains_pct": 116.2
+    }
+  },
+  "compositional": {
+    "active_nodes": 399,
+    "active_edges": 1016,
+    "total_edges": 1600,
+    "reachable_pairs": 38088,
+    "total_pairs": 158802,
+    "reachability_fraction": 0.239846,
+    "methods": {
+      "unconstrained_gnn": {
+        "raw_pdr": 0.997524,
+        "reachable_pdr": 1.0
+      },
+      "constrained_gnn": {
+        "raw_pdr": 0.342656,
+        "reachable_pdr": 1.0
+      },
+      "constrained_dijkstra": {
+        "raw_pdr": 0.470749,
+        "reachable_pdr": 1.0
+      }
+    },
+    "gap_decomposition": {
+      "raw_pdr_gap": 0.128093,
+      "reachable_pdr_gap": 0.0,
+      "unreachable_fraction": 0.760154,
+      "reachability_explains_pct": 115.6
+    }
+  }
+}

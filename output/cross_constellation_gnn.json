@@ -1,0 +1,137 @@
+{
+  "training": {
+    "config": "training",
+    "label": "Walker-Delta 550km/53deg (training)",
+    "altitude_km": 550.0,
+    "inclination_deg": 53.0,
+    "gnn_pdr_mean": 99.75,
+    "gnn_pdr_std": 0.01,
+    "dijkstra_pdr_mean": 99.75,
+    "dijkstra_pdr_std": 0.01,
+    "gnn_vs_dijkstra_gap": 0.0,
+    "gnn_seeds": [
+      {
+        "seed": 42,
+        "mean_pdr": 0.9976400693945792,
+        "mean_latency": null
+      },
+      {
+        "seed": 123,
+        "mean_pdr": 0.9975435809419221,
+        "mean_latency": null
+      },
+      {
+        "seed": 456,
+        "mean_pdr": 0.9973881012132618,
+        "mean_latency": null
+      }
+    ],
+    "dijkstra_seeds": [
+      {
+        "seed": 42,
+        "mean_pdr": 0.9976400693945792,
+        "mean_latency": null
+      },
+      {
+        "seed": 123,
+        "mean_pdr": 0.9975435809419221,
+        "mean_latency": null
+      },
+      {
+        "seed": 456,
+        "mean_pdr": 0.9973881012132618,
+        "mean_latency": null
+      }
+    ]
+  },
+  "sso_97": {
+    "config": "sso_97",
+    "label": "SSO 550km/97deg (OOD)",
+    "altitude_km": 550.0,
+    "inclination_deg": 97.0,
+    "gnn_pdr_mean": 45.18,
+    "gnn_pdr_std": 0.21,
+    "dijkstra_pdr_mean": 99.09,
+    "dijkstra_pdr_std": 0.02,
+    "gnn_vs_dijkstra_gap": -53.91,
+    "gnn_seeds": [
+      {
+        "seed": 42,
+        "mean_pdr": 0.4544152296524542,
+        "mean_latency": null
+      },
+      {
+        "seed": 123,
+        "mean_pdr": 0.44930497870820074,
+        "mean_latency": null
+      },
+      {
+        "seed": 456,
+        "mean_pdr": 0.45175267320143414,
+        "mean_latency": null
+      }
+    ],
+    "dijkstra_seeds": [
+      {
+        "seed": 42,
+        "mean_pdr": 0.9908932212339487,
+        "mean_latency": null
+      },
+      {
+        "seed": 123,
+        "mean_pdr": 0.9910874349143285,
+        "mean_latency": null
+      },
+      {
+        "seed": 456,
+        "mean_pdr": 0.9906800155592191,
+        "mean_latency": null
+      }
+    ]
+  },
+  "high_alt": {
+    "config": "high_alt",
+    "label": "High-alt 1200km/53deg (OOD)",
+    "altitude_km": 1200.0,
+    "inclination_deg": 53.0,
+    "gnn_pdr_mean": 99.75,
+    "gnn_pdr_std": 0.01,
+    "dijkstra_pdr_mean": 99.75,
+    "dijkstra_pdr_std": 0.01,
+    "gnn_vs_dijkstra_gap": 0.0,
+    "gnn_seeds": [
+      {
+        "seed": 42,
+        "mean_pdr": 0.9976400693945792,
+        "mean_latency": null
+      },
+      {
+        "seed": 123,
+        "mean_pdr": 0.9975435809419221,
+        "mean_latency": null
+      },
+      {
+        "seed": 456,
+        "mean_pdr": 0.9973881012132618,
+        "mean_latency": null
+      }
+    ],
+    "dijkstra_seeds": [
+      {
+        "seed": 42,
+        "mean_pdr": 0.9976400693945792,
+        "mean_latency": null
+      },
+      {
+        "seed": 123,
+        "mean_pdr": 0.9975435809419221,
+        "mean_latency": null
+      },
+      {
+        "seed": 456,
+        "mean_pdr": 0.9973881012132618,
+        "mean_latency": null
+      }
+    ]
+  }
+}
