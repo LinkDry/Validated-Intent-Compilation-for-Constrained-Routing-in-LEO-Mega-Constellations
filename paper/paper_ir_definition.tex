@@ -44,7 +44,7 @@ The hard constraint type set is:
                    &\texttt{disable\_edge}, \texttt{avoid\_region}, \nonumber \\
                    &\texttt{avoid\_latitude}, \texttt{reroute\_away}, \nonumber \\
                    &\texttt{max\_latency\_ms}, \texttt{max\_hops}, \nonumber \\
-                   &\texttt{k\_edge\_disjoint}, \texttt{min\_cap\_reserve}\}
+                   &\texttt{k\_edge\_disjoint\_paths}, \texttt{min\_capacity\_reserve}\}
 \end{align}
 \end{definition}
 
@@ -83,13 +83,13 @@ within region $r$.
 \texttt{disable\_node} & \texttt{node:$n$} & $M_V[n] \leftarrow 0$ \\
 \texttt{disable\_plane} & \texttt{plane:$p$} & $M_V[pS{:}(p{+}1)S] \leftarrow 0$ \\
 \texttt{disable\_edge} & \texttt{edge:$(u,v)$} & $M_E[(u,v)] \leftarrow 0$ \\
-\texttt{avoid\_latitude} & \texttt{edges} & $M_E \leftarrow 0$ if $|\phi| > \theta$ \\
-\texttt{avoid\_region} & \texttt{region:$r$} & $M_E \leftarrow 0$ if $u{\in}\mathcal{N}_r {\lor} v{\in}\mathcal{N}_r$ \\
+\texttt{avoid\_latitude} & \texttt{edges:ALL} & $M_E \leftarrow 0$ if $|\phi| > \theta$ \\
+\texttt{avoid\_region} & \texttt{edges:ALL} & $M_E \leftarrow 0$ if $u{\in}\mathcal{N}_r {\lor} v{\in}\mathcal{N}_r$ \\
 \texttt{reroute\_away} & \texttt{node:$n$} & $M_V[n] \leftarrow 0$ (transit) \\
-\texttt{max\_latency\_ms} & \texttt{flow\_sel:$i$} & $\mathbf{d}[f_i] \leftarrow v$ \\
-\texttt{max\_hops} & \texttt{flow\_sel:$i$} & hop limit on path \\
-\texttt{k\_edge\_disjoint} & \texttt{flow\_sel:$i$} & $k$ disjoint paths \\
-\texttt{min\_cap\_reserve} & \texttt{flow\_sel:$i$} & $\mathbf{u}[e] \geq v$ \\
+\texttt{max\_latency\_ms} & \texttt{flow\_selector:$i$} & $\mathbf{d}[f_i] \leftarrow v$ \\
+\texttt{max\_hops} & \texttt{flow\_selector:$i$} & hop limit on path \\
+\texttt{k\_edge\_disjoint\_paths} & \texttt{flow\_selector:$i$} & $k$ disjoint paths \\
+\texttt{min\_capacity\_reserve} & \texttt{flow\_selector:$i$} & $\mathbf{u}[e] \geq v$ \\
 \bottomrule
 \end{tabular}
 \end{table}

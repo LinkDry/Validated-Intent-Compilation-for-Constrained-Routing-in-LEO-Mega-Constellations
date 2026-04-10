@@ -8,11 +8,11 @@ End-to-end system for intent-driven constrained routing in LEO satellite mega-co
 |-----------|--------|-------|
 | GNN Router | Packet Delivery Ratio | 99.8% (= Dijkstra) |
 | GNN Router | Inference Speedup | 17× vs Dijkstra |
-| LLM Compiler | Full Semantic Match | 86.2% (240 intents) |
-| LLM Compiler | Compilation Rate | 97.9% |
+| LLM Compiler | Full Semantic Match | 86.2% (240 intents, uniform random edge delays) |
+| LLM Compiler | Compilation Rate | 97.9% (uniform random edge delays) |
 | Validator | Corruption Detection | 100% (240 tests) |
-| End-to-End | Constraint Violations | 0 (all scenarios) |
-| OOD Generalization | Full Match | 81.8% (33 intents) |
+| End-to-End | Constraint Violations | 0 (constrained methods, 4 scenarios) |
+| OOD Generalization | Full Match | 81.8% (33 scorable paraphrases) |
 
 ## Architecture
 
@@ -53,7 +53,7 @@ The LLM compiler requires a local LLM server (LM Studio or compatible OpenAI API
 
 ```
 ├── intent/                    # Intent compilation pipeline
-│   ├── compiler.py           # LLM intent compiler (6-shot + repair loop)
+│   ├── compiler.py           # LLM intent compiler (5-shot + repair loop)
 │   ├── verifier.py           # 8-pass deterministic validator
 │   ├── schema.py             # ConstraintProgram IR definition
 │   ├── constrained_router.py # Constraint grounding + routing

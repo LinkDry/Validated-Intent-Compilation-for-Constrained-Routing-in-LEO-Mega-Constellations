@@ -14,7 +14,7 @@ def ablation_table():
     print("% === Table: Ablation Study ===")
     print(r"\begin{table}[t]")
     print(r"\centering")
-    print(r"\caption{Ablation study on the 240-intent benchmark. Full pipeline uses 6-shot prompting, 8-pass verifier, and up to 3 repair attempts.}")
+    print(r"\caption{Ablation study on the 240-intent benchmark. Full pipeline uses 5-shot prompting, 8-pass verifier, and up to 3 total attempts.}")
     print(r"\label{tab:ablation}")
     print(r"\begin{tabular}{lcccccc}")
     print(r"\toprule")

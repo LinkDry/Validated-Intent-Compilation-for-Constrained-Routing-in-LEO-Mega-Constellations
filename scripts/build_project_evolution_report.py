@@ -398,7 +398,7 @@ def build_summary_section(story: list, styles: dict[str, ParagraphStyle], ctx: d
 
     summary_rows = [
         ["Phase A 路由层", "3 层 GAT + MLP cost-to-go 头；152,193 参数；监督蒸馏自 Dijkstra；99.8% PDR；17x 推理加速。"],
-        ["Phase B 编译层", f"Qwen3.5-9B + 6-shot prompting + repair loop；240 意图基准上 full pipeline 达到 {format_pct(full['compiled_rate'])} compiled、{format_pct(full['full_match_rate'])} full match。"],
+        ["Phase B 编译层", f"Qwen3.5-9B + 5-shot prompting + repair loop；240 意图基准上 full pipeline 达到 {format_pct(full['compiled_rate'])} compiled、{format_pct(full['full_match_rate'])} full match。"],
         ["安全层", f"8-pass deterministic validator + Pass 8 feasibility certifier；unsafe acceptance={format_pct(safety['infeasible_unsafe_accept_rate'])}；运行时中位数 {format_ms(runtime['median_ms'])}。"],
         ["泛化层", f"OOD 改写意图上 compiled={format_pct(ood['compiled_rate'])}，scorable 样本 full match={format_pct(ood['full_match_rate'])}；说明语言泛化尚可，但复杂组合仍是难点。"],
         ["系统层结论", "最稳的论文口径不是“GNN 超越 Dijkstra”或“LLM 直接控网”，而是“受验证的意图编译系统，让自然语言网络意图可以安全落地到受约束的 LEO 路由”。"],

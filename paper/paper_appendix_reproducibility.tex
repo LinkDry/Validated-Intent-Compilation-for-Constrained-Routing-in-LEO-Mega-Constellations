@@ -15,7 +15,7 @@ enabling full reproduction of reported results.
 \item \textbf{Inference}: Local GPU (RTX 4060 8GB), OpenAI-compatible API
 \item \textbf{Temperature}: 0.1
 \item \textbf{Max tokens}: 2048
-\item \textbf{Max repair retries}: 3
+\item \textbf{Max total attempts}: 3 (1 initial + 2 repairs)
 \item \textbf{Timeout}: 120s per API call
 \end{itemize}
 
@@ -31,7 +31,7 @@ released codebase at \texttt{intent/compiler.py}.
 
 \subsection*{A.3 Few-Shot Examples}
 
-The compiler uses 6 in-context examples (3 user/assistant pairs)
+The compiler uses 5 in-context examples (5 user/assistant pairs)
 covering the following intent categories:
 
 \begin{table}[h]
@@ -84,9 +84,10 @@ Compiler output is scored against ground truth on four hierarchical
 metrics, each requiring the previous to be true:
 
 \begin{enumerate}
-\item \textbf{Compiled}: The compiler produces a JSON that passes all
-7 verifier checks (or, for infeasible intents, produces any parseable
-JSON). Binary.
+\item \textbf{Compiled}: The compiler produces a ConstraintProgram that
+is not rejected by the full 8-pass validator (includes both
+\decision{Accept} and \decision{Abstain}; excludes \decision{Reject}).
+Binary.
 
 \item \textbf{Types Match}: All hard and soft constraint \texttt{type}
 fields match the ground truth, compared as sorted multisets. Order-
@@ -119,10 +120,10 @@ Four configurations are evaluated on the full 240-intent benchmark:
 \toprule
 \textbf{Config} & \textbf{Few-shot} & \textbf{Verifier} & \textbf{Repair Loop} \\
 \midrule
-Full pipeline & 6-shot & Yes & Up to 3 retries \\
-No verifier & 6-shot & No & No \\
-No repair & 6-shot & Yes & 1 attempt only \\
-Zero-shot & 0-shot & Yes & Up to 3 retries \\
+Full pipeline & 5-shot & Yes & Up to 3 total attempts \\
+No verifier & 5-shot & No & No \\
+No repair & 5-shot & Yes & 1 attempt only \\
+Zero-shot & 0-shot & Yes & Up to 3 total attempts \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -153,8 +154,9 @@ Invalid plane ID & Physical admissibility & \texttt{plane:25} in 20-plane conste
 \end{table}
 
 \noindent All 240 corrupted programs are correctly rejected (100\%
-detection rate). Each of the 7 verifier passes catches at least one
-corruption type, confirming non-overlapping coverage.
+detection rate). Each of the first 7 structural passes catches at least one
+corruption type, confirming non-overlapping coverage. Pass~8 (feasibility
+certification) is evaluated separately via infeasibility tests.
 
 \subsection*{A.8 OOD Generalization Protocol}
 
@@ -163,7 +165,7 @@ Out-of-distribution evaluation uses 38 paraphrased intents (33 scorable
 vocabulary (``satellite'' $\to$ ``sat'', ``shut down'' $\to$ ``kill''),
 sentence structure (imperative $\to$ declarative), specificity level
 (explicit IDs $\to$ descriptive references), and combining constraint
-patterns not seen in the 6-shot examples. Ambiguous intents (e.g.,
+patterns not seen in the 5-shot examples. Ambiguous intents (e.g.,
 ``optimize the network'') are scored qualitatively only.
 
 \subsection*{A.9 End-to-End Routing Evaluation}

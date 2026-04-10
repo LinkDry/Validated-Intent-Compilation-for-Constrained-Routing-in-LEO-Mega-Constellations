@@ -7,7 +7,7 @@
 % ============================================================
 \begin{table}[t]
 \centering
-\caption{Three-way validator confusion matrix (240-intent benchmark, 8-pass pipeline). 0\% unsafe acceptance across all categories.}
+\caption{Three-way validator confusion matrix (240-intent benchmark, 8-pass pipeline, distance-based ISL delays). Unsafe acceptance is defined as an infeasible program receiving \decision{Accept}; none of the 30 labeled-infeasible intents does so.}
 \label{tab:confusion_matrix}
 \begin{tabular}{lccc}
 \toprule
@@ -21,7 +21,7 @@ Infeasible ($n$=30)     & 0   & 22  & 8   \\
 \textbf{Total} ($n$=240) & 58 & 54 & 128 \\
 \midrule
 \multicolumn{4}{l}{\textit{Safety (unsafe = infeasible \decision{Accept}):}} \\
-\quad Infeasible       & \multicolumn{3}{l}{0/30 = 0\% (was 73.3\% with 7-pass)} \\
+\quad Infeasible       & \multicolumn{3}{l}{0/30 = 0\% unsafe acceptance; 22 \decision{Reject}, 8 \decision{Abstain}} \\
 \multicolumn{4}{l}{\textit{Coverage (\decision{Accept}+\decision{Reject}):}} \\
 \quad Decided          & \multicolumn{3}{l}{112/240 = 46.7\%} \\
 \bottomrule
@@ -35,7 +35,7 @@ Infeasible ($n$=30)     & 0   & 22  & 8   \\
 % ============================================================
 \begin{table}[t]
 \centering
-\caption{Reachability separation analysis. Both GNN and Dijkstra achieve 100\% delivery on reachable pairs; raw PDR gaps reflect topology reachability, not routing quality.}
+\caption{Reachability separation analysis. For topology-limited scenarios (polar avoidance, compositional), both GNN and Dijkstra achieve 100\% delivery on reachable pairs; raw PDR gaps reflect topology reachability ceilings, not routing quality.}
 \label{tab:reachability}
 \begin{tabular}{lccccc}
 \toprule
@@ -189,7 +189,7 @@ Avg Latency    & 204.4s & \textbf{15.7s}  \\
 % ============================================================
 \begin{table}[t]
 \centering
-\caption{8-pass validator runtime (240-intent benchmark). Median under 1\,ms; worst case below 2\,ms, confirming negligible overhead for real-time deployment. Certification status counts Pass~8 outcomes only (22 early-pass rejects excluded).}
+\caption{8-pass validator runtime (240-intent benchmark, distance-based ISL delays). Median under 1\,ms; worst case below 2\,ms, confirming negligible overhead for real-time deployment. Certification status counts Pass~8 outcomes only (22 early-pass rejects excluded).}
 \label{tab:runtime}
 \begin{tabular}{lcccc}
 \toprule

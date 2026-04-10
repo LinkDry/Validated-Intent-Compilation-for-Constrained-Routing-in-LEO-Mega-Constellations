@@ -1,13 +1,13 @@
 """Ablation study: evaluate compiler variants on the 240-intent benchmark.
 
 Configs:
-  full          — 6-shot + verifier + 3 retries (baseline)
-  no_verifier   — 6-shot + NO verification (raw LLM output)
-  no_repair     — 6-shot + verifier + 1 attempt (no retry)
-  zero_shot     — 0-shot + verifier + 3 retries
-  retry_1       — 6-shot + verifier + 1 retry
-  retry_2       — 6-shot + verifier + 2 retries
-  model_4b      — 4B model + 6-shot + verifier + 3 retries
+  full          — 5-shot + verifier + 3 total attempts (baseline)
+  no_verifier   — 5-shot + NO verification (raw LLM output)
+  no_repair     — 5-shot + verifier + 1 attempt (no retry)
+  zero_shot     — 0-shot + verifier + 3 total attempts
+  retry_1       — 5-shot + verifier + 1 retry
+  retry_2       — 5-shot + verifier + 2 retries
+  model_4b      — 4B model + 5-shot + verifier + 3 total attempts
 
 Usage:
   python scripts/eval_ablations.py full

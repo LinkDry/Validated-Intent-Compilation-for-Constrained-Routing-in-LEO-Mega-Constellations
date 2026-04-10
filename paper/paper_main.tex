@@ -44,7 +44,8 @@ delivery ratio with 17$\times$ inference speedup;
 (2)~an LLM intent compiler that converts natural language to a typed
 constraint intermediate representation using few-shot prompting with
 a verifier-feedback repair loop, achieving 97.9\% compilation rate
-and 86.2\% full semantic match on a 240-intent benchmark; and
+and 86.2\% full semantic match on a 240-intent benchmark
+under uniform random edge delays; and
 (3)~an 8-pass deterministic validator with constructive feasibility
 certification that achieves 0\% unsafe acceptance on all 30 labeled-infeasible intents, with 100\% corruption
 detection across 240 structural corruption tests and 100\% on 15
@@ -119,11 +120,11 @@ supervised distillation from Dijkstra shortest paths. It achieves
 speedup, enabling real-time per-packet routing decisions.
 
 \noindent\textbf{LLM Intent Compiler} (Section~\ref{sec:compiler}).
-A Qwen3.5-9B language model with 6-shot prompting converts natural
+A Qwen3.5-9B language model with 5-shot prompting converts natural
 language intents to a typed ConstraintProgram intermediate
 representation. A verifier-feedback repair loop corrects compilation
 errors, achieving 97.9\% compilation rate and 86.2\% full semantic
-match on the 240-intent benchmark.
+match on the 240-intent benchmark (uniform random edge delays).
 
 \noindent\textbf{Deterministic Validator} (Section~\ref{sec:validator}).
 An 8-pass verification pipeline checks schema validity, entity
@@ -140,7 +141,7 @@ grounding semantics for 10 hard constraint types and support for soft
 constraints with configurable penalty weights.
 \item An LLM-based intent compiler with verifier-feedback repair that
 outperforms rule-based parsing by 59.0pp on compositional intents and
-generalizes to out-of-distribution phrasings (81.8\% accuracy, 4.4pp
+generalizes to out-of-distribution phrasings (81.8\% on 33 scorable paraphrases, 4.4pp
 degradation).
 \item A reachability separation analysis showing that apparent routing
 performance gaps under polar constraints are largely explained by
@@ -289,7 +290,7 @@ utilization cap), and conditional constraints (event-triggered reroute).
 \subsubsection{Repair Loop}
 When the verifier rejects a compiled program, the error messages are
 appended to the conversation as a repair prompt. The compiler retries
-up to $k=3$ times, with each attempt receiving the accumulated error
+up to 3 total attempts (1 initial + 2 repairs), with each attempt receiving the accumulated error
 context. This closed-loop design converts verifier precision into
 compiler accuracy: under uniform random edge delays, 93.3\% of all
 240 intents compile on the first attempt, and the repair loop raises
@@ -328,8 +329,8 @@ cost-to-go scorer (rank 64). 152,193 parameters. Trained 200 epochs
 on 500 snapshots. Hardware: NVIDIA RTX 4060 (8\,GB VRAM).
 
 \textbf{LLM Compiler.} Qwen3.5-9B (GGUF quantization) served locally
-via LM Studio. Temperature 0.1, max 2048 tokens, up to 3 repair
-retries. 6-shot prompt (6 examples spanning single, compositional,
+via LM Studio. Temperature 0.1, max 2048 tokens, up to 3 total
+attempts (1 initial + 2 repairs). 5-shot prompt (5 examples spanning single, compositional,
 and conditional categories).
 
 \textbf{Benchmark.} 240 intents by category: 80 single-constraint,
@@ -338,15 +339,15 @@ and conditional categories).
 ground-truth ConstraintProgram for automated scoring. All compiler
 comparison and ablation tables use uniform random edge delays over
 all 240 intents. A separate distance-based ISL delay rerun (9B only)
-yields 85.0\% compiled and 70.4\% full match over all 240; under
-distance-based delays, Pass~8 discovers 17 additional
-routing-infeasible intents, yielding 193 feasible and 47 total
-infeasible (30 labeled + 17 discovered). On the 193-feasible subset,
-the distance-based rerun achieves 98.4\% compiled and 87.6\% full
-match. Safety metrics (unsafe acceptance) always use all 240 intents.
+yields 85.0\% compiled and 70.4\% full match over all 240 intents.
+Safety metrics (unsafe acceptance) always use all 240 intents.
 
-\textbf{Metrics.} \textit{Compiled}: accepted by the full 8-pass
-validator, including Pass~8 feasibility certification.
+\textbf{Metrics.} \textit{Compiled}: produces a ConstraintProgram that
+is not rejected by the full 8-pass validator (includes both
+\decision{Accept} and \decision{Abstain}; excludes \decision{Reject}).
+\textit{Unsafe acceptance}: a labeled-infeasible intent receiving
+\decision{Accept}; \decision{Abstain} is treated as safe fallback,
+not acceptance.
 \textit{Types match}: correct constraint type multiset.
 \textit{Full match}: types + targets + values match (primary metric).
 \textit{PDR}: packet delivery ratio over 100 random OD pairs $\times$
@@ -389,11 +390,8 @@ show 95.8\% exact next-hop match, zero routing loops, hop stretch of
 Table~\ref{tab:ablation} presents the ablation study across four
 compiler configurations on the full 240-intent benchmark. All ablation
 and comparison tables use uniform random edge delays for controlled
-comparison across configurations. A separate distance-based 9B rerun
-yields 85.0\% compiled and 70.4\% full match over all 240 intents;
-excluding 47 intents judged infeasible under distance-based delays
-(30 labeled + 17 discovered by Pass~8) yields 98.4\% compiled and
-87.6\% full match on 193 feasible intents.
+comparison across configurations. A separate distance-based ISL delay rerun
+(9B only) yields 85.0\% compiled and 70.4\% full match over all 240 intents.
 
 \begin{table}[t]
 \centering
@@ -519,10 +517,6 @@ additionally identifies 32 programs among the feasible categories
 whose latency or hop constraints cannot be satisfied on the physical
 topology; 29/32 are independently confirmed via a separate Dijkstra
 oracle (the 3 borderline cases fall within region-grounding margin).
-Of these 32, 17 correspond to intents whose routing infeasibility was
-newly discovered under distance-based edge delays; the remaining 15
-are feasible intents whose LLM-compiled programs contain overly tight
-bounds (a compiler accuracy issue, not a safety issue).
 Coverage (decided rate) is 46.7\%, with 128 topology-only programs
 receiving \decision{Abstain} due to absent flow selectors.
 
@@ -594,10 +588,10 @@ for compositional reasoning in this domain.
 \textbf{Verification as safety net.}
 The validator's three-way classification (0\% unsafe acceptance,
 46.7\% coverage) provides strong safety guarantees: \decision{Abstain}
-defers to Dijkstra fallback (safe without certification), and
-\decision{Accept} carries a constructive witness.
-The feasibility certifier (Pass~8) closes the semantic gap that
-previously allowed 73.3\% of infeasible intents to pass unchecked.
+defers to Dijkstra fallback (safe without constructive certification),
+and \decision{Accept} carries a constructive witness. On the 30
+labeled-infeasible benchmark intents, the current 8-pass pipeline yields
+22 \decision{Reject}, 8 \decision{Abstain}, and 0 \decision{Accept}.
 The 8-pass pipeline adds under 2\,ms overhead (Table~\ref{tab:runtime}),
 making it practical for real-time deployment.
 
@@ -635,14 +629,15 @@ or fine-tuning is needed per constellation geometry.
 We presented an end-to-end system for intent-driven constrained
 routing in LEO mega-constellations. The system combines a GNN
 cost-to-go router (99.8\% PDR, 17$\times$ speedup), an LLM intent
-compiler (86.2\% full semantic match), and an 8-pass deterministic
+compiler (86.2\% full semantic match, uniform random edge delays), and an 8-pass deterministic
 validator (0\% unsafe acceptance, 100\% structural corruption detection) to bridge the gap
 between operator intent and network configuration.
 
-Our evaluation on a 240-intent benchmark demonstrates that LLM-based
+Our evaluation on a 240-intent benchmark (uniform random edge delays)
+demonstrates that LLM-based
 compilation significantly outperforms rule-based parsing on
 compositional intents (+59.0pp), generalizes to novel phrasings
-(81.8\% OOD accuracy), and produces zero constraint violations in
+(81.8\% on 33 scorable OOD paraphrases), and produces zero constraint violations in
 end-to-end routing. The reachability separation analysis reveals
 that apparent performance gaps under polar constraints are topological
 artifacts, not routing deficiencies.
