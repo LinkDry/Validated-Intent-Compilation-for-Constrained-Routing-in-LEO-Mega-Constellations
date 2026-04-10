@@ -1,0 +1,129 @@
+Loading GNN model...
+Model loaded on cuda
+Creating environment...
+Building verifier...
+Creating compiler...
+
+======================================================================
+Scenario: baseline — No constraints, uniform traffic
+======================================================================
+
+  Seed 42:
+    Unconstrained GNN: PDR=0.9976 delay=61.4ms drop=0.0024 viol=N/A (2.5s)
+
+  Seed 123:
+    Unconstrained GNN: PDR=0.9975 delay=61.5ms drop=0.0025 viol=N/A (1.9s)
+
+  Seed 456:
+    Unconstrained GNN: PDR=0.9974 delay=61.5ms drop=0.0026 viol=N/A (1.8s)
+
+  Summary for baseline:
+    unconstrained_gnn        : PDR=0.9975  delay=61.5ms  drop=0.0025  viol=0.000000
+
+======================================================================
+Scenario: node_failure — Single node failure
+======================================================================
+  Compiling intent: Disable node 42 immediately due to hardware failure...
+  Compiled OK in 15671ms (attempts=1)
+
+  Seed 42:
+    Unconstrained GNN: PDR=0.9976 delay=61.4ms drop=0.0024 viol=0.0021851110187529124 (1.9s)
+    Constrained GNN:   PDR=0.9863 delay=61.4ms drop=0.0137 viol=0.000000 compile=15671ms (18.1s)
+    Constrained Dijk:  PDR=0.9778 delay=61.3ms drop=0.0222 viol=0.000000 (26.3s)
+
+  Seed 123:
+    Unconstrained GNN: PDR=0.9975 delay=61.5ms drop=0.0025 viol=0.0022040024684827648 (2.3s)
+    Constrained GNN:   PDR=0.9872 delay=61.5ms drop=0.0128 viol=0.000000 compile=15671ms (18.1s)
+    Constrained Dijk:  PDR=0.9780 delay=61.4ms drop=0.0220 viol=0.000000 (25.4s)
+
+  Seed 456:
+    Unconstrained GNN: PDR=0.9974 delay=61.5ms drop=0.0026 viol=0.002197705318572814 (2.1s)
+    Constrained GNN:   PDR=0.9872 delay=61.5ms drop=0.0128 viol=0.000000 compile=15671ms (18.2s)
+    Constrained Dijk:  PDR=0.9790 delay=61.4ms drop=0.0210 viol=0.000000 (25.9s)
+
+  Summary for node_failure:
+    unconstrained_gnn        : PDR=0.9975  delay=61.5ms  drop=0.0025  viol=0.002196
+    constrained_gnn          : PDR=0.9869  delay=61.5ms  drop=0.0131  viol=0.000000
+    constrained_dijkstra     : PDR=0.9783  delay=61.3ms  drop=0.0217  viol=0.000000
+
+======================================================================
+Scenario: plane_maintenance — Full plane disabled
+======================================================================
+  Compiling intent: Take orbital plane 5 offline for maintenance...
+  Compiled OK in 13242ms (attempts=1)
+
+  Seed 42:
+    Unconstrained GNN: PDR=0.9976 delay=61.4ms drop=0.0024 viol=0.015372864879877796 (1.8s)
+    Constrained GNN:   PDR=0.7054 delay=58.7ms drop=0.2946 viol=0.000000 compile=13242ms (17.0s)
+    Constrained Dijk:  PDR=0.7025 delay=58.5ms drop=0.2975 viol=0.000000 (25.6s)
+
+  Seed 123:
+    Unconstrained GNN: PDR=0.9975 delay=61.5ms drop=0.0025 viol=0.015268712678794611 (2.1s)
+    Constrained GNN:   PDR=0.7052 delay=58.7ms drop=0.2948 viol=0.000000 compile=13242ms (16.8s)
+    Constrained Dijk:  PDR=0.7022 delay=58.5ms drop=0.2978 viol=0.000000 (26.1s)
+
+  Seed 456:
+    Unconstrained GNN: PDR=0.9974 delay=61.5ms drop=0.0026 viol=0.015268712678794611 (2.2s)
+    Constrained GNN:   PDR=0.7047 delay=58.8ms drop=0.2953 viol=0.000000 compile=13242ms (16.3s)
+    Constrained Dijk:  PDR=0.7018 delay=58.6ms drop=0.2982 viol=0.000000 (25.9s)
+
+  Summary for plane_maintenance:
+    unconstrained_gnn        : PDR=0.9975  delay=61.5ms  drop=0.0025  viol=0.015303
+    constrained_gnn          : PDR=0.7051  delay=58.7ms  drop=0.2949  viol=0.000000
+    constrained_dijkstra     : PDR=0.7022  delay=58.5ms  drop=0.2978  viol=0.000000
+
+======================================================================
+Scenario: polar_avoidance — Polar link avoidance (45 deg threshold)
+======================================================================
+  Compiling intent: Avoid polar links above 45 degrees latitude...
+  Compiled OK in 12299ms (attempts=1)
+
+  Seed 42:
+    Unconstrained GNN: PDR=0.9976 delay=61.4ms drop=0.0024 viol=N/A (1.8s)
+    Constrained GNN:   PDR=0.3470 delay=51.1ms drop=0.6530 viol=0.000000 compile=12299ms (15.2s)
+    Constrained Dijk:  PDR=0.4814 delay=50.4ms drop=0.5186 viol=0.000000 (27.7s)
+
+  Seed 123:
+    Unconstrained GNN: PDR=0.9975 delay=61.5ms drop=0.0025 viol=N/A (2.3s)
+    Constrained GNN:   PDR=0.3467 delay=50.9ms drop=0.6533 viol=0.000000 compile=12299ms (15.4s)
+    Constrained Dijk:  PDR=0.4775 delay=50.3ms drop=0.5225 viol=0.000000 (27.7s)
+
+  Seed 456:
+    Unconstrained GNN: PDR=0.9974 delay=61.5ms drop=0.0026 viol=N/A (2.0s)
+    Constrained GNN:   PDR=0.3452 delay=51.1ms drop=0.6548 viol=0.000000 compile=12299ms (15.3s)
+    Constrained Dijk:  PDR=0.4768 delay=50.4ms drop=0.5232 viol=0.000000 (27.7s)
+
+  Summary for polar_avoidance:
+    unconstrained_gnn        : PDR=0.9975  delay=61.5ms  drop=0.0025  viol=0.000000
+    constrained_gnn          : PDR=0.3463  delay=51.0ms  drop=0.6537  viol=0.000000
+    constrained_dijkstra     : PDR=0.4786  delay=50.4ms  drop=0.5214  viol=0.000000
+
+======================================================================
+Scenario: compositional — Multi-constraint: node + polar + utilization
+======================================================================
+  Compiling intent: Disable node 200, avoid polar links above 45 degrees, and ca...
+  Compiled OK in 21092ms (attempts=1)
+
+  Seed 42:
+    Unconstrained GNN: PDR=0.9976 delay=61.4ms drop=0.0024 viol=0.0022102996183927153 (1.9s)
+    Constrained GNN:   PDR=0.3435 delay=51.1ms drop=0.6565 viol=0.000000 compile=21092ms (17.3s)
+    Constrained Dijk:  PDR=0.4735 delay=50.4ms drop=0.5265 viol=0.000000 (29.3s)
+
+  Seed 123:
+    Unconstrained GNN: PDR=0.9975 delay=61.5ms drop=0.0025 viol=0.0022102996183927153 (2.0s)
+    Constrained GNN:   PDR=0.3430 delay=51.0ms drop=0.6570 viol=0.000000 compile=21092ms (17.2s)
+    Constrained Dijk:  PDR=0.4700 delay=50.3ms drop=0.5300 viol=0.000000 (29.8s)
+
+  Seed 456:
+    Unconstrained GNN: PDR=0.9974 delay=61.5ms drop=0.0026 viol=0.002216596768302666 (2.1s)
+    Constrained GNN:   PDR=0.3414 delay=51.2ms drop=0.6586 viol=0.000000 compile=21092ms (16.8s)
+    Constrained Dijk:  PDR=0.4688 delay=50.4ms drop=0.5312 viol=0.000000 (29.6s)
+
+  Summary for compositional:
+    unconstrained_gnn        : PDR=0.9975  delay=61.5ms  drop=0.0025  viol=0.002212
+    constrained_gnn          : PDR=0.3427  delay=51.1ms  drop=0.6573  viol=0.000000
+    constrained_dijkstra     : PDR=0.4707  delay=50.4ms  drop=0.5293  viol=0.000000
+
+======================================================================
+END-TO-END EVALUATION COMPLETE
+Saved to output/e2e_eval_results.json

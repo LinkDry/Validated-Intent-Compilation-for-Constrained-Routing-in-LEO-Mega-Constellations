@@ -41,7 +41,7 @@ and rejects programs where no witness exists.
 \noindent Our confusion matrix (Table~\ref{tab:confusion_matrix})
 confirms the effectiveness of the 8-pass pipeline: 0\% unsafe acceptance
 across all categories. Of the 30 benchmark-infeasible intents, 22 receive
-\textsc{Reject} and 8 receive \textsc{Abstain}---none are accepted.
+\decision{Reject} and 8 receive \decision{Abstain}---none are accepted.
 Pass~8 additionally identifies 32 programs among the structurally-valid
 set whose latency or hop constraints cannot be satisfied on the physical
 constellation topology (e.g., 30\,ms S\~{a}o Paulo--New York when the
@@ -80,7 +80,7 @@ is as important as resolving it.
 
 \noindent In our 240-intent benchmark, all programs use the default
 \texttt{reject\_if\_hard\_infeasible} policy. The fallback mechanism
-is designed for production deployment where operator interaction is
+is designed for operational deployment where operator interaction is
 available; evaluating its effectiveness under dynamic network conditions
 is left to future work.
 
@@ -115,8 +115,8 @@ Three directions could extend coverage further:
 
 \begin{enumerate}
 \item \textbf{Extended fragment coverage}: constraints involving
-\texttt{min\_capacity\_reserve} or combinations of $k$-disjoint paths
-with latency/hop bounds currently produce \textsc{abstain}. Adding
+\texttt{min\_cap\_reserve} or combinations of $k$-disjoint paths
+with latency/hop bounds currently produce \decision{Abstain}. Adding
 fragments for these combinations (e.g., via constrained max-flow)
 would reduce the abstain rate.
 

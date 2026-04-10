@@ -14,7 +14,7 @@ def ablation_table():
     print("% === Table: Ablation Study ===")
     print(r"\begin{table}[t]")
     print(r"\centering")
-    print(r"\caption{Ablation study on the 240-intent benchmark. Full pipeline uses 6-shot prompting, 7-pass verifier, and up to 3 repair attempts.}")
+    print(r"\caption{Ablation study on the 240-intent benchmark. Full pipeline uses 6-shot prompting, 8-pass verifier, and up to 3 repair attempts.}")
     print(r"\label{tab:ablation}")
     print(r"\begin{tabular}{lcccccc}")
     print(r"\toprule")
@@ -322,7 +322,7 @@ def topology_sweep_table():
 
 if __name__ == "__main__":
     import os
-    os.chdir("/home/django/leo-gnn-routing")
+    os.chdir(os.path.join(os.path.dirname(__file__), ".."))
 
     ablation_table()
     e2e_table()

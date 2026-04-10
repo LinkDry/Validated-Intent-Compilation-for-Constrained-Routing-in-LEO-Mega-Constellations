@@ -6,12 +6,13 @@
 A \textit{ConstraintProgram} $\mathcal{P}$ is a typed intermediate representation
 that captures operator intent as a tuple:
 \begin{equation}
-\mathcal{P} = \langle \mathcal{F}, \mathcal{H}, \mathcal{S}, \mathcal{E}, \omega, \pi \rangle
+\mathcal{P} = \langle \mathcal{F}, \mathcal{H}, \mathcal{S}, \mathcal{E}, \omega, \pi, \beta \rangle
 \end{equation}
 where $\mathcal{F}$ is a set of flow selectors, $\mathcal{H}$ is a set of hard constraints,
 $\mathcal{S}$ is a set of soft constraints, $\mathcal{E}$ is a set of event conditions,
-$\omega$ is an objective weight vector, and $\pi \in \{\texttt{critical}, \texttt{high},
-\texttt{medium}, \texttt{low}\}$ is the priority level.
+$\omega$ is an objective weight vector, $\pi \in \{\texttt{critical}, \texttt{high},
+\texttt{medium}, \texttt{low}\}$ is the priority level, and $\beta$ is a fallback
+policy governing behavior when hard constraints cannot be satisfied at routing time.
 \end{definition}
 
 % Definition 2: Flow Selector
@@ -39,10 +40,11 @@ event condition.
 
 The hard constraint type set is:
 \begin{align}
-\mathcal{T}_H = \{&\texttt{disable\_node}, \texttt{disable\_plane}, \texttt{disable\_edge}, \nonumber \\
-                   &\texttt{avoid\_region}, \texttt{avoid\_latitude}, \texttt{reroute\_away}, \nonumber \\
+\mathcal{T}_H = \{&\texttt{disable\_node}, \texttt{disable\_plane}, \nonumber \\
+                   &\texttt{disable\_edge}, \texttt{avoid\_region}, \nonumber \\
+                   &\texttt{avoid\_latitude}, \texttt{reroute\_away}, \nonumber \\
                    &\texttt{max\_latency\_ms}, \texttt{max\_hops}, \nonumber \\
-                   &\texttt{k\_edge\_disjoint}, \texttt{min\_capacity\_reserve}\}
+                   &\texttt{k\_edge\_disjoint}, \texttt{min\_cap\_reserve}\}
 \end{align}
 \end{definition}
 
@@ -74,17 +76,20 @@ within region $r$.
 \centering
 \caption{ConstraintProgram hard constraint types and their grounding semantics.}
 \label{tab:constraint_types}
-\begin{tabular}{lll}
+\begin{tabular}{@{}lll@{}}
 \toprule
 \textbf{Type} & \textbf{Target} & \textbf{Grounding} \\
 \midrule
 \texttt{disable\_node} & \texttt{node:$n$} & $M_V[n] \leftarrow 0$ \\
 \texttt{disable\_plane} & \texttt{plane:$p$} & $M_V[pS{:}(p{+}1)S] \leftarrow 0$ \\
-\texttt{avoid\_latitude} & \texttt{edges:ALL} & $M_E[(u,v)] \leftarrow 0$ if $|\phi| > \theta$ \\
-\texttt{avoid\_region} & \texttt{region:$r$} & $M_E[(u,v)] \leftarrow 0$ if $u,v \in \mathcal{N}_r$ \\
+\texttt{disable\_edge} & \texttt{edge:$(u,v)$} & $M_E[(u,v)] \leftarrow 0$ \\
+\texttt{avoid\_latitude} & \texttt{edges} & $M_E \leftarrow 0$ if $|\phi| > \theta$ \\
+\texttt{avoid\_region} & \texttt{region:$r$} & $M_E \leftarrow 0$ if $u{\in}\mathcal{N}_r {\lor} v{\in}\mathcal{N}_r$ \\
 \texttt{reroute\_away} & \texttt{node:$n$} & $M_V[n] \leftarrow 0$ (transit) \\
 \texttt{max\_latency\_ms} & \texttt{flow\_sel:$i$} & $\mathbf{d}[f_i] \leftarrow v$ \\
 \texttt{max\_hops} & \texttt{flow\_sel:$i$} & hop limit on path \\
+\texttt{k\_edge\_disjoint} & \texttt{flow\_sel:$i$} & $k$ disjoint paths \\
+\texttt{min\_cap\_reserve} & \texttt{flow\_sel:$i$} & $\mathbf{u}[e] \geq v$ \\
 \bottomrule
 \end{tabular}
 \end{table}

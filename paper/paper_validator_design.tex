@@ -51,8 +51,11 @@ avoidance thresholds that remove $>50\%$ of edges trigger warnings.
 
 \item \textbf{Reachability Analysis.} Performs BFS on the constrained
 graph $G' = (V \odot M_V, E \odot M_E)$ to verify connectivity.
-Severe capacity loss ($\geq 75\%$ of nodes disabled) is rejected as
-non-functional; moderate loss ($\geq 50\%$) triggers warnings.
+Severe capacity loss ($\geq 75\%$ of nodes disabled) triggers a strong
+warning; moderate loss ($\geq 50\%$) triggers a standard warning.
+These capacity thresholds are heuristic indicators outside the
+soundness path---they do not block acceptance, which is determined
+solely by Pass~8.
 
 \item \textbf{Feasibility Certification.} For each demanded flow,
 constructs a routing witness on the constrained topology to certify
@@ -65,10 +68,11 @@ certified fragments cover the constraint space:
 \item \textbf{F4} (+ latency + hops): hop-layered Dijkstra
 \item \textbf{F5} (+ $k$-disjoint): Edmonds-Karp max-flow
 \end{itemize}
-Three outcomes: \textsc{accept} (witness found), \textsc{reject}
-(no feasible routing exists), or \textsc{abstain} (unsupported
-constraint combination). Programs are rejected only on \textsc{reject};
-\textsc{abstain} preserves soundness by deferring to the routing layer.
+Three outcomes: \decision{accept} (witness found), \decision{reject}
+(no feasible routing exists), or \decision{abstain} (unsupported
+constraint combination). Programs are rejected only on \decision{reject};
+\decision{abstain} defers to Dijkstra fallback routing, preserving
+safety without constructive certification.
 \end{enumerate}
 
 \begin{theorem}[Acceptance Soundness]
@@ -85,8 +89,8 @@ returned by the algorithm, which by construction satisfies the
 topology constraints (disabled nodes/edges excluded from the search
 graph), latency bounds (Dijkstra optimality), hop limits (BFS layering),
 and disjointness requirements (augmenting path decomposition).
-Unsupported combinations produce \textsc{abstain}, never
-\textsc{accept}, so no false acceptance is possible within the
+Unsupported combinations produce \decision{abstain}, never
+\decision{accept}, so no false acceptance is possible within the
 certified fragment space.
 \end{proof}
 
@@ -107,5 +111,5 @@ semantic gap between structural validity and routing feasibility.
 \noindent\textbf{Repair loop integration.} When validation fails, the
 error messages are fed back to the LLM as a repair prompt. The compiler
 retries up to $k=3$ times, with each attempt receiving the previous
-errors as context. In our 240-benchmark evaluation, 97.9\% of intents
-compile successfully, with 89.2\% succeeding on the first attempt.
+errors as context. In our 240-benchmark evaluation (uniform random edge delays), 97.9\% of intents
+compile successfully, with 93.3\% succeeding on the first attempt.

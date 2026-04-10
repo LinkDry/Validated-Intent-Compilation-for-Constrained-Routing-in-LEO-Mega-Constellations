@@ -1,0 +1,77 @@
+% System Architecture Figure (TikZ)
+% Single-row layout with adjustbox for precise width control
+
+\begin{figure*}[t]
+\centering
+\begin{adjustbox}{max width=\textwidth}
+\begin{tikzpicture}[
+    node distance=0.45cm and 0.32cm,
+    box/.style={draw=black, rounded corners=1.5pt, line width=0.6pt,
+                minimum height=0.75cm, text width=1.35cm,
+                inner xsep=2pt, inner ysep=2pt,
+                align=center, font=\footnotesize},
+    comp/.style={box, fill=black!6},
+    data/.style={box, fill=white, dashed},
+    result/.style={box, fill=black!12},
+    fallback/.style={box, fill=black!18},
+    arr/.style={->, >=Latex, line width=0.7pt},
+    reject/.style={arr, dashed},
+    abstain/.style={arr, densely dotted},
+    lbl/.style={font=\scriptsize, text=black!70},
+]
+
+% Main pipeline (single row)
+\node[data] (intent) {Operator\\Intent};
+\node[comp, right=of intent] (compiler) {LLM\\Compiler};
+\node[data, right=of compiler] (ir) {Constraint\\Program};
+\node[comp, right=of ir] (validator) {8-Pass\\Validator};
+\node[comp, right=0.8cm of validator] (grounding) {Grounding\\$\Gamma$};
+\node[data, right=of grounding] (masks) {$M_V, M_E$\\Masks};
+\node[comp, right=of masks] (router) {GNN\\Router};
+\node[result, right=of router] (routes) {Routing\\Tables $\Pi$};
+
+% Main arrows
+\draw[arr] (intent) -- (compiler);
+\draw[arr] (compiler) -- (ir);
+\draw[arr] (ir) -- (validator);
+
+% Accept path (solid)
+\draw[arr] (validator) -- (grounding);
+\node[lbl, above=2pt] at ($(validator)!0.5!(grounding)$) {Accept};
+
+\draw[arr] (grounding) -- (masks);
+\draw[arr] (masks) -- (router);
+\draw[arr] (router) -- (routes);
+
+% Reject / Repair loop (dashed, below)
+\draw[reject] (validator.south) -- ++(0,-0.8) -| (compiler.south);
+\node[lbl] at ($(compiler.south)!0.5!(validator.south)+(0,-0.83)$)
+  {Reject / repair ($\leq$3 retries)};
+
+% Constellation graph input
+\node[data, below=0.7cm of grounding] (graph) {$G_t$\\[-1pt]\scriptsize constellation};
+\draw[arr] (graph) -- (grounding);
+\draw[arr, black!40] (graph) -| (router);
+
+% Dijkstra fallback (receives masked topology)
+\node[fallback, below=0.45cm of router] (dijkstra) {Dijkstra\\Fallback};
+\draw[arr] (masks.south) -- ++(0,-0.12) -| (dijkstra.west);
+\draw[arr] (dijkstra) -| (routes.south);
+
+% Abstain path (dotted, defers to Dijkstra)
+\draw[abstain] (validator.south east) -- ++(0,-0.25) -| (dijkstra.north west);
+\node[lbl] at ($(validator.south east)+(0.6,-0.35)$) {Abstain};
+
+% Phase labels
+\node[above=0.12cm of $(compiler)!0.5!(ir)$, font=\scriptsize\bfseries, text=black!55] {Compilation};
+\node[above=0.12cm of validator, font=\scriptsize\bfseries, text=black!55] {Verification};
+\node[above=0.12cm of $(router)!0.5!(routes)$, font=\scriptsize\bfseries, text=black!55] {Routing};
+
+\end{tikzpicture}
+\end{adjustbox}
+\caption{End-to-end system architecture. Operator intents are compiled
+to typed ConstraintPrograms and verified by the 8-pass validator.
+Accept (solid) proceeds to grounding and GNN routing;
+Reject (dashed) triggers repair; Abstain (dotted) defers to Dijkstra.}
+\label{fig:system_architecture}
+\end{figure*}

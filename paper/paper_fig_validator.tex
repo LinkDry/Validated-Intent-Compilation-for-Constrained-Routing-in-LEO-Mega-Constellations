@@ -1,0 +1,82 @@
+% Validator Pipeline Figure (TikZ)
+% Single-column figure for inclusion in paper_main.tex
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+    node distance=0.15cm,
+    pass/.style={draw=black, rounded corners=1.5pt, line width=0.6pt,
+                 minimum height=0.45cm, text width=5.0cm,
+                 inner xsep=4pt, inner ysep=2pt,
+                 align=left, font=\footnotesize, fill=black!6},
+    group/.style={font=\footnotesize\bfseries, text=black!60},
+    outcome/.style={draw=black, rounded corners=1.5pt, line width=0.7pt,
+                    minimum height=0.45cm, text width=1.2cm,
+                    align=center, font=\footnotesize},
+    arr/.style={->, >=Latex, line width=0.7pt, black!50},
+    fatal/.style={->, >=Latex, line width=0.7pt, dashed},
+]
+
+% Input
+\node[draw=black, dashed, rounded corners=1.5pt, line width=0.6pt,
+      minimum height=0.45cm, text width=5.0cm, fill=white,
+      font=\footnotesize, align=center, inner xsep=4pt]
+      (input) {ConstraintProgram $\mathcal{P}$ from Compiler};
+
+% Structural checks group
+\node[group, below=0.3cm of input.south west, anchor=west] (g1) {Structural};
+\node[pass, below=0.08cm of g1.south west, anchor=north west] (p1)
+     {\textbf{P1} Schema \hfill \textit{\scriptsize completeness}};
+\node[pass, below=0.12cm of p1] (p2)
+     {\textbf{P2} Entity Grounding \hfill \textit{\scriptsize hallucination}};
+\node[pass, below=0.12cm of p2] (p3)
+     {\textbf{P3} Type Safety \hfill \textit{\scriptsize constraint--entity}};
+\node[pass, below=0.12cm of p3] (p4)
+     {\textbf{P4} Value Range \hfill \textit{\scriptsize physical bounds}};
+
+% Semantic checks group
+\node[group, below=0.3cm of p4.south west, anchor=west] (g2) {Semantic};
+\node[pass, below=0.08cm of g2.south west, anchor=north west, fill=black!10] (p5)
+     {\textbf{P5} Conflict Detection \hfill \textit{\scriptsize contradictions}};
+\node[pass, below=0.12cm of p5, fill=black!10] (p6)
+     {\textbf{P6} Physical Admissibility \hfill \textit{\scriptsize realizability}};
+\node[pass, below=0.12cm of p6, fill=black!10] (p7)
+     {\textbf{P7} Reachability \hfill \textit{\scriptsize connectivity}};
+
+% Feasibility certification
+\node[group, below=0.3cm of p7.south west, anchor=west] (g3) {Certification};
+\node[pass, below=0.08cm of g3.south west, anchor=north west, fill=black!15] (p8)
+     {\textbf{P8} Constructive Witness \hfill \textit{\scriptsize F1--F5}};
+
+% Arrows between passes
+\foreach \a/\b in {input/p1, p1/p2, p2/p3, p3/p4, p4/p5, p5/p6, p6/p7, p7/p8} {
+    \draw[arr] (\a) -- (\b);
+}
+
+% Three outcomes
+\node[outcome, below=0.45cm of p8, xshift=-2.0cm, fill=black!12]
+     (accept) {\decision{Accept}\\[-1pt]\scriptsize\textit{+ witness}};
+\node[outcome, below=0.45cm of p8, fill=white]
+     (reject) {\decision{Reject}};
+\node[outcome, below=0.45cm of p8, xshift=2.0cm, fill=black!6]
+     (abstain) {\decision{Abstain}};
+
+% Outcome arrows with line style differentiation
+\draw[->, >=Latex, line width=0.7pt] (p8.south) -- ++(0,-0.12) -| (accept);
+\draw[->, >=Latex, line width=0.7pt, dashed] (p8.south) -- (reject);
+\draw[->, >=Latex, line width=0.7pt, densely dotted] (p8.south) -- ++(0,-0.12) -| (abstain);
+
+% Early termination arrow
+\draw[fatal] (p1.east) -- ++(0.25,0) |- node[font=\scriptsize\itshape, near start, right] {fatal} (reject.east);
+
+% Repair loop annotation
+\node[font=\scriptsize\itshape, text=black!60, below=0.04cm of reject]
+     {errors $\to$ repair loop};
+
+\end{tikzpicture}
+\caption{8-pass validation pipeline. Passes 1--4 check structural
+validity; 5--7 check semantic consistency; Pass~8 constructs routing
+witnesses (BFS, Dijkstra, Edmonds-Karp). Solid/dashed/dotted arrows
+indicate Accept/Reject/Abstain outcomes.}
+\label{fig:validator_pipeline}
+\end{figure}

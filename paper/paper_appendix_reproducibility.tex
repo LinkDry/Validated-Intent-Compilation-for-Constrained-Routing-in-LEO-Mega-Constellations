@@ -168,7 +168,7 @@ patterns not seen in the 6-shot examples. Ambiguous intents (e.g.,
 
 \subsection*{A.9 End-to-End Routing Evaluation}
 
-Constrained routing is evaluated across 5 scenarios $\times$ 3 random
+Constrained routing is evaluated across 4 scenarios $\times$ 3 random
 seeds $\times$ 20 time steps. Each scenario applies compiled constraints
 to the constellation topology, then routes 100 random OD pairs using
 both GNN and Dijkstra routers. Metrics: packet delivery ratio (PDR)
@@ -177,7 +177,7 @@ and constraint violation count.
 \subsection*{A.10 Code and Data Availability}
 
 All code, benchmarks, trained models, and evaluation scripts are
-released at: \texttt{[repository URL]}. The release includes:
+released at: \texttt{github.com/LinkDry/Validated-Intent-Compilation-for-Constrained-Routing-in-LEO-Mega-Constellations}. The release includes:
 \begin{itemize}
 \item \texttt{intent/compiler.py}: LLM compiler with full prompt
 \item \texttt{intent/verifier.py}: 8-pass deterministic validator with feasibility certification
