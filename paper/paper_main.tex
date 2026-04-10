@@ -338,8 +338,10 @@ and conditional categories).
 30 labeled-infeasible (physically unrealizable). Each intent has a
 ground-truth ConstraintProgram for automated scoring. All compiler
 comparison and ablation tables use uniform random edge delays over
-all 240 intents. A separate distance-based ISL delay rerun (9B only)
-yields 85.0\% compiled and 70.4\% full match over all 240 intents.
+all 240 intents. A separate distance-based ISL delay rerun (9B only;
+with a slightly different coordinate discretization, endpoint-exclusive
+rather than endpoint-inclusive) yields 85.0\% compiled and 70.4\% full
+match over all 240 intents.
 Safety metrics (unsafe acceptance) always use all 240 intents.
 
 \textbf{Metrics.} \textit{Compiled}: produces a ConstraintProgram that
@@ -391,7 +393,8 @@ Table~\ref{tab:ablation} presents the ablation study across four
 compiler configurations on the full 240-intent benchmark. All ablation
 and comparison tables use uniform random edge delays for controlled
 comparison across configurations. A separate distance-based ISL delay rerun
-(9B only) yields 85.0\% compiled and 70.4\% full match over all 240 intents.
+(9B only; see Section~\ref{sec:eval_setup} for coordinate discretization note)
+yields 85.0\% compiled and 70.4\% full match over all 240 intents.
 
 \begin{table}[t]
 \centering
@@ -460,12 +463,14 @@ in Section~\ref{sec:reachability}.
 
 Raw PDR differences in polar-avoidance scenarios (13pp gap between
 GNN and Dijkstra) could suggest routing quality differences. However,
-Table~\ref{tab:reachability} reveals that these gaps are entirely
-explained by the reachability ceiling: polar avoidance at 45\textdegree\
-removes inter-plane ISLs such that only 24\% of OD pairs remain reachable
-at any given snapshot. Both GNN and Dijkstra achieve \textbf{100\%
-delivery on reachable pairs}---the raw PDR gap reflects different
-sampling of reachable pairs across evaluation runs, not routing quality.
+Table~\ref{tab:reachability} shows that reachability ceilings are a major
+contributor: polar avoidance at 45\textdegree\ removes inter-plane ISLs
+such that only 24\% of OD pairs remain reachable at any given snapshot.
+We also note that the reported constrained ``Dijkstra'' baseline applies
+constraint masks via greedy first-hop substitution after building an
+unconstrained Dijkstra next-hop table, rather than recomputing shortest
+paths on the constrained graph; the comparison should therefore be
+interpreted as a heuristic constrained baseline, not an exact oracle.
 
 This finding has two implications: (1)~the GNN router's distillation
 quality is confirmed even under severe topology degradation, and
@@ -575,6 +580,14 @@ value is therefore not in routing quality but in inference speed
 (17$\times$), enabling real-time per-packet decisions on the trained
 topology. In deployment, the GNN serves as an accelerator with
 Dijkstra as a verified fallback for OOD topologies.
+A limitation of the constrained E2E evaluation is that the reported
+``Dijkstra'' baseline is implemented as greedy first-hop repair of an
+unconstrained Dijkstra table after applying constraint masks, rather than
+exact shortest-path recomputation on the constrained graph; a true
+constrained-shortest-path baseline could therefore perform better than
+the reported Dijkstra numbers. This limitation does not affect the
+zero-violation result, which is checked directly against the grounded
+scenario constraints.
 
 \textbf{LLM compiler value proposition.}
 The 59.0pp advantage over rule-based parsing on compositional intents

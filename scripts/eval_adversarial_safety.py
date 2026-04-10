@@ -1,4 +1,4 @@
-"""Adversarial safety tests for the 7-pass deterministic validator.
+"""Adversarial safety tests for the 8-pass deterministic validator.
 
 Tests 3 attack categories beyond the structural corruption audit:
   Category 4: Resource exhaustion (disable all planes/nodes, mass disable)
