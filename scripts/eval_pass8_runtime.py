@@ -1,7 +1,7 @@
 """Benchmark Pass 8 runtime overhead.
 
 Reports: one-shot validation time (median/p95/max), per-fragment breakdown,
-and comparison of 7-pass vs 8-pass validation time.
+and 8-pass validation time including feasibility certification.
 """
 import sys, os, json, time
 import numpy as np
