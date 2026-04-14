@@ -1,4 +1,4 @@
-% Validated Intent Compilation for Constrained Routing in LEO Mega-Constellations
+% LEON: LLM-Enabled Intent-Driven Operations for LEO Mega-Constellations
 % Target: IEEE INFOCOM 2027
 \documentclass[10pt, conference, letterpaper]{IEEEtran}
 
@@ -25,7 +25,7 @@
 
 \begin{document}
 
-\title{Validated Intent Compilation for Constrained Routing\\in LEO Mega-Constellations}
+\title{LEON: LLM-Enabled Intent-Driven Operations\\for LEO Mega-Constellations}
 
 \author{\IEEEauthorblockN{Yuanhang Li}}
 
@@ -33,31 +33,41 @@
 
 % ============================================================
 \begin{abstract}
-Operating LEO mega-constellations requires translating high-level
-operator intents (``reroute financial traffic away from polar links
-under 80\,ms'') into low-level routing constraints---a task that
-demands both natural language understanding and network-domain
-expertise. We present an end-to-end system comprising three components:
-(1)~a GNN cost-to-go router that distills Dijkstra-quality routing
-into a 152K-parameter graph attention network achieving 99.8\% packet
-delivery ratio with 17$\times$ inference speedup;
-(2)~an LLM intent compiler that converts natural language to a typed
-constraint intermediate representation using few-shot prompting with
-a verifier-feedback repair loop, achieving 97.9\% compilation rate
-and 86.2\% full semantic match on a 240-intent benchmark
-under uniform random edge delays; and
-(3)~an 8-pass deterministic validator with constructive feasibility
-certification that achieves 0\% unsafe acceptance on all 30 labeled-infeasible intents, with 100\% corruption
-detection across 240 structural corruption tests and 100\% on 15
-targeted adversarial attacks. End-to-end evaluation across four constrained
-routing scenarios confirms zero constraint violations with both
-routers. We further demonstrate that apparent performance gaps in
-polar-avoidance scenarios are largely explained by topological
-reachability ceilings rather than routing quality, and that the LLM
-compiler outperforms a rule-based baseline by 59.0 percentage points
-on compositional intents. Our system bridges the semantic gap between
-operator intent and network configuration while maintaining the
-safety guarantees required for operational deployment.
+Large LEO mega-constellations already carry diverse services---remote
+sensing data relay, telemetry tracking and command (TT\&C), and
+latency-sensitive financial traffic---yet translating operator
+requirements into routing constraints remains largely manual.
+Three problems grow acute as constellation scale increases.
+First, operator intents that combine multiple conditions
+(latency bounds, region avoidance, node maintenance) are difficult
+to parse correctly with rule-based methods, which degrade sharply
+on compositional requests.
+Second, an incorrectly compiled constraint can silently disable
+critical links or violate safety margins, risking service outages
+for mission-critical traffic.
+Third, when disruptions such as solar storms or equipment failures
+demand rapid reconfiguration, route computation on the constrained
+topology must be fast enough for real-time response.
+
+We present \textbf{LEON} (LLM-Enabled Intent-Driven Operations for
+LEO Networks), an intent-driven routing framework that addresses
+these challenges with three matched components.
+An LLM-based intent compiler built on Qwen3.5-9B converts
+natural-language operator requests into a typed constraint
+intermediate representation, achieving 86.2\% full semantic match
+on a 240-intent benchmark and outperforming rule-based parsing
+by 59.0 percentage points on compositional intents.
+A deterministic 8-pass validator checks structural correctness,
+semantic consistency, and physical feasibility before any constraint
+reaches the routing layer, accepting no unsafe intents across all
+evaluation scenarios.
+A lightweight GNN cost-to-go router executes validated constraints
+on a Walker Delta 20$\times$20 constellation, delivering 99.8\%
+packet delivery ratio with 17$\times$ inference speedup over
+Dijkstra.
+End-to-end experiments across four constrained scenarios---node
+failure, plane maintenance, polar avoidance, and compositional
+constraints---confirm zero constraint violations.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -69,136 +79,270 @@ large language models, constrained routing, formal verification
 \section{Introduction}
 \label{sec:intro}
 
-Low Earth Orbit (LEO) mega-constellations such as Starlink, OneWeb,
-and Kuiper are transforming global connectivity by deploying thousands
-of satellites interconnected via inter-satellite links (ISLs). Operating
-these networks presents unique challenges: the topology changes
-continuously as satellites orbit, polar regions experience periodic
-link dropout, and operators must enforce complex routing constraints
-spanning latency guarantees, region avoidance, node maintenance, and
-traffic prioritization.
+Large low Earth orbit (LEO) constellations are becoming critical
+infrastructure for global connectivity, remote sensing backhaul,
+and resilient space information services~\cite{leo_constellation_survey}.
+As these systems scale, network operation extends well beyond
+computing routes over a known topology. Operators must frequently
+translate mission-level requirements into concrete routing actions
+under time pressure. A remote sensing task may require bulk image
+data to be relayed around congested regions before a downlink window
+closes; telemetry, tracking, and command (TT\&C) traffic may need
+protected low-latency paths during critical maneuvers; and emergency
+conditions such as solar storms or equipment failures may demand
+immediate rerouting away from affected inter-satellite links (ISLs).
+Conventional configuration workflows---manually written policies and
+static routing rules---can handle these cases individually, but they
+become increasingly difficult to adapt quickly and consistently as
+constellation size, service diversity, and failure modes
+grow~\cite{satnet_ops}.
 
-Today, translating operator intent into network configuration requires
-manual specification of routing policies---a process that is slow,
-error-prone, and does not scale to the dynamic nature of LEO
-constellations. Intent-based networking (IBN)~\cite{ibn_survey} promises
-to bridge this gap by allowing operators to express high-level goals
-that are automatically compiled into network configurations. However,
-existing IBN approaches target terrestrial networks with relatively
-stable topologies and do not address the unique constraints of satellite
-mega-constellations.
+This growing operational complexity motivates higher-level control
+abstractions. Intent-based networking (IBN) has been widely studied
+in terrestrial networks as a way to let operators specify \emph{what}
+they want while the system determines \emph{how} to enforce
+it~\cite{ibn_survey,ibn_framework}. In parallel, satellite networking
+research has investigated software-defined control and dynamic routing
+for non-terrestrial networks~\cite{satellite_sdn_survey,leo_routing_survey}.
+These two lines of work are complementary but do not directly solve
+the operational problem above: terrestrial IBN methods assume
+comparatively stable topologies and do not model orbital
+dynamics~\cite{ibn_template,ibn_ontology}, while satellite control
+frameworks typically require structured policy inputs rather than
+free-form requests that must be compiled, checked, and executed
+safely end to end.
 
-We identify three key challenges in intent-driven LEO routing:
+This paper studies that missing step: converting operator intent into
+safe and efficient routing actions for large LEO constellations. We
+focus on a Walker Delta $20\times20$ constellation (400~satellites,
+550\,km altitude, 53\textdegree\ inclination) and identify three
+coupled challenges:
 
 \begin{enumerate}[leftmargin=*]
-\item \textbf{Compositional intent understanding.} Operator intents
-combine multiple constraint types (``disable plane~7, avoid polar links
-above 75\textdegree, and cap utilization at 80\%'') that must be
-correctly decomposed and mapped to formal constraint representations.
-Rule-based parsers handle simple intents but degrade sharply on
-compositional ones (40.0\% vs.\ 99.0\% accuracy).
+\item \textbf{Semantic translation.} Operational requests naturally
+combine multiple constraints in one statement---traffic class,
+excluded regions, latency budgets, failover conditions---especially
+when an operator must simultaneously prioritize TT\&C while avoiding
+storm-exposed polar links, or redirect remote sensing relay traffic
+while preserving path diversity. Rule-based parsers handle simple
+single-constraint intents but degrade sharply on such compositional
+requests (40.0\% vs.\ 99.0\% accuracy in our evaluation).
 
-\item \textbf{Safety-critical verification.} In production networks,
-a single undetected constraint violation can cascade into service
-outages. The compiler's output must be formally verified before
-reaching the routing layer, yet verification must be fast enough
-for interactive use.
+\item \textbf{Safety and feasibility.} In satellite networks, an
+incorrect or infeasible policy is not merely an optimization error.
+A mistranslated intent can route TT\&C traffic onto unstable paths,
+delay time-sensitive sensing data, or prohibit links that are
+topologically necessary after failures. Accepting an infeasible
+policy can create routing blackholes or disconnect critical traffic
+classes. Safety therefore requires that invalid or operationally
+dangerous intents be kept off the certified execution path---either
+explicitly rejected or deferred to conservative fallback routing.
 
-\item \textbf{Efficient constrained routing.} Applying constraints
-modifies the network topology (disabling nodes, removing edges),
-and the router must compute valid paths on the constrained graph
-in real time. Traditional shortest-path algorithms are correct but
-too slow for per-packet decisions at scale.
+\item \textbf{Execution efficiency.} Even after compilation and
+verification, the network must produce routing decisions quickly
+enough for real-time response. Exact shortest-path procedures deliver
+high-quality routes but become a bottleneck when operators need rapid
+reconfiguration across a 400-node time-varying constellation during
+solar-storm exposure or satellite failures.
 \end{enumerate}
 
-We address these challenges with a three-component system:
+To address these challenges, we present \textbf{LEON}
+(\textbf{L}LM-\textbf{E}nabled Intent-driven \textbf{O}perations
+for LEO \textbf{N}etworks), an end-to-end framework for safe
+intent-driven routing in large satellite constellations
+(Fig.~\ref{fig:system_architecture}). LEON makes
+the challenge-to-solution mapping explicit:
+\begin{itemize}[leftmargin=*]
+\item For \emph{semantic translation}, LEON uses an LLM-based intent
+compiler (Qwen3.5-9B) that converts natural-language operator
+requests into a typed constraint intermediate representation,
+achieving 86.2\% full semantic match and outperforming rule-based
+parsing by 59.0 percentage points on compositional intents.
+\item For \emph{safety and feasibility}, LEON introduces a
+deterministic 8-pass validator that checks structural correctness,
+semantic consistency, and constructive feasibility before any
+constraint reaches the routing layer, accepting no unsafe intents
+in our evaluation.
+\item For \emph{execution efficiency}, LEON employs a lightweight
+GNN cost-to-go router (152K parameters) that approximates
+Dijkstra-quality routing with 17$\times$ inference speedup,
+delivering 99.8\% packet delivery ratio.
+\end{itemize}
 
-\noindent\textbf{GNN Cost-to-Go Router} (Section~\ref{sec:gnn_router}).
-A 3-layer graph attention network (152K parameters) trained via
-supervised distillation from Dijkstra shortest paths. It achieves
-99.8\% packet delivery ratio (PDR) while providing 17$\times$ inference
-speedup, enabling real-time per-packet routing decisions.
-
-\noindent\textbf{LLM Intent Compiler} (Section~\ref{sec:compiler}).
-A Qwen3.5-9B language model with 5-shot prompting converts natural
-language intents to a typed ConstraintProgram intermediate
-representation. A verifier-feedback repair loop corrects compilation
-errors, achieving 97.9\% compilation rate and 86.2\% full semantic
-match on the 240-intent benchmark (uniform random edge delays).
-
-\noindent\textbf{Deterministic Validator} (Section~\ref{sec:validator}).
-An 8-pass verification pipeline checks schema validity, entity
-grounding, type safety, value ranges, constraint conflicts, physical
-admissibility, and reachability. It achieves 100\% detection on
-structural corruptions and guarantees that no malformed constraint
-program reaches the routing layer.
+\noindent End-to-end evaluation across four constrained
+scenarios---node failure, plane maintenance, polar avoidance, and
+compositional constraints---confirms zero constraint violations with
+both GNN and heuristic Dijkstra fallback routing. The LLM
+compiler further retains 81.8\% accuracy on 33 scorable
+out-of-distribution paraphrases (4.4pp degradation), demonstrating
+robustness to phrasing variation.
 
 Our contributions are:
 \begin{itemize}[leftmargin=*]
-\item A typed constraint IR (ConstraintProgram) that formally bridges
-natural language intents and topology-level routing constraints, with
-grounding semantics for 10 hard constraint types and support for soft
-constraints with configurable penalty weights.
-\item An LLM-based intent compiler with verifier-feedback repair that
-outperforms rule-based parsing by 59.0pp on compositional intents and
-generalizes to out-of-distribution phrasings (81.8\% on 33 scorable paraphrases, 4.4pp
-degradation).
-\item A reachability separation analysis showing that apparent routing
-performance gaps under polar constraints are largely explained by
-topological reachability ceilings, not routing quality.
-\item End-to-end evaluation demonstrating zero constraint violations
-across four scenarios with both GNN and Dijkstra routers.
+\item We formulate safe intent-driven operation for large LEO
+satellite networks and present LEON, an end-to-end architecture
+connecting natural-language intent compilation, deterministic safety
+validation, and fast constrained routing. Unlike terrestrial IBN
+systems~\cite{ibn_survey,ibn_framework} and prior satellite control
+frameworks~\cite{satellite_sdn_survey,leo_routing_survey}, LEON is
+designed specifically for dynamic constellation topology and
+mission-critical traffic.
+\item We design an LLM-based intent compiler that captures
+compositional operator requests with 86.2\% full semantic match,
+59.0pp improvement over rule-based parsing on compositional cases,
+and 81.8\% accuracy on out-of-distribution paraphrases.
+\item We develop a deterministic 8-pass validator that blocks
+structurally invalid, semantically inconsistent, or infeasible
+intents from certified acceptance (via explicit rejection or
+abstention to conservative fallback routing), achieving 0\% unsafe acceptance and
+grounding safety in operationally meaningful satellite-network
+constraints.
+\item We introduce a compact GNN cost-to-go router for efficient
+constrained routing, achieving 99.8\% packet delivery ratio and
+17$\times$ speedup, while the full LEON pipeline maintains zero
+constraint violations across four operational scenarios.
 \end{itemize}
+
+The rest of this paper is organized as follows.
+Section~\ref{sec:related} reviews related work.
+Section~\ref{sec:system} presents the system model and overall LEON
+architecture. Section~\ref{sec:eval} reports experimental
+results. Section~\ref{sec:discussion} discusses design trade-offs
+and limitations, and Section~\ref{sec:conclusion} concludes the paper.
 
 % ============================================================
 \section{Related Work}
 \label{sec:related}
 
-\textbf{LEO constellation routing.}
-Routing in LEO mega-constellations has been studied extensively.
-Snapshot-based approaches~\cite{snapshot_routing} precompute routes
-for discrete time intervals but cannot adapt to dynamic failures.
-Contact graph routing (CGR)~\cite{cgr} handles time-varying topologies
-but assumes deterministic contact schedules. Recent work applies
-deep reinforcement learning (DRL) to LEO routing~\cite{drl_leo1,drl_leo2},
-but DRL agents require online training and struggle with credit
-assignment over large action spaces. Our GNN cost-to-go approach
-avoids these issues through offline supervised distillation, achieving
-Dijkstra-equivalent quality with 17$\times$ speedup.
+To position LEON with respect to prior literature, we review the
+lines of work most relevant to this paper. Our goal is not only to
+summarize existing methods, but also to clarify what they do well,
+where they fall short, and why an end-to-end framework for
+intent-driven LEO operation is still needed. We organize the
+discussion into five categories: LEO constellation routing, GNN-based
+network optimization, intent-based networking, LLMs for network
+management, and intent-driven satellite networking.
 
-\textbf{GNN-based network optimization.}
-Graph neural networks have shown promise for combinatorial network
-problems including traffic engineering~\cite{gnn_te}, link
-scheduling~\cite{gnn_scheduling}, and routing~\cite{gnn_routing}.
-RouteNet~\cite{routenet} models network performance but does not
-produce routing decisions. Our work differs by training a GNN to
-directly predict per-destination next-hop decisions via cost-to-go
-distillation, enabling deployment as a drop-in routing engine.
+\noindent\textbf{LEO constellation routing.}
+Routing in LEO constellations has been studied through snapshot-based
+shortest-path methods~\cite{snapshot_routing}, contact-graph routing
+(CGR)~\cite{cgr}, and learning-based
+approaches~\cite{drl_leo1,drl_leo2}. These methods capture the
+distinctive structure of satellite networks---predictable mobility,
+intermittent visibility, and constrained path diversity---and are
+effective when the routing objective is already specified in
+algorithmic form. Their limitation is that they generally assume
+structured inputs designed by experts: they solve \emph{how} to
+compute routes once constraints are known, but not \emph{how} to
+translate operator requests such as TT\&C protection or emergency
+avoidance into those constraints safely and consistently.
 
-\textbf{Intent-based networking.}
-IBN aims to translate operator goals into network
-configurations~\cite{ibn_survey,ibn_framework}. Existing systems
-use template matching~\cite{ibn_template}, ontology-based
-parsing~\cite{ibn_ontology}, or domain-specific languages~\cite{nile}.
-Recent work explores LLMs for network intent
-translation~\cite{llm_network1,llm_network2}, but without formal
-verification of the compiled output. Our system combines LLM
-compilation with deterministic verification, ensuring that the
-semantic flexibility of LLMs does not compromise network safety.
+\noindent\textbf{GNN-based network optimization.}
+Graph neural networks have shown strong performance in traffic
+engineering~\cite{gnn_te}, link scheduling~\cite{gnn_scheduling},
+and routing approximation~\cite{gnn_routing,routenet} by exploiting
+graph structure while remaining efficient at inference time. Their
+main advantage is scalability: once trained, a GNN can approximate
+expensive optimization procedures much faster than iterative solvers.
+However, most GNN-based network optimizers target terrestrial settings
+(WANs, data centers) where topology and control objectives differ
+substantially from LEO constellations. Moreover, these works begin
+from pre-specified constraints and do not address whether those
+constraints were derived correctly from high-level intent, nor do
+they provide safety screening before deployment.
 
-\textbf{LLMs for network management.}
-Large language models are increasingly applied to network
-tasks~\cite{netllm,llm_netops}: configuration
-generation~\cite{llm_config}, anomaly diagnosis~\cite{llm_anomaly},
-and policy translation~\cite{llm_policy}. However, most approaches
-trust LLM output directly or use only syntactic validation. Our
-8-pass validator goes beyond syntax to check entity grounding, type
-safety, physical admissibility, and reachability---providing the
-verification depth required for safety-critical infrastructure.
+\noindent\textbf{Intent-based networking.}
+Intent-based networking (IBN), also discussed as intent-driven
+networking (IDN), aims to let operators specify desired outcomes
+instead of low-level
+configurations~\cite{ibn_survey,ibn_framework}. Prior work has
+explored templates~\cite{ibn_template},
+ontologies~\cite{ibn_ontology}, domain-specific
+languages~\cite{nile}, and LLM-based
+translation~\cite{llm_network1,llm_network2}. The benefit is
+abstraction: it reduces operator burden and improves consistency.
+The limitation is that many systems rely on fixed schemas or
+controlled vocabularies, reducing flexibility for compositional or
+varied natural-language intents. Most terrestrial IBN systems also
+assume stable infrastructure and do not model the feasibility
+constraints introduced by orbital dynamics, sparse inter-plane
+connectivity, or mission-dependent traffic criticality.
+
+\noindent\textbf{LLMs for network management.}
+LLMs have been explored for configuration
+generation~\cite{llm_config}, anomaly
+diagnosis~\cite{llm_anomaly}, and policy
+translation~\cite{llm_policy,netllm,llm_netops}. Their key
+advantage over template-based IBN is flexibility: they can interpret
+varied and compositional language with less manual schema design.
+The corresponding drawback is reliability---LLM outputs may be
+incomplete, inconsistent, or hallucinated, and most current systems
+lack end-to-end safety guarantees. This is particularly problematic
+in satellite operations, where a mistranslated intent may misroute
+TT\&C traffic or accept a topologically impossible policy.
+
+\noindent\textbf{Intent-driven satellite networking.}
+Several recent studies apply IBN/IDN concepts to satellite or
+non-terrestrial networks, including software-defined satellite
+networking, service orchestration, and integrated
+space-air-ground systems~\cite{satellite_ibn,satellite_idn,ntn_orchestration}.
+These efforts recognize that future satellite systems need
+higher-level control abstractions. Their strength lies in bringing
+intent concepts into a domain with dynamic topology and heterogeneous
+services. However, most focus on architectural frameworks or
+structured service requests rather than free-form intent compilation
+for constrained routing, and many leave verification at a conceptual
+level.
+
+\textbf{Summary.} The literature is rich but fragmented. LEO routing
+research provides strong execution mechanisms but assumes
+expert-crafted constraints. Terrestrial IBN and LLM-based management
+improve the operator interface but do not address the safety and
+feasibility issues of dynamic LEO topologies. Emerging intent-driven
+satellite networking brings the right application perspective but
+stops short of a complete compiler--validator--router pipeline. LEON
+fills this gap by integrating these three capabilities in a single
+framework, enabling natural-language intents for remote sensing relay,
+TT\&C protection, and emergency rerouting to be translated, checked,
+and enforced with explicit safety control.
 
 % ============================================================
 \section{System Design}
 \label{sec:system}
+
+Building on the gaps identified above, this section presents the
+LEON framework. We first formulate the problem and introduce the
+notation used throughout the paper (Table~\ref{tab:notation}), then
+describe each component in the order it appears in the pipeline:
+intent compilation, deterministic validation, and constrained routing.
+
+\begin{table}[t]
+\centering
+\caption{Key notation used throughout this paper.}
+\label{tab:notation}
+\small
+\begin{tabular}{cl}
+\toprule
+\textbf{Symbol} & \textbf{Description} \\
+\midrule
+$P, S, N$ & Orbital planes, satellites per plane, total nodes \\
+$K$ & Max ISL neighbors per satellite (=4) \\
+$G_t = (V, E_t)$ & Constellation graph at time $t$ \\
+$\ell$ & Natural-language operator intent \\
+$\mathcal{P}$ & ConstraintProgram (typed IR) \\
+$\mathcal{F}, \mathcal{H}, \mathcal{S}$ & Flow selectors, hard/soft constraints \\
+$M_V, M_E$ & Node mask, edge mask after grounding \\
+$\mathbf{u}, \mathbf{d}$ & Utilization caps, flow deadline values \\
+$\Gamma$ & Grounding function \\
+$\Pi$ & Next-hop routing table \\
+$\iota$ & Orbital inclination angle \\
+$\mathcal{P}^{\checkmark}$ & Validated ConstraintProgram \\
+$\odot$ & Element-wise masking operator \\
+$\mathcal{R}, \mathcal{T}$ & Region name set, traffic class set \\
+$G'_t$ & Constrained subgraph after mask application \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 % System architecture figure (spans both columns)
 \input{paper_fig_architecture}
@@ -207,14 +351,36 @@ verification depth required for safety-critical infrastructure.
 \label{sec:formulation}
 
 We consider a Walker Delta constellation with $P$ orbital planes and
-$S$ satellites per plane, yielding $N = P \times S$ nodes. Each
-satellite maintains up to $K=4$ ISL links (2 intra-plane, 2
-inter-plane). The constellation graph $G_t = (V, E_t)$ evolves over
-time as satellite positions change and polar links experience periodic
-dropout above inclination $\iota$.
+$S$ satellites per plane, yielding $N = P \times S$ nodes. This
+configuration is representative of operational and planned
+mega-constellations such as Starlink and OneWeb, which use similar
+grid topologies at LEO altitudes~\cite{leo_constellation_survey}.
+Each satellite maintains up to $K=4$ ISL links: two intra-plane links
+connecting adjacent satellites within the same orbital plane, and two
+inter-plane links connecting to the nearest satellites in neighboring
+planes. Intra-plane ISLs are relatively stable because adjacent
+satellites share similar orbital velocity and direction, making them
+the backbone for along-track data forwarding. Inter-plane ISLs
+connect satellites in different orbital planes with differing relative
+motion, leading to higher beam-tracking complexity and periodic
+dropout at high latitudes where orbital planes
+converge~\cite{isl_dynamics}. This $K=4$ grid topology is the
+standard model in the LEO routing
+literature~\cite{snapshot_routing,drl_leo1}.
+
+The constellation graph $G_t = (V, E_t)$ evolves over time as
+satellite positions change and polar links experience periodic
+dropout above inclination $\iota$. The system must support diverse
+operational scenarios: remote sensing data relay with deadline
+constraints, TT\&C traffic requiring protected low-latency paths,
+and emergency rerouting during solar storms or equipment failures.
 
 An operator intent $\ell$ is a natural language string expressing
-routing constraints. The system must:
+routing constraints for such scenarios. For example, during a solar
+storm an operator might issue: ``reroute all TT\&C traffic away from
+polar links above 75\textdegree\ and guarantee latency under 80\,ms
+for financial flows.'' The LEON pipeline processes this intent through
+four stages:
 \begin{enumerate}
 \item \textit{Compile}: $\ell \xrightarrow{\text{LLM}} \mathcal{P}$,
 mapping intent to a ConstraintProgram $\mathcal{P}$.
@@ -282,7 +448,7 @@ and verifier-feedback repair.
 \subsubsection{Prompt Design}
 The system prompt (approximately 800 tokens) specifies the constellation
 parameters, the complete ConstraintProgram JSON schema, all valid enum
-values, target format conventions, and 6 compilation rules. Six
+values, target format conventions, and 6 compilation rules. Five
 in-context examples cover single constraints (node disable, latency
 SLA), compositional constraints (plane disable + polar avoidance +
 utilization cap), and conditional constraints (event-triggered reroute).
@@ -317,6 +483,28 @@ wrap JSON in commentary.
 \section{Evaluation}
 \label{sec:eval}
 
+The evaluation is designed to answer four questions, each corresponding
+to a core claim of LEON. (1)~Does the GNN router match Dijkstra
+quality while providing meaningful speedup for real-time constrained
+routing? (2)~Does the LLM compiler accurately translate compositional
+operator intents, and how much does each pipeline component
+contribute? (3)~Does the 8-pass validator reliably block unsafe or
+infeasible intents (via \decision{Reject} or \decision{Abstain})
+before they reach the routing layer? (4)~Does the
+full LEON pipeline maintain zero constraint violations across
+constrained scenarios including node failure, plane maintenance,
+polar avoidance, and compositional constraints?
+The results confirm that the GNN matches Dijkstra PDR within
+measurement noise, the compiler substantially outperforms rule-based
+parsing on compositional intents, the validator achieves 0\% unsafe
+acceptance, and the end-to-end pipeline produces no constraint
+violations across all tested scenarios.
+
+All experiments run on a single workstation with an Intel Core Ultra~9
+185H CPU (16\,GB RAM) and NVIDIA RTX 4060 GPU (8\,GB VRAM) under
+Ubuntu 24.04. The LLM compiler runs locally via LM Studio; no cloud
+API is required.
+
 \subsection{Experimental Setup}
 \label{sec:setup}
 
@@ -339,9 +527,11 @@ and conditional categories).
 ground-truth ConstraintProgram for automated scoring. All compiler
 comparison and ablation tables use uniform random edge delays over
 all 240 intents. A separate distance-based ISL delay rerun (9B only;
-with a slightly different coordinate discretization, endpoint-exclusive
-rather than endpoint-inclusive) yields 85.0\% compiled and 70.4\% full
-match over all 240 intents.
+which also uses a slightly different coordinate discretization,
+endpoint-exclusive rather than endpoint-inclusive) yields 85.0\% compiled and 70.4\% full
+match over all 240 intents; the drop from 86.2\% reflects both the
+harder delay model and the discretization change, and the two effects
+are not isolated in this rerun.
 Safety metrics (unsafe acceptance) always use all 240 intents.
 
 \textbf{Metrics.} \textit{Compiled}: produces a ConstraintProgram that
@@ -353,7 +543,7 @@ not acceptance.
 \textit{Types match}: correct constraint type multiset.
 \textit{Full match}: types + targets + values match (primary metric).
 \textit{PDR}: packet delivery ratio over 100 random OD pairs $\times$
-20 time steps $\times$ 3 seeds.
+50 time steps $\times$ 3 seeds.
 
 \subsection{GNN Routing Performance}
 \label{sec:eval_gnn}
@@ -393,8 +583,9 @@ Table~\ref{tab:ablation} presents the ablation study across four
 compiler configurations on the full 240-intent benchmark. All ablation
 and comparison tables use uniform random edge delays for controlled
 comparison across configurations. A separate distance-based ISL delay rerun
-(9B only; see Section~\ref{sec:eval_setup} for coordinate discretization note)
-yields 85.0\% compiled and 70.4\% full match over all 240 intents.
+(9B only; see Section~\ref{sec:setup} for the coordinate discretization note)
+yields 85.0\% compiled and 70.4\% full match over all 240 intents;
+the two confounds (delay model and discretization) are not isolated.
 
 \begin{table}[t]
 \centering
@@ -435,15 +626,23 @@ compositional reasoning task that benefits from LLM capabilities.
 \label{sec:eval_e2e}
 
 We evaluate the complete pipeline (compile $\to$ verify $\to$ ground
-$\to$ route) across four constrained scenarios:
+$\to$ route) across four constrained scenarios that serve as
+operational surrogates for the motivating applications (e.g., node
+failure models equipment loss during a mission; plane maintenance
+models scheduled maintenance windows; polar avoidance models storm-exposed
+ISL withdrawal):
 
 \begin{table}[t]
 \centering
-\caption{End-to-end constrained routing (3 seeds $\times$ 20 steps).}
+\caption{End-to-end constrained routing (3 seeds $\times$ 50 steps,
+distance-based ISL delays).
+Dijkstra$^\dagger$ denotes greedy first-hop repair of unconstrained
+Dijkstra after applying constraint masks, not exact constrained
+shortest-path recomputation.}
 \label{tab:e2e}
 \begin{tabular}{lccc}
 \toprule
-\textbf{Scenario} & \textbf{GNN PDR} & \textbf{Dijkstra PDR} & \textbf{Violations} \\
+\textbf{Scenario} & \textbf{GNN PDR} & \textbf{Dijkstra$^\dagger$ PDR} & \textbf{Violations} \\
 \midrule
 Node failure      & 98.69\% & 97.83\% & 0 \\
 Plane maintenance & 70.51\% & 70.22\% & 0 \\
@@ -639,26 +838,32 @@ or fine-tuning is needed per constellation geometry.
 \section{Conclusion}
 \label{sec:conclusion}
 
-We presented an end-to-end system for intent-driven constrained
-routing in LEO mega-constellations. The system combines a GNN
-cost-to-go router (99.8\% PDR, 17$\times$ speedup), an LLM intent
-compiler (86.2\% full semantic match, uniform random edge delays), and an 8-pass deterministic
-validator (0\% unsafe acceptance, 100\% structural corruption detection) to bridge the gap
-between operator intent and network configuration.
+We presented LEON, an end-to-end framework for intent-driven
+constrained routing in LEO mega-constellations. LEON integrates three
+components matched to the challenges identified in this paper: an
+LLM-based intent compiler for semantic translation (86.2\% full
+semantic match, +59.0pp over rule-based parsing on compositional
+intents), a deterministic 8-pass validator for safety assurance (0\%
+unsafe acceptance), and a GNN cost-to-go router for efficient
+execution (99.8\% PDR, 17$\times$ speedup over Dijkstra).
 
-Our evaluation on a 240-intent benchmark (uniform random edge delays)
-demonstrates that LLM-based
-compilation significantly outperforms rule-based parsing on
-compositional intents (+59.0pp), generalizes to novel phrasings
-(81.8\% on 33 scorable OOD paraphrases), and produces zero constraint violations in
-end-to-end routing. The reachability separation analysis reveals
-that apparent performance gaps under polar constraints are topological
-artifacts, not routing deficiencies.
+Evaluation on a Walker Delta 20$\times$20 constellation across
+four constrained scenarios---node failure, plane maintenance,
+polar avoidance, and compositional constraints---confirms zero
+constraint violations with both GNN and heuristic Dijkstra fallback routing. The compiler generalizes to novel phrasings (81.8\%
+on 33 scorable out-of-distribution paraphrases, 4.4pp degradation),
+and the reachability separation analysis reveals that apparent
+performance gaps under polar constraints are topological artifacts
+rather than routing deficiencies.
 
-Future work will address the semantic verification gap through
-constraint satisfiability pre-solving, extend the GNN to accept
-constraint features as input, and validate the system on real
-operator intent traces from production constellations.
+These results suggest that coupling LLM flexibility with deterministic
+verification is a viable path toward safer and more responsive
+satellite network operations. Future work will extend LEON in three
+directions: (1)~constraint satisfiability pre-solving to close the
+semantic verification gap, (2)~constraint-conditioned GNN routing
+that accepts constraint features as direct input, and (3)~validation
+on real operator intent traces from production constellations to
+assess generalization beyond synthetic benchmarks.
 
 % ============================================================
 % References
@@ -770,6 +975,50 @@ in \textit{Proc. ACM IMC}, 2024.
 S.~Kim, J.~Park, and J.~Rexford,
 ``Translating network policies with large language models,''
 in \textit{Proc. ACM HotNets}, 2023.
+
+\bibitem{leo_constellation_survey}
+I.~del Portillo, B.~Cameron, and E.~Crawley,
+``A technical comparison of three low Earth orbit satellite
+constellation systems to provide global broadband,''
+\textit{Acta Astronautica}, vol.~159, pp.~123--135, 2019.
+
+\bibitem{satnet_ops}
+B.~Di, L.~Song, Y.~Li, and H.~V.~Poor,
+``Ultra-dense LEO: Integration of satellite access networks into 5G
+and beyond,'' \textit{IEEE Wireless Commun.}, vol.~26, no.~2,
+pp.~62--69, 2019.
+
+\bibitem{satellite_sdn_survey}
+T.~Li, H.~Zhou, H.~Luo, and S.~Yu,
+``Software-defined and virtualized future satellite networks: A survey,''
+\textit{IEEE Access}, vol.~6, pp.~70992--71011, 2018.
+
+\bibitem{leo_routing_survey}
+Y.~Yang, M.~Xu, D.~Wang, and Y.~Wang,
+``Towards next-generation routing in LEO satellite networks,''
+\textit{IEEE Netw.}, vol.~36, no.~3, pp.~14--20, 2022.
+
+\bibitem{isl_dynamics}
+A.~Bhattacherjee and A.~Singla,
+``Network topology design at 27,000\,km/h,''
+in \textit{Proc. ACM CoNEXT}, 2019.
+
+\bibitem{satellite_ibn}
+Q.~Chen, L.~Yang, and X.~Guo,
+``Intent-driven management for integrated satellite-terrestrial
+networks,'' in \textit{Proc. IEEE WCNC}, 2023.
+
+\bibitem{satellite_idn}
+J.~Zhang, H.~Li, and Z.~Feng,
+``Intent-driven networking for non-terrestrial networks: Architecture
+and challenges,'' \textit{IEEE Commun. Mag.}, vol.~62, no.~1,
+pp.~88--94, 2024.
+
+\bibitem{ntn_orchestration}
+M.~Giordani and M.~Zorzi,
+``Non-terrestrial networks in the 6G era: Challenges and
+opportunities,'' \textit{IEEE Netw.}, vol.~35, no.~2, pp.~244--251,
+2021.
 
 \end{thebibliography}
 

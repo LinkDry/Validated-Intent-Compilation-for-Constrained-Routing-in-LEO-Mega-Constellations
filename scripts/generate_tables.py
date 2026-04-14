@@ -65,7 +65,7 @@ def e2e_table():
         ("baseline",          "Baseline (no constraints)"),
         ("node_failure",      "Node failure"),
         ("plane_maintenance", "Plane maintenance"),
-        ("polar_avoidance",   "Polar avoidance (5^\circ$)"),
+        ("polar_avoidance",   "Polar avoidance (45$^\\circ$)"),
         ("compositional",     "Compositional"),
     ]
     
@@ -78,7 +78,7 @@ def e2e_table():
     print("% === Table: End-to-End Evaluation ===")
     print(r"\begin{table}[t]")
     print(r"\centering")
-    print(r"\caption{End-to-end constrained routing evaluation across 5 scenarios (3 seeds each). Violation rate measures constraint satisfaction.}")
+    print(r"\caption{End-to-end constrained routing evaluation across 5 scenarios (3 seeds $\times$ 50 steps each, distance-based ISL delays). Violation rate measures constraint satisfaction.}")
     print(r"\label{tab:e2e}")
     print(r"\begin{tabular}{llcccc}")
     print(r"\toprule")
