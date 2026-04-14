@@ -5,7 +5,7 @@
 \label{sec:infeasible_handling}
 
 Real-world operator intents are not always well-formed or physically
-realizable. Our system addresses three categories of problematic intents
+realizable. LEON addresses three categories of problematic intents
 through complementary mechanisms.
 
 \subsubsection{Infeasible Intent Detection}
@@ -13,7 +13,7 @@ through complementary mechanisms.
 An intent is \textit{infeasible} when its constraint program is
 syntactically valid but physically unrealizable---e.g., demanding
 sub-millisecond latency across intercontinental paths, or routing through
-a region after disabling all nodes in that region. Our 8-pass validator
+a region after disabling all nodes in that region. The LEON validator
 detects three classes of infeasibility:
 
 \begin{itemize}

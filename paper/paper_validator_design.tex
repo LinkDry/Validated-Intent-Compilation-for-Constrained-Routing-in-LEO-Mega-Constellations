@@ -4,13 +4,21 @@
 \subsection{Deterministic Validation Pipeline}
 \label{sec:validator}
 
-A key design principle of our system is that the LLM compiler operates
+A key design principle of LEON is that the LLM compiler operates
 \textit{offline} and its output is never trusted directly. Every
 ConstraintProgram passes through an 8-pass deterministic validator before
-reaching the routing layer. This design is motivated by two observations:
-(1)~LLMs can produce syntactically valid but semantically incorrect
-constraint programs, and (2)~in safety-critical network infrastructure,
-a single undetected constraint violation can cascade into service outages.
+reaching the routing layer. This design is motivated by the operational
+consequences of incorrect constraints in satellite networks. For example,
+a mistranslated intent that disables the wrong orbital plane could sever
+TT\&C connectivity to an entire satellite cluster during a critical
+maneuver; an infeasible latency bound could cause the router to drop
+time-sensitive remote sensing data rather than relay it through an
+available but longer path; and a contradictory constraint pair (e.g.,
+disabling a node while simultaneously routing through it) could create
+routing blackholes that silently discard mission traffic. Because LLMs
+can produce syntactically valid but semantically incorrect constraint
+programs, and because a single undetected violation can cascade into
+service outages, deterministic validation before deployment is essential.
 
 The validator implements the following passes in sequence, with early
 termination on fatal errors:
