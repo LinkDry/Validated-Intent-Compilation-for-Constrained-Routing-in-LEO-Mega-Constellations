@@ -1,0 +1,124 @@
+% Validator Design Rationale Subsection
+% For inclusion in paper Section III-C (Deterministic Validation Pipeline)
+
+\subsection{Deterministic Validation Pipeline}
+\label{sec:validator}
+
+A key design principle of LEON is that the LLM compiler operates
+\textit{offline} and its output is never trusted directly. Every
+ConstraintProgram passes through an 8-pass deterministic validator before
+reaching the routing layer. This design is motivated by the operational
+consequences of incorrect constraints in satellite networks. For example,
+a mistranslated intent that disables the wrong orbital plane could sever
+TT\&C connectivity to an entire satellite cluster during a critical
+maneuver; an infeasible latency bound could cause the router to drop
+time-sensitive remote sensing data rather than relay it through an
+available but longer path; and a contradictory constraint pair (e.g.,
+disabling a node while simultaneously routing through it) could create
+routing blackholes that silently discard mission traffic. Because LLMs
+can produce syntactically valid but semantically incorrect constraint
+programs, and because a single undetected violation can cascade into
+service outages, deterministic validation before deployment is essential.
+
+The validator implements the following passes in sequence, with early
+termination on fatal errors:
+
+\begin{enumerate}
+\item \textbf{Schema Validation.} Checks structural completeness: all
+required fields present, valid priority levels, non-empty constraint
+types and targets. Rejects malformed programs before deeper analysis.
+
+\item \textbf{Entity Grounding.} Verifies that all referenced entities
+exist in the constellation model: node IDs $\in [0, N)$, plane IDs
+$\in [0, P)$, region names $\in \mathcal{R}$, traffic classes
+$\in \mathcal{T}$. This catches hallucinated entities (e.g., node~454
+in a 400-node constellation).
+
+\item \textbf{Type Safety.} Ensures constraints attach to semantically
+correct entity types: \texttt{max\_latency\_ms} must target a
+\texttt{flow\_selector}, \texttt{disable\_node} must target a
+\texttt{node}, \texttt{avoid\_latitude} must target \texttt{edges}.
+Prevents type confusion errors where the LLM assigns a constraint
+to the wrong entity class.
+
+\item \textbf{Value Range Checking.} Validates numeric parameters:
+latency values $> 0$, utilization caps
+$\in (0, 1]$, node IDs within constellation bounds. Catches
+out-of-range values that would produce undefined behavior.
+
+\item \textbf{Conflict Detection.} Identifies contradictory constraints
+within the same program: a node cannot be simultaneously disabled and
+used as a routing waypoint (promoted to error); conflicting latency bounds on the same flow
+are flagged as warnings. Node-level contradictions are rejected;
+latency conflicts use the stricter bound.
+
+\item \textbf{Physical Admissibility.} Checks whether the constrained
+topology is physically realizable: latency deadlines below the
+single-hop physical minimum ($<2.0$\,ms) are rejected; latitude
+avoidance thresholds that remove $>50\%$ of edges trigger warnings.
+
+\item \textbf{Reachability Analysis.} Performs BFS on the node-masked
+graph $G' = (V \odot M_V, E')$ where $E'$ retains edges between active nodes,
+to verify connectivity.
+Severe capacity loss ($\geq 75\%$ of nodes disabled) triggers a strong
+warning; moderate loss ($\geq 50\%$) triggers a standard warning.
+These capacity thresholds are heuristic indicators outside the
+soundness path---they do not block acceptance, which is determined
+solely by Pass~8.
+
+\item \textbf{Feasibility Certification.} For each demanded flow,
+constructs a routing witness on the constrained topology to certify
+that all hard constraints can be simultaneously satisfied. Five
+certified fragments cover the constraint space:
+\begin{itemize}
+\item \textbf{F1} (topology only): BFS reachability
+\item \textbf{F2} (+ latency): Dijkstra with deadline
+\item \textbf{F3} (+ hops): BFS with hop limit
+\item \textbf{F4} (+ latency + hops): hop-layered Dijkstra
+\item \textbf{F5} (+ $k$-disjoint): Edmonds-Karp max-flow
+\end{itemize}
+Three outcomes: \decision{accept} (witness found), \decision{reject}
+(no feasible routing exists), or \decision{abstain} (unsupported
+constraint combination). Programs are rejected only on \decision{reject};
+\decision{abstain} defers to Dijkstra fallback routing, preserving
+safety without constructive certification.
+\end{enumerate}
+
+\begin{theorem}[Acceptance Soundness]
+If the feasibility certifier accepts a constraint program $P$ with
+witness $W$, then there exists a routing assignment satisfying all
+hard constraints of $P$ on the constrained topology.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+By case analysis over fragments F1--F5. Each fragment's algorithm
+is a standard shortest-path or max-flow algorithm whose correctness
+is well-established. The witness $W$ is the concrete path (or path set)
+returned by the algorithm, which by construction satisfies the
+topology constraints (disabled nodes/edges excluded from the search
+graph), latency bounds (Dijkstra optimality), hop limits (BFS layering),
+and disjointness requirements (augmenting path decomposition).
+Unsupported combinations produce \decision{abstain}, never
+\decision{accept}, so no false acceptance is possible within the
+certified fragment space.
+\end{proof}
+
+\noindent\textbf{Design rationale.} We chose deterministic
+validation over learned or probabilistic checking for three reasons:
+\begin{itemize}
+\item \textit{Completeness}: every structural error class is covered by
+at least one pass, achieving 100\% detection on our corruption benchmark
+(8 error types $\times$ 30 injections = 240 tests).
+\item \textit{Transparency}: each rejection includes a human-readable
+error message identifying the specific violation, enabling the repair
+loop to provide targeted feedback to the LLM.
+\item \textit{Soundness}: the feasibility certifier guarantees that
+accepted programs have constructive routing witnesses, closing the
+semantic gap between structural validity and routing feasibility.
+\end{itemize}
+
+\noindent\textbf{Repair loop integration.} When validation fails, the
+error messages are fed back to the LLM as a repair prompt. The compiler
+retries up to 3 total attempts (1 initial + 2 repairs), with each attempt receiving the previous
+errors as context. In our 240-benchmark evaluation (uniform random edge delays), 97.9\% of intents
+compile successfully, with 93.3\% succeeding on the first attempt.

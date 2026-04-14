@@ -1,0 +1,135 @@
+% Infeasible Intent Handling and Fallback Policies
+% For inclusion in paper Section III-D or IV (Discussion)
+
+\subsection{Handling Infeasible, Ambiguous, and Edge-Case Intents}
+\label{sec:infeasible_handling}
+
+Real-world operator intents are not always well-formed or physically
+realizable. LEON addresses three categories of problematic intents
+through complementary mechanisms.
+
+\subsubsection{Infeasible Intent Detection}
+
+An intent is \textit{infeasible} when its constraint program is
+syntactically valid but physically unrealizable---e.g., demanding
+sub-millisecond latency across intercontinental paths, or routing through
+a region after disabling all nodes in that region. The LEON validator
+detects three classes of infeasibility:
+
+\begin{itemize}
+\item \textbf{Structural infeasibility} (100\% detection): missing fields,
+out-of-range entity IDs, type mismatches, and values outside physical
+bounds (e.g., latency $< 2.0$\,ms). These are caught by passes 1--4
+(schema, entity grounding, type safety, value ranges).
+
+\item \textbf{Topological infeasibility} (100\% detection): constraints
+that partition the network, eliminate viable paths, or cause severe
+capacity loss. Pass~5 rejects contradictory constraints (e.g., disabling
+a node while routing through it). Pass~7 warns when $\geq 50\%$ of nodes are disabled (severe capacity
+loss) and escalates to a stronger warning at $\geq 75\%$. These
+capacity thresholds are heuristic warnings outside the soundness
+path---they do not block acceptance.
+
+\item \textbf{Routing infeasibility} (100\% detection within certified
+fragments): constraint combinations that are individually valid but
+jointly unsatisfiable on the physical topology. Pass~8 (feasibility
+certification) constructs routing witnesses using fragment-specific
+algorithms (BFS, Dijkstra, hop-layered Dijkstra, Edmonds-Karp max-flow)
+and rejects programs where no witness exists.
+\end{itemize}
+
+\noindent Our confusion matrix (Table~\ref{tab:confusion_matrix})
+confirms the effectiveness of the 8-pass pipeline: 0\% unsafe acceptance
+across all categories. Of the 30 benchmark-infeasible intents, 22 receive
+\decision{Reject} and 8 receive \decision{Abstain}---none are accepted.
+Pass~8 additionally identifies 32 programs among the structurally-valid
+set whose latency or hop constraints cannot be satisfied on the physical
+constellation topology (e.g., 30\,ms S\~{a}o Paulo--New York when the
+minimum-hop path requires $\sim$63\,ms); 29/32 are independently
+confirmed via a separate Dijkstra oracle.
+
+Our adversarial safety evaluation (15 tests across resource exhaustion,
+semantic conflicts, and boundary exploitation) achieves 100\% detection
+(15/15), including near-total capacity removal (disabling 19/20 planes),
+cross-constraint contradictions, and boundary value exploitation.
+
+\subsubsection{Fallback Policies}
+
+The ConstraintProgram IR includes a \texttt{fallback\_policy} field that
+governs system behavior when hard constraints cannot be satisfied at
+routing time:
+
+\begin{enumerate}
+\item \texttt{reject\_if\_hard\_infeasible} (default): the routing layer
+refuses to compute paths and returns an explicit failure to the operator.
+This is the safest option for critical intents where partial compliance
+is unacceptable.
+
+\item \texttt{relax\_soft\_first}: soft constraints are progressively
+relaxed (in order of increasing penalty weight) until a feasible routing
+exists. Hard constraints are never relaxed. This enables graceful
+degradation for intents where approximate compliance is preferable to
+total failure.
+
+\item \texttt{report\_unsat\_core}: the system identifies the minimal
+subset of constraints that cause infeasibility and reports them to the
+operator, enabling informed manual intervention. This supports
+diagnostic workflows where understanding \textit{why} an intent fails
+is as important as resolving it.
+\end{enumerate}
+
+\noindent In our 240-intent benchmark, all programs use the default
+\texttt{reject\_if\_hard\_infeasible} policy. The fallback mechanism
+is designed for operational deployment where operator interaction is
+available; evaluating its effectiveness under dynamic network conditions
+is left to future work.
+
+\subsubsection{Ambiguous Intent Resolution}
+
+Ambiguous intents admit multiple valid interpretations. Our OOD
+evaluation includes 5 deliberately ambiguous intents (e.g., ``optimize
+the network for best performance'') to assess compiler behavior.
+Key observations:
+
+\begin{itemize}
+\item The LLM compiler produces \textit{reasonable} constraint programs
+for all 5 ambiguous intents (qualitative assessment), typically selecting
+conservative interpretations that map to load-balancing or latency
+optimization.
+
+\item Ambiguous intents are excluded from quantitative scoring because
+no unique ground truth exists. We report them separately as qualitative
+evidence of graceful degradation.
+
+\item The compiler's 5-shot prompt includes examples that implicitly
+demonstrate disambiguation strategies (e.g., mapping vague performance
+requests to specific constraint types), providing soft guidance without
+explicit disambiguation rules.
+\end{itemize}
+
+\subsubsection{Limitations and Future Directions}
+
+The feasibility certifier covers five constraint fragments (F1--F5)
+that span the most common constraint combinations in our benchmark.
+Three directions could extend coverage further:
+
+\begin{enumerate}
+\item \textbf{Extended fragment coverage}: constraints involving
+\texttt{min\_cap\_reserve} or combinations of $k$-disjoint paths
+with latency/hop bounds currently produce \decision{Abstain}. Adding
+fragments for these combinations (e.g., via constrained max-flow)
+would reduce the abstain rate.
+
+\item \textbf{Multi-constellation generalization}: cross-constellation
+evaluation (Table~\ref{tab:cross_constellation}) shows the GNN
+generalizes to altitude changes but not inclination changes.
+The compile--verify--ground pipeline is constellation-agnostic,
+but the GNN requires retraining per orbital geometry. Extending
+to heterogeneous multi-shell constellations (e.g., Starlink Gen2)
+remains future work.
+
+\item \textbf{Intent confirmation loop}: presenting the grounded
+constraint program back to the operator in natural language for
+confirmation before execution, closing the semantic loop between
+intent and realization.
+\end{enumerate}
